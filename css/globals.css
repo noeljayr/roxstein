@@ -1,0 +1,357 @@
+@import "tailwindcss";
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 1.45vw, 1.25em);
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+  background-color: var(--off-white);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    color: var(--black);
+    box-sizing: border-box;
+    font-size: var(--p3);
+    scroll-behavior: smooth;
+    font-family: "Inter", sans-serif;
+    /* transition: var(--transition); */
+  }
+
+
+}
+
+:root {
+  /* colors */
+  --black: #080e1c;
+  --white: #ffffff;
+  --off-white: #dcdcdc;
+  --primary: #4162bf;
+  --border: rgba(44, 44, 53, 0.1);
+  --border-2: rgba(216, 216, 218, 0.25);
+  --input-bg: #fafafa;
+  --input-bg-2: rgba(250, 250, 250, 0.35);
+  --background: #0e0e11;
+  --success: #00ad00;
+  --error: #b60707;
+  --warning: #f0c63d;
+
+  /* typography */
+  --inter: "Inter", sans-serif;
+  --plus-jakarta: "Plus Jakarta Sans", sans-serif;
+  --h1: clamp(1.5rem, 4.35vw, 1.75rem);
+  --h3: clamp(1rem, 3.5vw, 1.25rem);
+  --h4: clamp(0.95rem, 3vw, 1.15rem);
+  --p1: clamp(0.75rem, 2.5vw, 0.85rem);
+  --p2: clamp(0.65rem, 2vw, 0.75rem);
+  --p3: clamp(0.55rem, 1.75vw, 0.65rem);
+  --p4: clamp(0.45rem, 1.5vw, 0.55rem);
+  --p5: clamp(0.35rem, 1.45vw, 0.45rem);
+  /* elements */
+  --radius: 1rem;
+  --radius-m: 0.85rem;
+  --radius-s: 0.65rem;
+  --radius-ss: 0.45rem;
+  --padding: clamp(0.75rem, 3vw, 1rem);
+
+  --transition: ease 0.5s;
+  --cta-hover: brightness(93%);
+}
+
+body {
+  background: var(--off-white);
+  color: var(--black);
+  display: flex;
+  gap: 4rem;
+  flex-direction: column;
+  padding: 1rem;
+  padding-top: 4.5rem;
+  padding-bottom: 0;
+  min-height: 100vh !important;
+}
+
+h1 {
+  font-size: var(--h1);
+  font-weight: bold;
+  line-height: 130%;
+  font-family: "Inter", sans-serif;
+}
+
+h1 span {
+  font-size: var(--h1);
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+
+h2 {
+  font-size: var(--h2);
+  font-weight: 600;
+  line-height: 130%;
+  font-family: "Inter", sans-serif;
+}
+
+h3 {
+  font-size: var(--h3);
+  font-weight: 600;
+  line-height: 150%;
+  font-family: "Inter", sans-serif;
+}
+h4 {
+  font-weight: 600;
+  font-size: var(--h4);
+  line-height: 180%;
+  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  line-height: 180%;
+}
+
+ul li {
+  line-height: 180%;
+}
+
+.font-h-1,
+.font-h-1 * {
+  font-size: var(--h1) !important;
+}
+.font-h-2,
+.font-h-2 * {
+  font-size: var(--h2) !important;
+}
+
+.font-h-3,
+.font-p-3 * {
+  font-size: var(--h3) !important;
+}
+
+.font-h-4,
+.font-p-4 * {
+  font-size: var(--h4) !important;
+}
+
+.font-p-1,
+.font-p-1 * {
+  font-size: var(--p1) !important;
+}
+.font-p-2,
+.font-p-2 * {
+  font-size: var(--p2) !important;
+}
+
+.font-p-3,
+.font-p-3 * {
+  font-size: var(--p3) !important;
+}
+
+.font-p-4,
+.font-p-4 * {
+  font-size: var(--p4) !important;
+}
+
+
+
+
+.logo {
+  font-size: var(--h4);
+  font-family: "Inter", sans-serif;
+  transition: var(--transition);
+}
+
+.links svg {
+  height: 0.85rem;
+  width: 0.85rem;
+  transition: var(--transition);
+}
+
+.cta,
+.cta-2 {
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 2rem;
+  transition: var(--transition);
+  color: var(--black);
+  font-weight: 600;
+}
+
+.cta:hover {
+  background: rgba(220, 220, 220, 0.08);
+}
+
+.cta-2 {
+  background-color: var(--primary);
+  border: 1px solid transparent;
+  color: var(--off-white);
+}
+
+.cta-2:hover {
+  filter: var(--cta-hover);
+}
+
+.cta-container span {
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.cta-container span img {
+  height: 0.85rem;
+  width: 0.85rem;
+  transition: var(--transition);
+}
+
+.navbar {
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.scrolled {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-container:hover span img {
+  transform: rotate(45deg);
+}
+
+.cta-container:hover .cta {
+  background: rgba(158, 158, 158, 0.2);
+}
+
+.section {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 1440px) {
+  .section {
+    width: 60vw;
+  }
+}
+
+.why-us-tagline p {
+  font-weight: 500;
+}
+
+.why-us-tagline p b {
+  background: rgba(65, 98, 191, 0.15);
+  border: 1px solid rgba(65, 98, 191, 0.25);
+  border-radius: 0.4rem;
+  padding: 0.25rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  margin-right: 0.25rem;
+  color: var(--primary);
+}
+
+.section-title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.section-title .name {
+  font-size: var(--p4);
+  padding: 0.35rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(44, 44, 53, 0.15);
+  border-radius: var(--radius-ss);
+  font-weight: 800;
+  color: rgba(21, 21, 25, 0.8);
+}
+
+.section-title .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(44, 44, 53, 0.15);
+  border-radius: var(--radius-ss);
+}
+
+.section-title .icon svg {
+  stroke: rgba(21, 21, 25, 0.8);
+  stroke-width: 3px;
+  opacity: 0.85;
+  height: 0.85rem;
+  width: 0.85rem;
+  transition: var(--transition);
+  stroke-width: 2.5px;
+}
+
+.section-title .icon-filled svg {
+  fill: rgba(21, 21, 25, 0.8);
+  stroke-width: 0;
+}
+
+.language .selector {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: calc(var(--radius-ss) * 0.95);
+  padding: 0.25rem;
+  padding-left: 0.35rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.scrolled .language .selector{
+  border: 1px solid var(--border);
+}
+
+.language .selector img {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.language .options {
+  width: 5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  top: 120%;
+  border-radius: var(--radius-ss);
+}
+
+.language .options * {
+  font-size: var(--p3);
+}
+
+.language .options span {
+  padding: 0.35rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+
+.language .options img {
+  height: 0.85rem;
+  width: 0.85rem;
+  transition: var(--transition);
+}

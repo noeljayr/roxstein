@@ -1,0 +1,76 @@
+.reasons .reason {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  height: 15rem;
+  width: 100%;
+  display: grid;
+  padding: 1rem;
+  grid-template-rows: auto auto auto 1fr;
+  overflow: hidden;
+  position: relative;
+}
+
+canvas {
+  width: 100%;
+  height: 100% !important;
+}
+
+.reasons div .title {
+  font-size: var(--p2);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.reasons div .number {
+  color: var(--primary);
+  font-size: var(--p4);
+  font-weight: 800;
+  font-family: "JetBrains Mono", monospace;
+  margin-bottom: 0.5rem;
+}
+
+.value-section {
+  display: grid;
+  grid-template-columns: 57% 1fr;
+  gap: 2rem;
+}
+
+.progress-bar__background {
+  fill: none;
+  stroke: #e2eff0;
+  stroke-width: 1.8;
+}
+.progress-bar__progress {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-dasharray: 100 100;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.loader-svg {
+  /* padding: 0.5rem; */
+  transform: rotate(-90deg);
+}
+
+.loader-svg circle {
+  stroke-width: 4px;
+}
+
+
+.project .indicator{
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.project:hover .indicator{
+  opacity: 1;
+}
+
+.service{
+  background-color: #E6E6E6;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
