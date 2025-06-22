@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "title": "Roxstein",
+    "description": "Personalized software and multimedia solutions.",
+    "keywords": [
+      "Roxstein",
+      "software solutions",
+      "best web Design agency in Switzerland",
+      "web development",
+      "software developer in Switzerland",
+      "web design",
+      "UI/UX design",
+      "App developer",
+      "Swiss",
+      "Switzerland",
+      "personal portfolio"
+    ]
+  },
+  "visitSite": {
+    "text": "Visit site"
+  },
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "about": "About us",
+    "imprint": "Imprint",
+    "callUs": "Call us now",
+    "allRights": "All Rights Reserved"
+  },
+  "hero": {
+    "tri": {
+      "local": "Local.",
+      "reliable": "Reliable.",
+      "affordable": "Affordable."
+    },
+    "tagline": "Max out your business goals.",
+    "description": "When Swiss quality assurance meets global talent, we ensure that we maximize your business online whether its for reach or profits",
+    "cta1": "Request quote",
+    "cta2": "Give us a call",
+    "chart": {
+      "customersGained": "Customers gained",
+      "conversionRate": "Conversion rate"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "tagline": "Made Just for You",
+    "description": "We take the time to understand what you need deliver required service",
+    "design": {
+      "title": "Design",
+      "description": "We create clean layouts and visuals that help your customers find what they need. From buttons to the checkout page, every detail is designed to make it so that every one using it has the best experience.",
+      "learnMore": "Learn more"
+    },
+    "dev": {
+      "title": "Development",
+      "description": "We turn static design images to full functioning sites, using industry’s best practices to ensure that your website is as reliable as it can be."
+    },
+    "hosting": {
+      "title": "Hosting",
+      "description": "Bringing the site to life is not the end of the journey. We enable your customers to access your business online from anywhere, at any time."
+    }
+  },
+  "why": {
+    "title": "Why Roxstein?",
+    "tagline": "Here’s how we can boost your business’s growth",
+    "description": "Collaborate with Roxstein to bridge the gap between",
+    "yourbigideas": "Your big ideas",
+    "last": "and business outcomes.",
+    "reason3": {
+      "title": "Creative Excellence",
+      "description": "We combine creativity and skill to make unique products that help your brand feel real and stand out online."
+    },
+    "reason4": {
+      "title": "Quality Assurance",
+      "description": "We ensure every project is tested for flawless performance, security, and a seamless user experience, delivering reliable, polished results that exceed expectations.",
+      "performance": "Performance",
+      "bestPractices": "Best Practices",
+      "seo": "SEO"
+    }
+  },
+  "value": {
+    "title": "Value",
+    "tagline": "Better value than cost added makes great product.",
+    "description": "Our commitment is to accelerate your success. Our definition of \"great product\" centers on this core idea: its ability to deliver meaningful business outcomes, faster workflows, actionable insights, improved conversions",
+    "descriptionMobile": "We build products that accelerate success through faster workflows, insights, and conversions.",
+    "getStarted": "Get started"
+
+  },
+  "faqs": {
+    "title": "Quick Answers"
+  },
+  "secondCta": {
+    "title": "Still curious? Talk directly to the team.",
+    "cta": "Call us now"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "tagline": "Together we can boost your company’s growth",
+    "description": "For business inquiries or to say hello, fill out the form below or email",
+    "emailAddress": "contact@roxstein.ch",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Full name"
+      },
+      "email": {
+        "label": "What's your email?",
+        "placeholder": "Email address"
+      },
+      "message": {
+        "label": "Any extra details that you would like to share?",
+        "placeholder": "Write us your message",
+        "optional": "(optional)"
+      },
+      "services": {
+        "label": "Services",
+        "placeholder": "(select all that applies)"
+      },
+      "submit": "Send message"
+    }
+  },
+  "aboutUs": {
+    "title": "About us",
+    "tagline": "Get to know about Roxstein and the team.",
+    "years": {
+      "title": "Years in business",
+      "description": "Roxstein was founded 3 years ago but it is comprised of a team of professionals and experts with more years of experience",
+      "yearsOfExperience": "3+ years of experience",
+      "projects": "57+ completed projects"
+    },
+    "clients": {
+      "title": "Satisfied Clients",
+      "description": "Driving brand success through innovative and powerful solutions."
+    },
+    "values": {
+      "title": "Roxstein's values",
+      "description": "Our business approach and processes are guided by the following values:"
+    },
+    "team": {
+      "title": "The team",
+      "description": "Roxstein is comprised of a diverse team, including top talents from across the world including Africa.",
+      "professional": "Professional",
+      "international": "International"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import iru from "@/public/projects/iru.png";
@@ -8,6 +8,7 @@ import mzunipay from "@/public/projects/mzunipay.png";
 import rainbow from "@/public/projects/rainbow.png";
 import makoko from "@/public/projects/makoko.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type Types = {
   name: string;
@@ -21,6 +22,7 @@ type FinalTypes = {
 };
 
 function Project({ project, index }: FinalTypes) {
+  const t = useTranslations("visitSite");
   const ref = useRef<HTMLAnchorElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -73,7 +75,7 @@ function Project({ project, index }: FinalTypes) {
   };
 
   return (
-    <motion.div
+    <motion.a
       initial={{ opacity: 0, y: 60 }}
       transition={{
         ease: [0.25, 0.1, 0.25, 1.0],
@@ -82,64 +84,60 @@ function Project({ project, index }: FinalTypes) {
       }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className=""
+      target="_blank"
+      ref={ref}
+      href={project.link}
+      className="project w-full h-full bg-[#E6E6E6] cursor-none relative overflow-hidden rounded-[var(--radius)] border border-[var(--border)] flex items-center justify-center max-[800px]:aspect-square"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <Link
-        target="_blank"
-        ref={ref}
-        href={project.link}
-        className="project w-full h-full bg-[#E6E6E6] cursor-none relative overflow-hidden rounded-[var(--radius)] border border-[var(--border)] flex items-center justify-center"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {isHovered && (
-          <motion.span
-            key={index}
-            initial={{
-              x: mousePos.x,
-              y: mousePos.y,
-              scale: 0,
-              opacity: 0,
-            }}
-            animate={{
-              x: mousePos.x,
-              y: mousePos.y,
-              scale: 1,
-              opacity: 1,
-            }}
-            transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.15 }}
-            exit={{
-              scale: 0,
-              opacity: 0,
-              transition: { duration: 0.15 },
-            }}
-            className="absolute z-[2] indicator h-[3.5rem] w-[3.5rem] bg-[var(--primary)] text-[var(--off-white)] flex items-center justify-center text-center font-bold rounded-full pointer-events-none"
-            style={{
-              left: 0,
-              top: 0,
-              translateX: "-50%",
-              translateY: "-50%",
-            }}
-          >
-            Visit site
-          </motion.span>
-        )}
+      {isHovered && (
+        <motion.span
+          key={index}
+          initial={{
+            x: mousePos.x,
+            y: mousePos.y,
+            scale: 0,
+            opacity: 0,
+          }}
+          animate={{
+            x: mousePos.x,
+            y: mousePos.y,
+            scale: 1,
+            opacity: 1,
+          }}
+          transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.15 }}
+          exit={{
+            scale: 0,
+            opacity: 0,
+            transition: { duration: 0.15 },
+          }}
+          className="absolute z-[2] indicator h-[5rem] w-[5rem] bg-[var(--primary)] text-[var(--off-white)] flex items-center justify-center text-center font-bold rounded-full pointer-events-none"
+          style={{
+            left: 0,
+            top: 0,
+            translateX: "-50%",
+            translateY: "-50%",
+          }}
+        >
+          {t("text")}
+        </motion.span>
+      )}
 
-        <Image
-          src={
-            project.image === "iru"
-              ? iru
-              : project.image == "mzunipay"
-              ? mzunipay
-              : project.image === "rainbow"
-              ? rainbow
-              : makoko
-          }
-          alt={project.name}
-          className="h-[140%] scale-[1.3] w-full object-cover object-center absolute z-[0]"
-        />
-      </Link>
-    </motion.div>
+      <Image
+        src={
+          project.image === "iru"
+            ? iru
+            : project.image == "mzunipay"
+            ? mzunipay
+            : project.image === "rainbow"
+            ? rainbow
+            : makoko
+        }
+        alt={project.name}
+        className="h-[140%] scale-[1.3] w-full object-cover object-center absolute z-[0]"
+      />
+    </motion.a>
   );
 }
 

@@ -1,14 +1,8 @@
 "use client";
 
-import { useRive } from "@rive-app/react-canvas";
-import { useEffect, useRef } from "react";
-import { useInView } from "motion/react";
 import { motion } from "motion/react";
 
 function Reason2() {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { once: false });
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -19,7 +13,6 @@ function Reason2() {
       }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      ref={ref}
       className="reason"
     >
       <span className="number relative z-[2]">02</span>

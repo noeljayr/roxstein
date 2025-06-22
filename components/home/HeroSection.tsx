@@ -9,9 +9,10 @@ import heroImage from "@/public/hero-image.png";
 import Image from "next/image";
 import Customers from "../charts/Customers";
 import NumberFlow from "@number-flow/react";
-import { motionTranstion } from "@/constants/motionTranstion";
+import { useTranslations } from "next-intl";
 
 function HeroSection() {
+  const t = useTranslations("hero");
   const radius = 15.9155;
   const circumference = 2 * Math.PI * radius;
   const [value, setValue] = useState(0);
@@ -25,9 +26,9 @@ function HeroSection() {
   }, []);
 
   return (
-    <motion.div className="hero-section h-[25rem] flex relative items-center overflow-hidden justify-between">
-      <div className="flex flex-col gap-3">
-        <div className="flex w-[60ch] flex-col gap-1">
+    <motion.div className="hero-section h-[25rem] flex max-[980px]:items-center max-[980px]:justify-center  max-[980px]:flex-col relative items-center overflow-hidden justify-between">
+      <div className="flex flex-col gap-3 max-[980px]:items-center  ">
+        <div className="flex w-[60ch] max-[980px]:w-fit flex-col gap-1 max-[980px]:items-center">
           <motion.span
             initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -38,12 +39,14 @@ function HeroSection() {
             }}
             className="p-1.5 px-3 mb-2 rounded-4xl w-fit border-[1px] border-[rgba(65,98,191,0.1)] bg-[rgba(65,98,191,0.05)] font-p-4 flex gap-2"
           >
-            <span className="font-extrabold text-[var(--primary)]">Local.</span>
             <span className="font-extrabold text-[var(--primary)]">
-              Reliable.
+              {t("tri.local")}
             </span>
             <span className="font-extrabold text-[var(--primary)]">
-              Affordable.
+              {t("tri.reliable")}
+            </span>
+            <span className="font-extrabold text-[var(--primary)]">
+              {t("tri.affordable")}
             </span>
           </motion.span>
           <motion.h1
@@ -55,9 +58,9 @@ function HeroSection() {
             }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className=""
+            className="max-[980px]:text-center max-[980px]:w-[75ch]"
           >
-            Max out your business goals.
+            {t("tagline")}
           </motion.h1>
           <motion.p
             initial={{ y: -40, opacity: 0 }}
@@ -66,13 +69,11 @@ function HeroSection() {
               duration: 0.75,
               delay: 0.35,
             }}
-            whileInView={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 0, opacity: 0.85 }}
             viewport={{ once: true }}
-            className="w-full font-medium opacity-85"
+            className="w-full font-medium opacity-85 max-[980px]:text-center max-[980px]:w-[55ch]"
           >
-            When <b>Swiss</b> quality assurance meets global talent, we ensure
-            that we maximize your business online whether its for reach or
-            profits
+            {t("description")}
           </motion.p>
         </div>
 
@@ -85,14 +86,14 @@ function HeroSection() {
           }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          className="cta-container relative z-1 flex gap-3 mt-2 items-center"
+          className="cta-container relative z-1 flex gap-3 mt-2 items-center max-[980px]:w-fit"
         >
           <Link href="/contact" className="cta-2">
-            Request quote
+            {t("cta1")}
           </Link>
 
           <Link target="_blank" href="tel:+41775090427" className="cta">
-            Give us a call
+            {t("cta2")}
           </Link>
         </motion.div>
       </div>
@@ -105,7 +106,7 @@ function HeroSection() {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="hero-image right-[5rem] self-center rounded-[var(--radius)] border-[1px] border-[var(--border)] h-[19rem] w-[28rem] bg-[rgba(255,255,255,0.5)] absolute"
+        className="hero-image right-[5rem] max-[980px]:hidden  self-center rounded-[var(--radius)] border-[1px] border-[var(--border)] h-[19rem] w-[28rem] bg-[rgba(255,255,255,0.5)] absolute"
       >
         <div className="flex conversion-chart flex-col items-center justify-center absolute border-[1px] border-white w-[4.5rem] bg-[rgba(255,255,255,0.3)] backdrop-blur-[2px] h-[4.5rem] left-[4.5rem] top-[3rem] z-[2] rounded-full">
           <svg
@@ -145,7 +146,7 @@ function HeroSection() {
             style={{ fontSize: "calc(var(--p4) * 0.65)" }}
             className=" text-[#8F8F8F] font-bold"
           >
-            Conversion rate
+            {t("chart.conversionRate")}
           </span>
         </div>
 

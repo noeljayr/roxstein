@@ -12,8 +12,10 @@ import prof6 from "@/public/team/prof6.jpg";
 import switzerland from "@/public/team/country/switzerland.png";
 import nigeria from "@/public/team/country/nigeria.png";
 import mw from "@/public/team/country/malawi.png";
+import { useLocale } from "next-intl";
+import { useTranslations } from "use-intl";
 
-const values = [
+const englishValues = [
   {
     title: "Craftsmanship",
     p: "Treat projects as a craft. “Done isn’t enough, done right is the only standard.”",
@@ -25,6 +27,21 @@ const values = [
   {
     title: "Collaboration",
     p: "Open communication, clear roadmaps, honest status reports.",
+  },
+];
+
+const germanValues = [
+  {
+    title: "Handwerkskunst",
+    p: "Projekte werden als Handwerk betrachtet. „Fertig ist nicht genug – nur richtig gemacht zählt.“",
+  },
+  {
+    title: "Kundenorientierung",
+    p: "Wir holen regelmäßig Feedback ein und verbessern unsere Arbeit stetig, um unsere Kunden wirklich zufrieden zu stellen.",
+  },
+  {
+    title: "Zusammenarbeit",
+    p: "Offene Kommunikation, klare Fahrpläne, ehrliche Statusberichte.",
   },
 ];
 
@@ -57,6 +74,17 @@ const team = [
 
 function AboutUs() {
   const [value, setValue] = useState(0);
+  const [values, setValues] = useState(englishValues);
+  const locale: string = useLocale();
+  const t = useTranslations("aboutUs");
+
+  useEffect(() => {
+    if (locale === "de") {
+      setValues(germanValues);
+    } else {
+      setValues(englishValues);
+    }
+  }, [locale]);
 
   useEffect(() => {
     const timerId = setTimeout(() => {
@@ -69,18 +97,18 @@ function AboutUs() {
   return (
     <div className="section flex flex-col mt-8">
       <span className="section-title">
-        <span className="name">About us</span>
+        <span className="name">{t("title")}</span>
         <span className="icon  icon-filled">
           <IconInfoCircleFilled className="relative" />
         </span>
       </span>
 
       <div className="flex items-center flex-col gap-0.5">
-        <h3>Get to know about Roxstein and the team.</h3>
+        <h3 className="text-center">{t("tagline")}</h3>
       </div>
 
       <div className="overflow-hidden flex flex-col p-4 w-full bg-[#E6E6E6] border-[1px] border-[var(--border)] rounded-[var(--radius)] ">
-        <div className="flex flex-col pb-8  border-b-[1px] border-b-[var(--border)]">
+        <div className="flex flex-col pb-8 max-[850px]:pb-16 relative  border-b-[1px] border-b-[var(--border)]">
           <div className="flex items-center w-full justify-between">
             <motion.span
               initial={{ opacity: 0, x: -40 }}
@@ -92,9 +120,9 @@ function AboutUs() {
               viewport={{ once: true }}
               className="font-p-1 font-semibold"
             >
-              Years in business
+              {t("years.title")}
             </motion.span>
-            <div className="flex gap-2 ml-auto">
+            <div className="flex gap-2 ml-auto max-[850px]:absolute max-[850px]:bottom-4">
               <motion.span
                 initial={{ opacity: 0, x: -40 }}
                 transition={{
@@ -106,7 +134,7 @@ function AboutUs() {
                 viewport={{ once: true }}
                 className="font-bold font-p-4 px-4 py-2 bg-[#D6D9E3] rounded-4xl text-[var(--primary)]"
               >
-                3+ years of experience
+                {t("years.yearsOfExperience")}
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, x: -40 }}
@@ -119,7 +147,7 @@ function AboutUs() {
                 viewport={{ once: true }}
                 className="font-bold font-p-4 px-4 py-2 bg-[#D0E0DB] rounded-4xl text-[#03825E]"
               >
-                57+ completed projects
+                {t("years.projects")}
               </motion.span>
             </div>
           </div>
@@ -132,15 +160,14 @@ function AboutUs() {
             }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-medium opacity-75 w-[55ch]"
+            className="font-medium opacity-75 w-[55ch] max-[400px]:w-full"
           >
-            Roxstein was founded 3 years ago but it is comprised of a team of
-            professionals and experts with more years of experience
+            {t("years.description")}
           </motion.p>
         </div>
 
-        <div className="w-full pt-8 grid grid-cols-[auto_55%] justify-between">
-          <div className="flex flex-col font-medium w-[45ch]">
+        <div className="w-full pt-8 grid grid-cols-[auto_55%] max-[850px]:flex max-[850px]:flex-col max-[850px]:gap-4 justify-between">
+          <div className="flex flex-col font-medium w-[45ch] max-[360]:w-full">
             <motion.span
               initial={{ opacity: 0, y: -40 }}
               transition={{
@@ -151,7 +178,7 @@ function AboutUs() {
               viewport={{ once: true }}
               className="font-p-1 font-semibold"
             >
-              Roxstein{`'`}s values
+              {t("values.title")}
             </motion.span>
             <motion.p
               initial={{ opacity: 0, y: -40 }}
@@ -164,11 +191,10 @@ function AboutUs() {
               viewport={{ once: true }}
               className="opacity-70"
             >
-              Our business approach and processes are guided by the following
-              values:
+              {t("values.description")}
             </motion.p>
 
-            <div className="flex flex-col w-full gap-2 mt-2">
+            <div className="flex flex-col w-full gap-2 mt-2 ">
               {values.map((v, index) => {
                 const idx = index + 2;
                 return (
@@ -197,7 +223,7 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 h-full">
+          <div className="grid grid-cols-2 gap-2 h-full max-[850px]:h-[15rem] max-[600px]:h-[10rem] max-[450px]:h-fit max-[450px]:grid-cols-1 max-[450px]:grid-rows-[10rem_15rem]">
             <motion.div
               initial={{ opacity: 0 }}
               transition={{
@@ -210,7 +236,7 @@ function AboutUs() {
               className="flex flex-col  h-full w-full bg-[#DBDDE3] border-[1px] border-[rgba(65,98,191,0.1)]  rounded-[var(--radius-m)] p-3"
             >
               <span className="font-semibold font-p-2 opacity-85 mb-auto">
-                Satisfied Clients
+                {t("clients.title")}
               </span>
 
               <NumberFlow
@@ -219,7 +245,7 @@ function AboutUs() {
                 className="text-[var(--primary)] font-bold text-6xl leading-0"
               />
               <p className="opacity-70 font-p-4 font-medium">
-                Driving brand success through innovative and powerful solutions.
+                {t("clients.description")}
               </p>
             </motion.div>
             <motion.div
@@ -245,7 +271,7 @@ function AboutUs() {
       </div>
 
       <div className="flex overflow-hidden flex-col p-4 w-full bg-[#E6E6E6] border-[1px] border-[var(--border)] rounded-[var(--radius)] ">
-        <div className="flex flex-col pb-8  border-b-[1px] border-b-[var(--border)]">
+        <div className="flex flex-col pb-8 max-[850px]:pb-16 relative  border-b-[1px] border-b-[var(--border)]">
           <div className="flex items-center w-full justify-between">
             <motion.span
               initial={{ opacity: 0, x: -40 }}
@@ -257,9 +283,9 @@ function AboutUs() {
               viewport={{ once: true }}
               className="font-p-1 font-semibold"
             >
-              The team
+              {t("team.title")}
             </motion.span>
-            <div className="flex gap-2 ml-auto">
+            <div className="flex gap-2 ml-auto  max-[850px]:absolute max-[850px]:bottom-4">
               <motion.span
                 initial={{ opacity: 0, x: -40 }}
                 transition={{
@@ -271,7 +297,7 @@ function AboutUs() {
                 viewport={{ once: true }}
                 className="font-bold font-p-4 px-4 py-2 bg-[#E3D6DC] rounded-4xl text-[#BF4182]"
               >
-                Professional
+                {t("team.professional")}
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, x: -40 }}
@@ -284,7 +310,7 @@ function AboutUs() {
                 viewport={{ once: true }}
                 className="font-bold font-p-4 px-4 py-2 bg-[#DDDBCF] rounded-4xl text-[#847500]"
               >
-                International
+                {t("team.international")}
               </motion.span>
             </div>
           </div>
@@ -297,10 +323,9 @@ function AboutUs() {
             }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-medium opacity-75 w-[55ch]"
+            className="font-medium opacity-75 w-[55ch] max-[400]:w-full"
           >
-            Roxstein is comprised of a diverse team, including top talents from
-            across the world including Africa.
+            {t("team.description")}
           </motion.p>
         </div>
 

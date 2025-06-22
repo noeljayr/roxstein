@@ -4,26 +4,27 @@ import bolt from "@/public/bolt.png";
 import diamond from "@/public/diamond-2.png";
 import search from "@/public/world-search.png";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 function Reason4() {
+  const t = useTranslations("why.reason4");
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 80 }}
       transition={{
         ease: [0.25, 0.1, 0.25, 1.0],
         duration: 0.85,
-        delay: 0.85,
+        delay: 0.25,
       }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       className="reason"
     >
-      <span className="number">04</span>
-      <span className="title">Quality Assurance</span>
+      <span className="number">02</span>
+      <span className="title">{t("title")}</span>
       <p className="opacity-85">
-        We ensure every project is tested for flawless performance, security,
-        and a seamless user experience, delivering reliable, polished results
-        that exceed expectations.
+        {t("description")}
       </p>
 
       <div className="absolute bottom-0 justify-self-center j flex gap-2 items-center w-[calc(100%_-_1.5rem)] border-[1px] border-[rgba(44,_44,_53,_0.05)] h-[48%] bg-[#E1E1E1] rounded-t-[var(--radius-m)] py-4 px-8 justify-between ">
@@ -36,7 +37,7 @@ function Reason4() {
             style={{ fontSize: "var(--p4)" }}
             className="opacity-85 font-semibold"
           >
-            Performance
+            {t("performance")}
           </span>
         </div>
 
@@ -49,7 +50,7 @@ function Reason4() {
             style={{ fontSize: "var(--p4)" }}
             className="opacity-85 font-semibold"
           >
-            Best Practices
+            {t("bestPractices")}
           </span>
         </div>
 
@@ -62,7 +63,7 @@ function Reason4() {
             style={{ fontSize: "var(--p4)" }}
             className="opacity-85 font-semibold"
           >
-            SEO
+            {t("seo")}
           </span>
         </div>
       </div>

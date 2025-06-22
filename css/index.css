@@ -36,6 +36,13 @@ canvas {
   gap: 2rem;
 }
 
+@media screen and (width <= 850px){
+  .value-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .progress-bar__background {
   fill: none;
   stroke: #e2eff0;

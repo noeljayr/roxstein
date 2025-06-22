@@ -3,8 +3,12 @@
 import { useRive } from "@rive-app/react-canvas";
 import { useEffect } from "react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 function Service3() {
+  const t = useTranslations("services.hosting");
+ 
+   
   const { rive, RiveComponent } = useRive({
     src: "/hosting-animation.riv",
     stateMachines: "default",
@@ -30,12 +34,8 @@ function Service3() {
       className="service grid grid-row-[auto_1fr] gap-1 relative"
     >
       <div className="flex flex-col p-4">
-        <span className="font-bold font-p-1">Deployment & Hosting</span>
-        <p className="font-medium opacity-85">
-          Bringing the site to life is not the end of the journey. We enable
-          your customers to access your business online from anywhere, at any
-          time.
-        </p>
+        <span className="font-bold font-p-1">{t("title")}</span>
+        <p className="font-medium opacity-85">{t("description")}</p>
       </div>
 
       <div className="flex relative w-[80%] h-[90%] mx-auto">

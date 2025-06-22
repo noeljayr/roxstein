@@ -6,12 +6,18 @@ import Image from "next/image";
 import german from "@/public/german.png";
 import uk from "@/public/united-kingdom.png";
 import { IconChevronDown } from "@tabler/icons-react";
-import { motionTranstion } from "@/constants/motionTranstion";
+import { useLocale } from "next-intl";
+import { Locale, useRouter, usePathname } from "@/i18n/routing";
+import { useParams } from "next/navigation";
 
 function Language() {
-  const [prefLanguage, setPrefLanguage] = useState("eng");
+  const locale: string = useLocale();
+  const [prefLanguage, setPrefLanguage] = useState(locale || "en");
   const [showOptions, setShowOptions] = useState(false);
   const languageDiv = useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -30,13 +36,24 @@ function Language() {
     };
   }, []);
 
+  function changeLanguage(nextLocale: string) {
+    router.replace(
+      // @ts-expect-error -- TypeScript will validate that only known `params`
+      // are used in combination with a given `pathname`. Since the two will
+      // always match for the current route, we can skip runtime checks.
+      { pathname, params },
+      { locale: nextLocale as Locale }
+    );
+    setPrefLanguage(nextLocale);
+  }
+
   return (
     <span ref={languageDiv} className="language flex relative justify-center">
       <span
         onClick={() => setShowOptions(!showOptions)}
         className="selector flex gap-1"
       >
-        <Image src={prefLanguage == "eng" ? uk : german} alt="english" />
+        <Image src={prefLanguage == "en" ? uk : german} alt="english" />
         <IconChevronDown className={`${showOptions ? "rotate-180" : ""}`} />
       </span>
 
@@ -46,13 +63,13 @@ function Language() {
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
-            transition={motionTranstion}
+            transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
             className="options absolute"
           >
             <span
-              onClick={() => setPrefLanguage("ger")}
+              onClick={() => changeLanguage("de")}
               className={`flex gap-1 items-center ${
-                prefLanguage == "ger" ? "opacity-100" : "opacity-35"
+                prefLanguage == "de" ? "opacity-100" : "opacity-35"
               }`}
             >
               <Image src={german} alt="" /> German
@@ -60,9 +77,9 @@ function Language() {
 
             <hr className="bg-[var(--border)] border-0 h-[1px]" />
             <span
-              onClick={() => setPrefLanguage("eng")}
+              onClick={() => changeLanguage("en")}
               className={`flex gap-1 items-center ${
-                prefLanguage == "eng" ? "opacity-100" : "opacity-35"
+                prefLanguage == "en" ? "opacity-100" : "opacity-35"
               }`}
             >
               <Image src={uk} alt="" /> English

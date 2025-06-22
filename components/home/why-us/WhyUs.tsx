@@ -1,17 +1,19 @@
 "use client";
 
 import { IconFlameFilled } from "@tabler/icons-react";
-import Reason1 from "./Reason1";
-import Reason2 from "./Reason2";
+// import Reason1 from "./Reason1";
+// import Reason2 from "./Reason2";
 import Reason3 from "./Reason3";
 import Reason4 from "./Reason4";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 function WhyUs() {
+  const t = useTranslations("why");
   return (
     <div className="section ">
       <span className="section-title">
-        <span className="name">Why Roxstein?</span>
+        <span className="name">{t("title")}</span>
         <span className="icon icon-filled">
           <IconFlameFilled />
         </span>
@@ -28,7 +30,7 @@ function WhyUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Here’s how we can boost your business’s growth
+          {t("tagline")}
         </motion.h3>
         <div className="text-center  items-center flex flex-col gap-1">
           <motion.p
@@ -42,8 +44,7 @@ function WhyUs() {
             viewport={{ once: true }}
             className="opacity-85"
           >
-            {" "}
-            Collaborate with Netflash to bridge the gap between
+            {t("description")}
           </motion.p>
 
           <motion.div
@@ -58,16 +59,14 @@ function WhyUs() {
             className="text-center flex"
           >
             <p>
-              <b className="">Your big ideas </b>
+              <b className="">{t("yourbigideas")}</b>
             </p>
-            <p className="opacity-85"> and business outcomes.</p>
+            <p className="opacity-85"> {t("last")}</p>
           </motion.div>
         </div>
       </motion.div>
 
-      <div className="grid reasons mt-4 gap-4 w-full grid-cols-2">
-        <Reason1 />
-        <Reason2 />
+      <div className="grid reasons mt-4 gap-4 w-full grid-cols-2 max-[800px]:flex max-[800px]:flex-col">
         <Reason3 />
         <Reason4 />
       </div>

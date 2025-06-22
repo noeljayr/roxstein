@@ -24,9 +24,6 @@
   height: auto;
 }
 
-.hero-section .hero-image {
-  display: inline-block;
-}
 
 .hero-image .progress-bar__progress {
   stroke: #4162bf;

@@ -4,13 +4,26 @@ import "@/css/contact.css";
 
 import { IconPhoneCall } from "@tabler/icons-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { useLocale, useTranslations } from "next-intl";
 
-const services = ["Design", "Development", "Deployment & Hosting"];
+const englishServices = ["Design", "Development", "Hosting"];
+const germanServices = ["Design", "Entwicklung", "Hosting"];
 
 function Contact() {
+  const [services, setServices] = useState<string[]>([]);
   const [seletedServices, setSelectedServices] = useState<string[]>([]);
+  const t = useTranslations("contactPage");
+  const locale: string = useLocale();
+
+  useEffect(() => {
+    if (locale === "de") {
+      setServices(germanServices);
+    } else {
+      setServices(englishServices);
+    }
+  }, [locale]);
 
   const toggleService = (service: string) => {
     if (seletedServices.includes(service)) {
@@ -23,7 +36,7 @@ function Contact() {
   return (
     <div className="section flex flex-col mt-8">
       <span className="section-title">
-        <span className="name">Contact</span>
+        <span className="name">{t("title")}</span>
         <span className="icon relative">
           <IconPhoneCall />
         </span>
@@ -38,8 +51,9 @@ function Contact() {
           }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="text-center"
         >
-          Together we can boost your company’s growth
+          {t("tagline")}
         </motion.h3>
         <div className="text-center  items-center flex flex-col gap-1">
           <motion.p
@@ -53,14 +67,13 @@ function Contact() {
             viewport={{ once: true }}
             className="opacity-85"
           >
-            For business inquiries or to say hello, fill out the form below or
-            email <br />
+            {t("description")} <br />
             <Link
               target="_blank"
               className="font-bold text-[var(--primary)] hover:underline"
-              href="mailto:contact@roxstein.ch"
+              href={`mailto:${t("emailAddress")}`}
             >
-              contact@roxstein.ch.
+              {t("emailAddress")}.
             </Link>
           </motion.p>
         </div>
@@ -80,44 +93,60 @@ function Contact() {
       >
         <div className="flex flex-col gap-4 p-4 w-full bg-[#E6E6E6] border-[1px] border-[var(--border)] rounded-[var(--radius)] rounded-b-[0.5rem]">
           <div className="form-input">
-            <label htmlFor="">Name</label>
-            <input required type="text" placeholder="Full name" />
+            <label htmlFor="">{t("form.name.label")}</label>
+            <input
+              required
+              type="text"
+              placeholder={t("form.name.placeholder")}
+            />
           </div>
 
           <div className="form-input">
-            <label htmlFor="">What's your email</label>
-            <input required type="email" placeholder="Email address" />
+            <label htmlFor="">{t("form.email.label")}</label>
+            <input
+              required
+              type="email"
+              placeholder={t("form.email.placeholder")}
+            />
           </div>
 
           <div className="form-input">
-            <label htmlFor="">Whatsapp number</label>
+            <label htmlFor="">Whatsapp</label>
             <input required type="text" placeholder="+41" />
           </div>
 
           <div className="form-input">
             <label htmlFor="">
-              Any extra details that you would like to share?
+              {t("form.message.label")}
               <span className="opacity-50 ml-1">
                 {" "}
-                {`(`}Optional{`)`}
+                {t("form.message.optional")}
               </span>
             </label>
-            <textarea placeholder="Write us your message" />
+            <textarea placeholder={t("form.message.placeholder")} />
           </div>
         </div>
 
         <div className="flex flex-col gap-2 p-4 w-full bg-[#E6E6E6] border-[1px] border-[var(--border)] rounded-[var(--radius)] rounded-t-[0.5rem]">
           <span className="font-semibold opacity-70 ">
-            Service{" "}
+            {t("form.services.label")}
             <span className="opacity-50 ml-1">
-              {`(`}select all that applies{`)`}
+              {t("form.services.placeholder")}
             </span>
           </span>
           <div className="flex items-center gap-4">
             {services.map((s, index) => {
-              let idx = index + 1;
+              const idx = index + 1;
               return (
-                <span
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{
+                    ease: [0.25, 0.1, 0.25, 1.0],
+                    duration: 0.5,
+                    delay: idx * 0.25,
+                  }}
                   key={index}
                   onClick={() => toggleService(s)}
                   style={{ transition: "var(--transition)" }}
@@ -128,7 +157,7 @@ function Contact() {
                   }`}
                 >
                   {s}
-                </span>
+                </motion.span>
               );
             })}
           </div>
@@ -138,7 +167,7 @@ function Contact() {
           style={{ borderRadius: "var(--radius-s)" }}
           className="cta-2 mt-2 cursor-pointer"
         >
-          Send message
+          {t("form.submit")}
         </button>
       </motion.form>
     </div>

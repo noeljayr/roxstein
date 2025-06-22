@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "Roxstein",
+    "description": "Personalisierte Software- und Multimedia-Lösungen.",
+    "keywords": [
+      "Roxstein",
+      "Softwarelösungen",
+      "beste Webdesign-Agentur in der Schweiz",
+      "Webentwicklung",
+      "Softwareentwickler in der Schweiz",
+      "Webdesign",
+      "UI/UX Design",
+      "App-Entwickler",
+      "Schweizer",
+      "Schweiz",
+      "persönliches Portfolio"
+    ]
+  },
+  "visitSite": {
+    "text": "Website besuchen"
+  },
+  "navbar": {
+    "home": "Start",
+    "projects": "Projekte",
+    "about": "über uns",
+    "contact": "Kontakt",
+    "imprint": "Impressum",
+    "callUs": "Rufen Sie uns an",
+    "allRights": "Alle Rechte vorbehalten"
+  },
+  "hero": {
+    "tri": {
+      "local": "Lokal.",
+      "reliable": "Zuverlässig.",
+      "affordable": "Bezahlbar."
+    },
+    "tagline": "Maximieren Sie Ihre Geschäftziele.",
+    "description": "Wenn Schweizer Qualitätssicherung auf globales Talent trifft, stellen wir sicher, dass wir Ihr Geschäft online maximieren, sei es für Reichweite oder Gewinn.",
+    "cta1": "Angebot anfordern",
+    "cta2": "Rufen Sie uns an",
+    "chart": {
+      "customersGained": "Gewonnene Kunden",
+      "conversionRate": "Konversionsrate"
+    }
+  },
+  "services": {
+    "title": "Dienstleistungen",
+    "tagline": "Nur für Sie gemacht",
+    "description": "Wir nehmen uns die Zeit, um zu verstehen, was Sie benötigen, und liefern die erforderlichen Dienstleistungen.",
+    "design": {
+      "title": "Design",
+      "description": "Wir erstellen klare Layouts und ansprechende Visuals, die Ihren Kunden helfen, schnell zu finden, was sie suchen. Von Buttons bis zur Checkout-Seite ist jedes Detail so gestaltet, dass alle Nutzer die bestmögliche Erfahrung machen.",
+      "learnMore": "Mehr erfahren"
+    },
+    "dev": {
+      "title": "Entwicklung",
+      "description": "Wir verwandeln statische Designbilder in voll funktionsfähige Websites – mit den besten Praktiken der Branche, um sicherzustellen, dass Ihre Website so zuverlässig wie möglich ist."
+    },
+    "hosting": {
+      "title": "Hosting",
+      "description": "Die Veröffentlichung der Website ist nicht das Ende der Reise. Wir ermöglichen es Ihren Kunden, jederzeit und von überall auf Ihr Unternehmen online zuzugreifen."
+    }
+  },
+  "why": {
+    "title": "Warum Roxstein?",
+    "tagline": "So können wir das Wachstum Ihres Unternehmens steigern.",
+    "description": "Arbeiten Sie mit Roxstein zusammen, um die Lücke zwischen",
+    "yourbigideas": "Ihre großen Ideen",
+    "last": "und Ihre Geschäftsergebnisse verbessern.",
+    "reason3": {
+      "title": "Kreative Exzellenz",
+      "description": "Wir vereinen Kreativität und Können, um einzigartige Produkte zu schaffen, die Ihre Marke authentisch wirken lassen und online hervorstechen."
+    },
+    "reason4": {
+      "title": "Qualitätssicherung",
+      "description": "Wir stellen sicher, dass jedes Projekt auf fehlerfreie Performance, Sicherheit und ein nahtloses Nutzererlebnis getestet wird – für zuverlässige, hochwertige Ergebnisse, die Erwartungen übertreffen.",
+      "performance": "Leistung",
+      "bestPractices": "Bewährte Verfahren",
+      "seo": "SEO"
+    }
+  },
+  "value": {
+    "title": "Wert",
+    "tagline": "Besserer Wert als die Kosten schafft großartige Produkte.",
+    "description": "Unser Engagement ist es, Ihren Erfolg zu beschleunigen. Unsere Definition von \"großartigem Produkt\" basiert auf dieser Kernidee: seine Fähigkeit, bedeutende Geschäftsergebnisse zu liefern, schnellere Arbeitsabläufe, umsetzbare Einblicke und verbesserte Konversionen zu ermöglichen.",
+    "getStarted": "Loslegen"
+  },
+  "faqs": {
+    "title": "Schnelle Antworten"
+  },
+  "secondCta": {
+    "title": "Noch Fragen? Sprechen Sie unser Team direkt an",
+    "cta": "Rufen Sie uns an"
+  },
+  "contactPage": {
+    "title": "Kontakt",
+    "tagline": "Gemeinsam können wir das Wachstum Ihres Unternehmens fördern",
+    "description": "Für geschäftliche Anfragen oder um Hallo zu sagen, füllen Sie das untenstehende Formular aus oder schreiben Sie an",
+    "emailAddress": "kontakt@roxstein.ch",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Vollständiger Name"
+      },
+      "email": {
+        "label": "Wie lautet Ihre E-Mail?",
+        "placeholder": "E-Mail-Adresse"
+      },
+      "message": {
+        "label": "Weitere Details, die Sie gerne mitteilen möchten?",
+        "placeholder": "Schreiben Sie uns Ihre Nachricht",
+        "optional": "(optional)"
+      },
+      "services": {
+        "label": "Dienstleistungen",
+        "placeholder": "(alles Zutreffende auswählen)"
+      },
+      "submit": "Nachricht senden"
+    }
+  },
+  "aboutUs": {
+    "title": "Über uns",
+    "tagline": "Lernen Sie Roxstein und das Team kennen.",
+    "years": {
+      "title": "Jahre im Geschäft",
+      "description": "Roxstein wurde vor 3 Jahren gegründet, besteht jedoch aus einem Team von Fachleuten und Experten mit noch mehr Erfahrung.",
+      "yearsOfExperience": "3+ Jahre Erfahrung",
+      "projects": "57+ abgeschlossene Projekte"
+    },
+    "clients": {
+      "title": "Zufriedene Kunden",
+      "description": "Markenerfolg durch innovative und leistungsstarke Lösungen vorantreiben."
+    },
+    "values": {
+      "title": "Roxsteins Werte",
+      "description": "Unser Geschäftsansatz und unsere Prozesse werden von den folgenden Werten geleitet:"
+    },
+    "team": {
+      "title": "Das Team",
+      "description": "Roxstein besteht aus einem vielfältigen Team, darunter Spitzenkräfte aus der ganzen Welt, auch aus Afrika.",
+      "professional": "Professionell",
+      "international": "International"
+    }
+  }
+}

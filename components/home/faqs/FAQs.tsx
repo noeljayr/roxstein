@@ -3,8 +3,8 @@
 import { IconMinus, IconPlus, IconQuestionMark } from "@tabler/icons-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { faqs } from "@/data/faq";
-import { motionTranstion } from "@/constants/motionTranstion";
+import { faqs_eng, faqs_ger } from "@/data/faq";
+import { useLocale, useTranslations } from "next-intl";
 
 type Question = {
   question: string;
@@ -12,8 +12,12 @@ type Question = {
 };
 
 function FAQs() {
+  const locale: string = useLocale();
+
+  const faqs = locale === "de" ? faqs_ger : faqs_eng;
   const [activeCategory, setActiveCategory] = useState(faqs[0]);
   const [activeQuestion, setActiveQuestion] = useState<Question | null>();
+  const t = useTranslations("faqs");
 
   const toggleActiveQuestion = (q: Question) => {
     if (q == activeQuestion) {
@@ -24,16 +28,13 @@ function FAQs() {
   };
   return (
     <AnimatePresence mode="wait">
-      <motion.div
-        layout
-        className="section flex flex-col gap-2"
-        >
+      <motion.div layout className="section flex flex-col gap-2">
         <motion.span
           layout="position"
-          transition={motionTranstion}
+          transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
           className="section-title"
         >
-          <span className="name">FAQs</span>
+          <span className="name">{t("title")}</span>
           <span className="icon">
             <IconQuestionMark />
           </span>
@@ -52,7 +53,7 @@ function FAQs() {
         >
           <div className="flex gap-2 items-center">
             {faqs.map((q, index) => {
-              let idx = index + 1;
+              const idx = index + 1;
               return (
                 <motion.span
                   layout="position"
@@ -81,7 +82,10 @@ function FAQs() {
 
           <motion.div
             layout="position"
-            transition={motionTranstion}
+            transition={{
+              ease: [0.25, 0.1, 0.25, 1.0],
+              duration: 0.85,
+            }}
             className="flex flex-col gap-1 mt-2 w-full"
           >
             {activeCategory.questions.map((q, index) => {
@@ -95,7 +99,10 @@ function FAQs() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   key={index}
-                  transition={motionTranstion}
+                  transition={{
+                    ease: [0.25, 0.1, 0.25, 1.0],
+                    duration: 0.85,
+                  }}
                   animate={{ height: "auto" }}
                   onClick={() => toggleActiveQuestion(q)}
                   className="flex flex-col select-none relative cursor-pointer w-full justify-between bg-[#F3F3F3]  pl-3 p-2 rounded-[var(--radius-m)]"
@@ -113,7 +120,10 @@ function FAQs() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={motionTranstion}
+                            transition={{
+                              ease: [0.25, 0.1, 0.25, 1.0],
+                              duration: 0.85,
+                            }}
                           >
                             <IconMinus
                               className="h-3 w-3"
@@ -125,7 +135,10 @@ function FAQs() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={motionTranstion}
+                            transition={{
+                              ease: [0.25, 0.1, 0.25, 1.0],
+                              duration: 0.85,
+                            }}
                           >
                             <IconPlus
                               className="h-3 w-3 "
@@ -141,7 +154,10 @@ function FAQs() {
                     <motion.p
                       className="font-medium"
                       layout
-                      transition={motionTranstion}
+                      transition={{
+                        ease: [0.25, 0.1, 0.25, 1.0],
+                        duration: 0.85,
+                      }}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 0.75 }}
                       exit={{ opacity: 0 }}

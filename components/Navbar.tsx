@@ -1,15 +1,16 @@
 "use client";
 
-import { IconChevronDown } from "@tabler/icons-react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { usePathname } from "next/navigation";
 import arrowUpright from "@/public/arrow-up-right.png";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import logo from "@/public/roxstein.png";
 import Language from "./Language";
+import { useTranslations } from "next-intl";
 
 function Navbar() {
+  const t = useTranslations("navbar");
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -30,17 +31,17 @@ function Navbar() {
     <div
       className={`navbar select-none fixed rounded-[var(--radius-m)] self-center z-[5]  top-2 py-2 ${
         isScrolled
-          ? "w-[80vw] min-[1440px]:w-[60vw] px-4  bg-[#F4F4F4] scrolled"
+          ? "w-[80vw] min-[1440px]:w-[60vw] max-[850px]:w-[calc(100vw_-_2rem)] px-4  bg-[#F4F4F4] scrolled"
           : pathname === "/"
           ? "w-screen px-5"
-          : "w-[80vw] min-[1440px]:w-[60vw]"
-      } grid grid-cols-[10rem_auto_10rem] justify-between items-center`}
+          : "w-[80vw]  max-[850px]:w-[calc(100vw_-_2rem)] min-[1440px]:w-[60vw]"
+      } grid grid-cols-[10rem_auto_10rem] max-[850px]:flex justify-between items-center`}
     >
       <Link href="/" className="logo font-bold">
         <Image src={logo} className="w-auto h-4" alt="roxstein logo" />
       </Link>
 
-      <div className="links mx-auto flex items-center gap-8">
+      <div className="links mx-auto flex items-center gap-8 max-[850px]:hidden">
         <Link
           href="/"
           className={`flex items-center gap-1 ${
@@ -49,7 +50,7 @@ function Navbar() {
               : "opacity-70 font-medium "
           }`}
         >
-          Home
+          {t("home")}
         </Link>
 
         <Link
@@ -60,7 +61,7 @@ function Navbar() {
               : "opacity-70 font-medium "
           }`}
         >
-          Work
+          {t("projects")}
         </Link>
 
         <Link
@@ -71,7 +72,7 @@ function Navbar() {
               : "opacity-70 font-medium "
           }`}
         >
-          Contact
+          {t("contact")}
         </Link>
 
         <Link
@@ -82,7 +83,7 @@ function Navbar() {
               : "opacity-70 font-medium "
           }`}
         >
-          About us
+          {t("about")}
         </Link>
 
         <Language />
@@ -90,10 +91,10 @@ function Navbar() {
 
       <Link
         href="/contact"
-        className="cta-container cursor-pointer flex gap-0.5 items-center"
+        className="cta-container cursor-pointer max-[980px]:ml-auto flex gap-0.5 items-center"
       >
         <button className="font-semibold ml-auto cursor-pointer cta">
-          Become a client
+          {t("callUs")}
         </button>
         <span className="icon cursor-pointer">
           <Image src={arrowUpright} alt="arrow" />

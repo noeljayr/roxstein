@@ -5,8 +5,11 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import arrow from "@/public/arrow-up-right.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 function SecondCTA() {
+  const t = useTranslations("secondCta");
+  
   return (
     <div className="flex flex-col gap-3 section">
       <motion.h1
@@ -18,7 +21,7 @@ function SecondCTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Still curious? Talk directly to the team.
+        {t("title")}
       </motion.h1>
       <motion.span
         initial={{ opacity: 0, y: 40 }}
@@ -35,7 +38,7 @@ function SecondCTA() {
           href="tel:+41775090427"
           className="cta-container w-fit flex items-center gap-0.5"
         >
-          <div className="cta">Call us now</div>
+          <div className="cta">{t("cta")}</div>
           <span>
             <Image src={arrow} alt="arrow" />
           </span>

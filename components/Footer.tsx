@@ -2,15 +2,24 @@
 
 import Image from "next/image";
 import logo from "@/public/roxstein.svg";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import arrow from "@/public/arrow-up-right.png";
 import { IconBrandLinkedin } from "@tabler/icons-react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 function Footer() {
+  const t = useTranslations("navbar");
+  const tMeta = useTranslations("meta");
+  const contact = t("contact");
+  const work = t("projects");
+  const about = t("about");
+  const imprint = t("imprint");
+  const allRights = t("allRights");
+
   return (
     <div className="section pb-2 mt-auto flex flex-col gap-4 justify-between">
-      <div className="w-full pb-8 flex justify-between">
+      <div className="w-full pb-8 flex justify-between max-[800px]:flex-col max-[800px]:gap-2 ">
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           transition={{
@@ -23,7 +32,7 @@ function Footer() {
         >
           <Image src={logo} className="w-fit h-4" alt="logo" />
           <span className="font-semibold opacity-75">
-            Personalized software- and multimedia solutions.
+            {tMeta("description")}
           </span>
         </motion.div>
         <motion.div
@@ -35,13 +44,13 @@ function Footer() {
           }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="flex-col flex gap-2"
+          className="flex-col flex gap-2 max-[800px]:mt-2 "
         >
           <Link href="/contact" className="font-semibold">
-            Contact
+            {contact}
           </Link>
           <Link href="/#projects" className="font-semibold">
-            Work
+            {work}
           </Link>
         </motion.div>
 
@@ -57,10 +66,10 @@ function Footer() {
           className="flex-col flex gap-2"
         >
           <Link href="/about" className="font-semibold">
-            About us
+            {about}
           </Link>
           <Link href="/imprint" className="font-semibold">
-            Imprint
+            {imprint}
           </Link>
         </motion.div>
 
@@ -80,7 +89,7 @@ function Footer() {
             href="tel:+41775090427"
             className="cta-container w-fit flex items-center gap-0.5"
           >
-            <div className="cta">Call us now</div>
+            <div className="cta">{t("callUs")}</div>
             <span>
               <Image src={arrow} alt="arrow" />
             </span>
@@ -99,7 +108,7 @@ function Footer() {
         </div>
 
         <span className="font-semibold font-p-4 opacity-75">
-          2025. All Rights Reserved
+          2025. {allRights}
         </span>
       </div>
     </div>

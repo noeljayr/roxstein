@@ -1,6 +1,6 @@
 "use client";
 
-import { motionTranstion } from "@/constants/motionTranstion";
+
 import { motion } from "motion/react";
 
 const Progress = ({ variant }: { variant: string }) => {

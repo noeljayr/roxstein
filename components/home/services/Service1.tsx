@@ -1,11 +1,13 @@
 "use client";
 
 import { useRive } from "@rive-app/react-canvas";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import React, { useEffect } from "react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 function Service1() {
+  const t = useTranslations("services.design");
   const { rive, RiveComponent } = useRive({
     src: "/design-animation.riv",
     stateMachines: "default",
@@ -27,21 +29,17 @@ function Service1() {
       }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="grid grid-cols-[40%_1fr] gap-4 col-span-2 service"
+      className="grid grid-cols-[40%_1fr] gap-4 col-span-2 max-[800px]:col-span-1 service  max-[800px]:flex  max-[800px]:flex-col  max-[800px]:gap-2"
     >
       <div className="flex flex-col p-4">
-        <span className="font-bold font-p-1">Design</span>
-        <p className="opacity-80 font-medium">
-          We create clean layouts and visuals that help your customers find what
-          they need. From buttons to the checkout page, every detail is designed
-          to make it so that every one using it has the best experience.
-        </p>
+        <span className="font-bold font-p-1">{t("title")}</span>
+        <p className="opacity-80 font-medium">{t("description")}</p>
 
         <Link
           href="/contact"
-          className="mt-auto font-p-3 w-fit font-semibold px-3 py-2 rounded-[var(--radius-s)] border-[1px] border-[var(--border)]"
+          className="mt-auto  max-[800px]:hidden font-p-3 w-fit font-semibold px-3 py-2 rounded-[var(--radius-s)] border-[1px] border-[var(--border)]"
         >
-          Learn more
+          {t("learnMore")}
         </Link>
       </div>
 

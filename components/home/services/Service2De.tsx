@@ -5,12 +5,12 @@ import { useEffect } from "react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 
-function Service2() {
+function Service2De() {
   const t = useTranslations("services.dev");
 
   
   const { rive, RiveComponent } = useRive({
-    src: "/dev-animation.riv",
+    src: "/dev-animation_de.riv",
     stateMachines: "default",
     autoplay: false,
   });
@@ -45,4 +45,4 @@ function Service2() {
   );
 }
 
-export default Service2;
+export default Service2De;

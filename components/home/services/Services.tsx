@@ -6,12 +6,17 @@ import Service1 from "./Service1";
 import Service2 from "./Service2";
 import Service3 from "./Services3";
 import { motion } from "motion/react";
+import { useLocale, useTranslations } from "next-intl";
+import Service2De from "./Service2De";
 
 function Services() {
+  const t = useTranslations("services");
+  const locale: string = useLocale();
+
   return (
     <div id="services" className="section flex flex-col">
       <span className="section-title">
-        <span className="name">Services</span>
+        <span className="name">{t("title")}</span>
         <span className="icon  icon-filled">
           <IconStarFilled className="relative" />
         </span>
@@ -27,17 +32,15 @@ function Services() {
         viewport={{ once: true, margin: "-100px" }}
         className="why-us-tagline flex items-center flex-col gap-0.5"
       >
-        <h3>Customizable services</h3>
+        <h3>{t("tagline")}</h3>
         <div className="text-center  items-center flex flex-col gap-1">
-          <p className="opacity-85">
-            All these services can be customized to adapt to your business goals
-          </p>
+          <p className="opacity-85">{t("description")}</p>
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-2 gap-4 grid-rows-[20rem_20rem]">
+      <div className="grid grid-cols-2 gap-4 grid-rows-[20rem_20rem] max-[800px]:grid-cols-1 max-[800px]:grid-rows-[35rem_20rem_20rem]">
         <Service1 />
-        <Service2 />
+        {locale === "de" ? <Service2De /> : <Service2 />}
         <Service3 />
       </div>
     </div>
