@@ -34,11 +34,13 @@ function Navbar() {
           ? "w-[80vw] min-[1440px]:w-[60vw] max-[850px]:w-[calc(100vw_-_2rem)] px-4  bg-[#F4F4F4] scrolled"
           : pathname === "/"
           ? "w-screen px-5"
-          : "w-[80vw]  max-[850px]:w-[calc(100vw_-_2rem)] min-[1440px]:w-[60vw]"
+          : "w-[calc(100%_-_2rem)]  max-[850px]:w-[calc(100vw_-_2rem)] min-[1440px]:w-[60vw]"
       } grid grid-cols-[10rem_auto_10rem] max-[850px]:flex justify-between items-center`}
     >
-      <Link href="/" className="logo font-bold">
-        <Image src={logo} className="w-auto h-4" alt="roxstein logo" />
+      <Link href="/" className="logo font-bold flex select-none">
+        <span className="font-h-2 font-extrabold text-[var(--primary)]">
+          Rox<b className="font-h-2 font-extrabold">Stein.</b>
+        </span>
       </Link>
 
       <div className="links mx-auto flex items-center gap-8 max-[850px]:hidden">

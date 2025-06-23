@@ -43,7 +43,7 @@ function Service1() {
         </Link>
       </div>
 
-      <div className="relative flex w-full h-full">
+      <div className="relative flex w-full h-full brightness-95">
         <div className="absolute  h-[90%] bottom-[-0.5rem] right-[-0.5rem] aspect-[1.51/1]">
           <RiveComponent />
         </div>

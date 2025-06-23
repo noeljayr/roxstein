@@ -30,7 +30,11 @@ function Footer() {
           viewport={{ once: true }}
           className="flex flex-col gap-2"
         >
-          <Image src={logo} className="w-fit h-4" alt="logo" />
+          <Link href="/" className="logo font-bold select-none flex">
+            <span className="font-h-2 font-extrabold text-[var(--primary)]">
+              Rox<b className="font-h-2 font-extrabold">Stein.</b>
+            </span>
+          </Link>
           <span className="font-semibold opacity-75">
             {tMeta("description")}
           </span>

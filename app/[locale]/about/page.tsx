@@ -67,7 +67,7 @@ const team = [
   {
     name: "Noel Luhanga",
     position: "UI/UX Designer",
-    courtry: "Switzerland",
+    courtry: "Malawi",
     profile: prof6,
   },
 ];
