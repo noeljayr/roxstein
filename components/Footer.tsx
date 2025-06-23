@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/public/roxstein.svg";
 import { Link } from "@/i18n/routing";
 import arrow from "@/public/arrow-up-right.png";
 import { IconBrandLinkedin } from "@tabler/icons-react";

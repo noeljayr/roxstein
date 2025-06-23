@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import arrowUpright from "@/public/arrow-up-right.png";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import logo from "@/public/roxstein.png";
 import Language from "./Language";
 import { useTranslations } from "next-intl";
 
