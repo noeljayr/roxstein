@@ -46,7 +46,7 @@ function Navbar() {
         <Link
           href="/"
           className={`flex items-center gap-1 ${
-            pathname == "/"
+            pathname == "/en" || pathname == "/de/startseite"
               ? "opacity-100 font-bold"
               : "opacity-70 font-medium "
           }`}
@@ -68,7 +68,7 @@ function Navbar() {
         <Link
           href="/contact"
           className={`flex items-center gap-1 ${
-            pathname.startsWith("/contact")
+            pathname.startsWith("/en/contact") || pathname.startsWith("/de/kontakt")
               ? "opacity-100 font-bold"
               : "opacity-70 font-medium "
           }`}
@@ -79,7 +79,7 @@ function Navbar() {
         <Link
           href="/about"
           className={`flex items-center gap-1 ${
-            pathname == "/about"
+            pathname == "/en/about" || pathname == "/de/uber-uns"
               ? "opacity-100 font-bold"
               : "opacity-70 font-medium "
           }`}

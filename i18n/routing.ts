@@ -23,7 +23,7 @@ export const routing = defineRouting({
     },
     "/contact": {
       en: "/contact",
-      de: "/Kontakt",
+      de: "/kontakt",
     },
     "tel:+41775090427": {
       en: "tel:+41775090427",
