@@ -7,15 +7,15 @@ export const routing = defineRouting({
   pathnames: {
     "/": {
       en: "/",
-      de: "/startseite",
+      de: "/",
     },
     "/about": {
       en: "/about",
       de: "/uber-uns",
     },
     "/#projects": {
-      en: "#projects",
-      de: "/startseite/#projekte",
+      en: "/#projects",
+      de: "/#projekte",
     },
     "/imprint": {
       en: "/imprint",

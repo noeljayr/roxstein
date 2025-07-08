@@ -4,7 +4,7 @@ import { IconStarFilled } from "@tabler/icons-react";
 import React from "react";
 import Service1 from "./Service1";
 import Service2 from "./Service2";
-import Service3 from "./Services3";
+import Service3 from "./Service3";
 import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import Service2De from "./Service2De";
@@ -38,7 +38,7 @@ function Services() {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-2 gap-4 grid-rows-[20rem_20rem] max-[800px]:grid-cols-1 max-[800px]:grid-rows-[35rem_20rem_20rem]">
+      <div className="grid grid-cols-2 gap-4 grid-rows-[20rem_20rem] max-[800px]:grid-cols-1 max-[800px]:grid-rows-[35rem_20rem_20rem] max-[700px]:grid-rows-[25rem_20rem_20rem]  max-[450px]:grid-rows-[15rem_20rem_20rem]">
         <Service1 />
         {locale === "de" ? <Service2De /> : <Service2 />}
         <Service3 />

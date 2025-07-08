@@ -88,7 +88,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <NextTopLoader color="#4162bf" />
+          <NextTopLoader color="#4162bf" showSpinner={false}  />
           <Navbar />
           {children}
           <Footer />

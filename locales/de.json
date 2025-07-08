@@ -16,6 +16,9 @@
       "persönliches Portfolio"
     ]
   },
+  "projectsId" : {
+    "text": "projekte"
+  },
   "visitSite": {
     "text": "Website besuchen"
   },
@@ -83,6 +86,7 @@
     "title": "Wert",
     "tagline": "Besserer Wert als die Kosten schafft großartige Produkte.",
     "description": "Unser Engagement ist es, Ihren Erfolg zu beschleunigen. Unsere Definition von \"großartigem Produkt\" basiert auf dieser Kernidee: seine Fähigkeit, bedeutende Geschäftsergebnisse zu liefern, schnellere Arbeitsabläufe, umsetzbare Einblicke und verbesserte Konversionen zu ermöglichen.",
+    "descriptionMobile": "Wir entwickeln Produkte, die den Erfolg durch schnellere Arbeitsabläufe, tiefere Einblicke und höhere Conversion-Raten beschleunigen.",
     "getStarted": "Loslegen"
   },
   "faqs": {
@@ -113,7 +117,7 @@
       },
       "services": {
         "label": "Dienstleistungen",
-        "placeholder": "(alles Zutreffende auswählen)"
+        "placeholder": "(Wählen Sie eine zutreffende Option aus.)"
       },
       "submit": "Nachricht senden"
     }

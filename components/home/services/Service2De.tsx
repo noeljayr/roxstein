@@ -10,7 +10,7 @@ function Service2De() {
 
   
   const { rive, RiveComponent } = useRive({
-    src: "/dev-animation_de.riv",
+    src: "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/dev-animation_de.riv",
     stateMachines: "default",
     autoplay: false,
   });

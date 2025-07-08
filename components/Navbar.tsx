@@ -31,7 +31,7 @@ function Navbar() {
       className={`navbar select-none fixed rounded-[var(--radius-m)] self-center z-[5]  top-2 py-2 ${
         isScrolled
           ? "w-[80vw] min-[1440px]:w-[60vw] max-[850px]:w-[calc(100vw_-_2rem)] px-4  bg-[#F4F4F4] scrolled"
-          : pathname === "/en" || pathname === "/de/startseite"
+          : pathname === "/en" || pathname === "/en/" || pathname === "/de" || pathname === "/de/"
           ? "w-screen px-5"
           : "w-[80vw]  max-[850px]:w-[calc(100vw_-_2rem)] min-[1440px]:w-[60vw]"
       } grid grid-cols-[10rem_auto_10rem] max-[850px]:flex justify-between items-center`}

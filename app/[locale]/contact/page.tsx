@@ -13,9 +13,14 @@ const germanServices = ["Design", "Entwicklung", "Hosting"];
 
 function Contact() {
   const [services, setServices] = useState<string[]>([]);
-  const [seletedServices, setSelectedServices] = useState<string[]>([]);
+  const [seletedServices, setSelectedService] = useState<string>('');
   const t = useTranslations("contactPage");
   const locale: string = useLocale();
+
+  // const [name, setName] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [phone, setPhone] = useState('')
+  // const [message, setMessage] = useState('')
 
   useEffect(() => {
     if (locale === "de") {
@@ -25,13 +30,9 @@ function Contact() {
     }
   }, [locale]);
 
-  const toggleService = (service: string) => {
-    if (seletedServices.includes(service)) {
-      setSelectedServices((prev) => prev.filter((q) => q !== service));
-    } else {
-      setSelectedServices((prev) => [...prev, service]);
-    }
-  };
+
+
+
 
   return (
     <div className="section flex flex-col mt-8">
@@ -148,7 +149,7 @@ function Contact() {
                     delay: idx * 0.25,
                   }}
                   key={index}
-                  onClick={() => toggleService(s)}
+                  onClick={() => setSelectedService(s)}
                   style={{ transition: "var(--transition)" }}
                   className={`cursor-pointer rounded-4xl border-[1px] px-4 py-1.5 font-semibold select-none ${
                     seletedServices.includes(s)

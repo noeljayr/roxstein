@@ -32,8 +32,9 @@ const projects = [
 
 function Projects() {
   const t = useTranslations("navbar");
+  const t2 = useTranslations("projectsId");
   return (
-    <div id="projects" className="section flex flex-col">
+    <div id={t2("text")} className="section flex flex-col">
       <span className="section-title mb-2">
         <span className="name">{t("projects")}</span>
         <span className="icon icon-filled">

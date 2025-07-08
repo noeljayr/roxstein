@@ -58,7 +58,7 @@ function HeroSection() {
             }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="max-[980px]:text-center max-[980px]:w-[75ch]"
+            className="max-[980px]:text-center max-[980px]:w-[75ch] max-[480px]:w-full"
           >
             {t("tagline")}
           </motion.h1>
@@ -71,7 +71,7 @@ function HeroSection() {
             }}
             whileInView={{ y: 0, opacity: 0.85 }}
             viewport={{ once: true }}
-            className="w-full font-medium opacity-85 max-[980px]:text-center max-[980px]:w-[55ch]"
+            className="w-full font-medium opacity-85 max-[980px]:text-center max-[980px]:w-[55ch] max-[480px]:w-full"
           >
             {t("description")}
           </motion.p>

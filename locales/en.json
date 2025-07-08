@@ -16,6 +16,9 @@
       "personal portfolio"
     ]
   },
+  "projectsId" : {
+    "text": "projects"
+  },
   "visitSite": {
     "text": "Visit site"
   },
@@ -85,8 +88,8 @@
     "description": "Our commitment is to accelerate your success. Our definition of \"great product\" centers on this core idea: its ability to deliver meaningful business outcomes, faster workflows, actionable insights, improved conversions",
     "descriptionMobile": "We build products that accelerate success through faster workflows, insights, and conversions.",
     "getStarted": "Get started"
-
   },
+
   "faqs": {
     "title": "Quick Answers"
   },
@@ -115,7 +118,7 @@
       },
       "services": {
         "label": "Services",
-        "placeholder": "(select all that applies)"
+        "placeholder": "(select one that applies.)"
       },
       "submit": "Send message"
     }

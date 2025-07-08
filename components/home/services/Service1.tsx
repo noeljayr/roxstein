@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 function Service1() {
   const t = useTranslations("services.design");
   const { rive, RiveComponent } = useRive({
-    src: "/design-animation.riv",
+    src: "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/design-animation.riv",
     stateMachines: "default",
     autoplay: false,
   });
@@ -44,7 +44,7 @@ function Service1() {
       </div>
 
       <div className="relative flex w-full h-full brightness-95">
-        <div className="absolute  h-[90%] bottom-[-0.5rem] right-[-0.5rem] aspect-[1.51/1]">
+        <div className="absolute  h-[90%] max-[450px]:h-[125%] bottom-[-0.5rem] right-[-0.5rem] aspect-[1.51/1]">
           <RiveComponent />
         </div>
       </div>

@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 function Reason1() {
   const { rive, RiveComponent } = useRive({
-    src: "/expertise-animation.riv",
+    src: "/public/expertise-animation.riv",
     stateMachines: "default",
     autoplay: false,
   });
