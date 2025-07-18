@@ -24,8 +24,6 @@ html {
     font-family: "Inter", sans-serif;
     /* transition: var(--transition); */
   }
-
-
 }
 
 :root {
@@ -75,6 +73,8 @@ body {
   padding-top: 4.5rem;
   padding-bottom: 0;
   min-height: 100vh !important;
+  overflow-x: hidden !important;
+  width: 100vw !important;
 }
 
 h1 {
@@ -156,9 +156,6 @@ ul li {
 .font-p-4 * {
   font-size: var(--p4) !important;
 }
-
-
-
 
 .logo {
   font-size: var(--h4);
@@ -327,7 +324,7 @@ ul li {
   transition: var(--transition);
 }
 
-.scrolled .language .selector{
+.scrolled .language .selector {
   border: 1px solid var(--border);
 }
 
@@ -354,7 +351,6 @@ ul li {
   cursor: pointer;
   transition: var(--transition);
 }
-
 
 .language .options img {
   height: 0.85rem;
