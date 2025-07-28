@@ -19,12 +19,16 @@
   "projectsId" : {
     "text": "projects"
   },
+  "servicesId" : {
+    "text": "services"
+  },
   "visitSite": {
     "text": "Visit site"
   },
   "navbar": {
     "home": "Home",
     "projects": "Projects",
+    "services": "Services",
     "contact": "Contact",
     "about": "About us",
     "imprint": "Imprint",

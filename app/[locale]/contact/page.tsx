@@ -13,7 +13,7 @@ const germanServices = ["Design", "Entwicklung", "Hosting"];
 
 function Contact() {
   const [services, setServices] = useState<string[]>([]);
-  const [seletedServices, setSelectedService] = useState<string>('');
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const t = useTranslations("contactPage");
   const locale: string = useLocale();
 
@@ -30,9 +30,13 @@ function Contact() {
     }
   }, [locale]);
 
-
-
-
+  const toggleService = (service: string) => {
+    if (selectedServices.includes(service)) {
+      setSelectedServices(selectedServices.filter((s) => s !== service));
+    } else {
+      setSelectedServices([...selectedServices, service]);
+    }
+  };
 
   return (
     <div className="section flex flex-col mt-8">
@@ -149,10 +153,10 @@ function Contact() {
                     delay: idx * 0.25,
                   }}
                   key={index}
-                  onClick={() => setSelectedService(s)}
+                  onClick={() => toggleService(s)}
                   style={{ transition: "var(--transition)" }}
                   className={`cursor-pointer rounded-4xl border-[1px] px-4 py-1.5 font-semibold select-none ${
-                    seletedServices.includes(s)
+                    selectedServices.includes(s)
                       ? "border-transparent bg-[var(--primary)] text-[var(--off-white)]"
                       : "bg-[rgba(65,98,191,0.05)] border-[rgba(65,98,191,0.2)]"
                   }`}

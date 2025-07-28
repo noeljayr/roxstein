@@ -18,6 +18,7 @@ function SecondCTA() {
           ease: [0.25, 0.1, 0.25, 1.0],
           duration: 0.85,
         }}
+        className="text-center"
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >

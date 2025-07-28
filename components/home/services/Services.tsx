@@ -11,10 +11,11 @@ import Service2De from "./Service2De";
 
 function Services() {
   const t = useTranslations("services");
+  const navT = useTranslations("servicesId")
   const locale: string = useLocale();
 
   return (
-    <div id="services" className="section flex flex-col">
+    <div id={navT('text')} className="section flex flex-col">
       <span className="section-title">
         <span className="name">{t("title")}</span>
         <span className="icon  icon-filled">

@@ -12,7 +12,7 @@ function Reason3() {
   const t = useTranslations("why.reason3");
 
   const { rive, RiveComponent } = useRive({
-    src: "/creative-animation.riv",
+    src: "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/creative-animation.riv",
     stateMachines: "default",
     autoplay: false,
   });

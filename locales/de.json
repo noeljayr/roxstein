@@ -19,13 +19,17 @@
   "projectsId" : {
     "text": "projekte"
   },
+  "servicesId" : {
+    "text": "dienstleistungen"
+  },
   "visitSite": {
     "text": "Website besuchen"
   },
   "navbar": {
     "home": "Start",
     "projects": "Projekte",
-    "about": "über uns",
+    "services": "Dienstleistungen",
+    "about": "Über uns",
     "contact": "Kontakt",
     "imprint": "Impressum",
     "callUs": "Rufen Sie uns an",

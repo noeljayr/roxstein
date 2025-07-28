@@ -10,7 +10,7 @@ import { useLocale } from "next-intl";
 import { Locale, useRouter, usePathname } from "@/i18n/routing";
 import { useParams } from "next/navigation";
 
-function Language() {
+function LanguageMobile() {
   const locale: string = useLocale();
   const [prefLanguage, setPrefLanguage] = useState(locale || "en");
   const [showOptions, setShowOptions] = useState(false);
@@ -48,13 +48,13 @@ function Language() {
   }
 
   return (
-    <span ref={languageDiv} className="language flex relative justify-center">
+    <span ref={languageDiv} style={{height: "fit-content"}} className="language flex relative justify-center">
       <span
         onClick={() => setShowOptions(!showOptions)}
-        className="selector flex gap-1"
+        className="selector h-fit flex gap-1"
       >
         <Image src={prefLanguage == "en" ? uk : switzerland} alt="english" />
-        <IconChevronDown className={`${showOptions ? "rotate-180" : ""}`} />
+        <IconChevronDown className={` h-4 w-4 ${showOptions ? "rotate-180" : ""}`} />
       </span>
 
       <AnimatePresence>
@@ -91,4 +91,4 @@ function Language() {
   );
 }
 
-export default Language;
+export default LanguageMobile;

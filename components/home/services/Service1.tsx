@@ -1,7 +1,6 @@
 "use client";
 
 import { useRive } from "@rive-app/react-canvas";
-import { Link } from "@/i18n/routing";
 import React, { useEffect } from "react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -35,12 +34,7 @@ function Service1() {
         <span className="font-bold font-p-1">{t("title")}</span>
         <p className="opacity-80 font-medium">{t("description")}</p>
 
-        <Link
-          href="/contact"
-          className="mt-auto  max-[800px]:hidden font-p-3 w-fit font-semibold px-3 py-2 rounded-[var(--radius-s)] border-[1px] border-[var(--border)]"
-        >
-          {t("learnMore")}
-        </Link>
+        
       </div>
 
       <div className="relative flex w-full h-full brightness-95">

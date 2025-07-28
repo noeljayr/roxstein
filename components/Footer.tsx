@@ -31,7 +31,7 @@ function Footer() {
         >
           <Link href="/" className="logo font-bold select-none flex">
             <span className="font-h-2 font-extrabold text-[var(--primary)]">
-              Rox<b className="font-h-2 font-extrabold">Stein.</b>
+              Rox<b className="font-h-2 font-extrabold">stein.</b>
             </span>
           </Link>
           <span className="font-semibold opacity-75">
