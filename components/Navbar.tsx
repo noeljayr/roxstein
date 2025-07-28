@@ -134,7 +134,7 @@ function Navbar() {
           <Language />
         </div>
 
-        <div className="flex items-center ml-auto min-[980px]:hidden space-x-4">
+        <div className="flex items-center ml-auto min-[850px]:hidden space-x-4">
           <LanguageMobile />
 
           <Link
@@ -153,6 +153,18 @@ function Navbar() {
             <IconMenu className="h-6 w-6 opacity-70" />
           </button>
         </div>
+
+        <Link
+          href="/contact"
+          className="cta-container cursor-pointer flex gap-0.5 max-[850px]:hidden   items-center"
+        >
+          <button className="font-semibold cursor-pointer cta">
+            {t("callUs")}
+          </button>
+          <span className="icon cursor-pointer">
+            <Image src={arrowUpright} alt="arrow" />
+          </span>
+        </Link>
       </div>
 
       <AnimatePresence>
@@ -233,16 +245,16 @@ function Navbar() {
             </Link>
 
             <Link
-            href="/contact"
-            className="cta-container cursor-pointer flex gap-0.5 items-center"
-          >
-            <button className="font-semibold cursor-pointer cta">
-              {t("callUs")}
-            </button>
-            <span className="icon cursor-pointer">
-              <Image src={arrowUpright} alt="arrow" />
-            </span>
-          </Link>
+              href="/contact"
+              className="cta-container cursor-pointer flex gap-0.5 items-center"
+            >
+              <button className="font-semibold cursor-pointer cta">
+                {t("callUs")}
+              </button>
+              <span className="icon cursor-pointer">
+                <Image src={arrowUpright} alt="arrow" />
+              </span>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
