@@ -17,7 +17,7 @@ function Navbar() {
   const searchParams = useSearchParams();
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const state = searchParams.get("menu");
+
 
   const handleScroll = useCallback(() => {
     const scrolled = window.scrollY >= 35;
@@ -39,14 +39,14 @@ function Navbar() {
           open ? "rounded-t-[var(--radius)]" : "rounded-[var(--radius-m)]"
         } self-center z-[5]  top-2 py-2 ${
           isScrolled || open
-            ? "w-[80vw] min-[1440px]:w-[60vw] max-[850px]:w-[calc(100vw_-_2rem)] px-4  bg-[#F4F4F4] scrolled"
+            ? "w-[80vw] min-[1440px]:w-[60vw] max-[850px]:w-[calc(100vw_-_2rem)] px-4  bg-[#fff] scrolled"
             : pathname === "/en" ||
               pathname === "/en/" ||
               pathname === "/de" ||
               pathname === "/de/"
             ? "w-screen px-5"
             : "w-[80vw]  max-[850px]:w-[calc(100vw_-_2rem)] min-[1440px]:w-[60vw]"
-        } grid grid-cols-[10rem_auto_10rem] max-[850px]:flex justify-between items-center`}
+        } ${isScrolled && !open ? '' : ''} grid grid-cols-[10rem_auto_10rem] max-[850px]:flex justify-between items-center`}
       >
         <Link href="/" className="logo font-bold flex select-none">
           <span className="font-h-2 font-extrabold text-[var(--primary)]">
@@ -115,7 +115,7 @@ function Navbar() {
         </div>
 
         <div className="flex items-center ml-auto min-[850px]:hidden space-x-4">
-          <LanguageMobile />
+          <LanguageMobile open={open} />
 
           <Link
             href="/contact"
@@ -174,10 +174,10 @@ function Navbar() {
         {open && (
           <>
             <motion.div
-              onClick={close}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
               transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
               className=" bg-black/20 w-screen h-screen fixed z-[2] top-0 left-0"
             ></motion.div>
@@ -186,7 +186,7 @@ function Navbar() {
               animate={{ opacity: 1, y: "0" }}
               exit={{ opacity: 0, y: "-2rem" }}
               transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
-              className="menu grid grid-cols-2 font-p-2 rounded-b-[var(--radius)] fixed w-[calc(100%_-_3rem)]  flex-col space-y-2 bg-[#F4F4F4] z-50 top-[3rem] left-4 p-4 pt-0"
+              className="menu grid grid-cols-2 font-p-2 rounded-b-[var(--radius)] fixed w-[calc(100%_-_2rem)]  flex-col space-y-2 bg-[#fff] z-[2] top-[3rem] left-4 p-4 pt-0"
             >
               <hr className="bg-[var(--border)] hidden max-sm:flex h-[1px] border-0 mb-4 mt-3 col-span-2" />
 

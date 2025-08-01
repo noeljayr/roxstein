@@ -54,7 +54,7 @@ function Language() {
         className="selector flex gap-1"
       >
         <Image src={prefLanguage == "en" ? uk : switzerland} alt="english" />
-        <IconChevronDown className={`${showOptions ? "rotate-180" : ""}`} />
+        <IconChevronDown style={{transition: 'var(--transition)'}} className={`${showOptions ? "rotate-180" : ""}`} />
       </span>
 
       <AnimatePresence>
