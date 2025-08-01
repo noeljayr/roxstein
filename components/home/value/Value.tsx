@@ -39,10 +39,10 @@ function Value() {
           viewport={{ once: true }}
           className="flex flex-col gap-1 w-[68ch] max-[1030px]:w-full max-[850px]:items-center"
         >
-          <h3>{tagline}</h3>
+          <h3 className="max-sm:text-center">{tagline}</h3>
 
           <p className="opacity-85 mb-auto max-[850px]:hidden">{description}</p>
-          <p className="opacity-85 mb-auto max-[850px]:block hidden">
+          <p className="opacity-85 mb-auto max-sm:text-center max-sm:w-[80%] max-[850px]:block hidden">
             {descriptionMobile}{" "}
           </p>
         </motion.div>

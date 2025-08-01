@@ -119,13 +119,24 @@ ul li {
   line-height: 180%;
 }
 
+@media (width < 610px) {
+  :root {
+    --p1: clamp(0.99rem, 3.3vw, 1.122rem);
+    --p2: clamp(0.77rem, 2.266vw, 0.902rem);
+    --p3: clamp(0.66rem, 2.178vw, 0.792rem);
+    --p4: clamp(0.594rem, 1.98vw, 0.726rem);
+    --p5: clamp(0.462rem, 1.914vw, 0.594rem);
+  }
+}
+
+
 .font-h-1,
 .font-h-1 * {
   font-size: var(--h1) !important;
 }
 .font-h-2,
 .font-h-2 * {
-  font-size: var(--h2) !important;
+  font-size: calc(var(--h2) * 0.8) !important;
 }
 
 .font-h-3,

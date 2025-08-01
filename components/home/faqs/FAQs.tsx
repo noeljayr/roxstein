@@ -51,7 +51,7 @@ function FAQs() {
           layout="position"
           className="w-full bg-[#E6E6E6] border-[1px] border-[var(--border)] p-4 rounded-[var(--radius)]"
         >
-          <div className="flex gap-2 items-center">
+          <div className="flex max-sm:grid max-sm:grid-cols-2 max-sm:pb-4 max-sm:truncate gap-2 items-center">
             {faqs.map((q, index) => {
               const idx = index + 1;
               return (
@@ -68,7 +68,7 @@ function FAQs() {
                   key={index}
                   onClick={() => setActiveCategory(q)}
                   style={{ transition: "var(--transition)" }}
-                  className={`category cursor-pointer rounded-4xl border-[1px] px-4 py-1.5 font-semibold select-none ${
+                  className={`category truncate text-center cursor-pointer rounded-4xl border-[1px] px-4 py-1.5 font-semibold select-none ${
                     activeCategory == q
                       ? "border-transparent bg-[var(--primary)] text-[var(--off-white)]"
                       : "bg-[rgba(65,98,191,0.05)] border-[rgba(65,98,191,0.2)]"
@@ -84,16 +84,16 @@ function FAQs() {
             layout="position"
             transition={{
               ease: [0.25, 0.1, 0.25, 1.0],
-              duration: 0.85,
+              duration: 0.25,
             }}
-            className="flex flex-col gap-1 mt-2 w-full"
+            className="flex flex-col gap-1 mt-2 w-full overflow-hidden"
           >
             {activeCategory.questions.map((q, index) => {
               const idx = index + 1;
 
               return (
                 <motion.div
-                  layout
+                  layout="position"
                   layoutId={`${index}`}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -101,7 +101,7 @@ function FAQs() {
                   key={index}
                   transition={{
                     ease: [0.25, 0.1, 0.25, 1.0],
-                    duration: 0.85,
+                    duration: 0.25,
                   }}
                   animate={{ height: "auto" }}
                   onClick={() => toggleActiveQuestion(q)}

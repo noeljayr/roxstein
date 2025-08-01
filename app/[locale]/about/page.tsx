@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "motion/react";
-import NumberFlow from "@number-flow/react";
 import { IconInfoCircleFilled } from "@tabler/icons-react";
 import React, { useEffect, useState } from "react";
 import tron from "@/public/tron-analytics.png";
@@ -73,7 +72,6 @@ const team = [
 ];
 
 function AboutUs() {
-  const [value, setValue] = useState(0);
   const [values, setValues] = useState(englishValues);
   const locale: string = useLocale();
   const t = useTranslations("aboutUs");
@@ -86,13 +84,7 @@ function AboutUs() {
     }
   }, [locale]);
 
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      setValue(99);
-    }, 1500);
-
-    return () => clearTimeout(timerId);
-  }, []);
+ 
 
   return (
     <div className="section flex flex-col mt-8">
@@ -166,7 +158,7 @@ function AboutUs() {
           </motion.p>
         </div>
 
-        <div className="w-full pt-8 grid grid-cols-[auto_55%] max-[850px]:flex max-[850px]:flex-col max-[850px]:gap-4 justify-between">
+        <div className="w-full pt-8 grid grid-cols-[auto_40%] max-[850px]:flex max-[850px]:flex-col max-[850px]:gap-4 justify-between">
           <div className="flex flex-col font-medium w-[45ch] max-[360]:w-full">
             <motion.span
               initial={{ opacity: 0, y: -40 }}
@@ -223,31 +215,8 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 h-full max-[850px]:h-[15rem] max-[600px]:h-[10rem] max-[450px]:h-fit max-[450px]:grid-cols-1 max-[450px]:grid-rows-[10rem_15rem]">
-            <motion.div
-              initial={{ opacity: 0 }}
-              transition={{
-                ease: [0.25, 0.1, 0.25, 1.0],
-                duration: 0.85,
-                delay: 1.5,
-              }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="flex flex-col  h-full w-full bg-[#DBDDE3] border-[1px] border-[rgba(65,98,191,0.1)]  rounded-[var(--radius-m)] p-3"
-            >
-              <span className="font-semibold font-p-2 opacity-85 mb-auto">
-                {t("clients.title")}
-              </span>
-
-              <NumberFlow
-                suffix="%"
-                value={value}
-                className="text-[var(--primary)] font-bold text-6xl leading-0"
-              />
-              <p className="opacity-70 font-p-4 font-medium">
-                {t("clients.description")}
-              </p>
-            </motion.div>
+          <div className="grid max-[850px]:hidden grid-cols-1 gap-2 h-full max-[850px]:h-[15rem] max-[600px]:h-[10rem] max-[450px]:h-fit max-[450px]:flex max-[450px]:grid-rows-[10rem_15rem]">
+            
             <motion.div
               initial={{ opacity: 0 }}
               transition={{
@@ -329,7 +298,7 @@ function AboutUs() {
           </motion.p>
         </div>
 
-        <div className="pt-8 grid grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] gap-4">
+        <div className="pt-8 grid max-sm:gap-10 grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] gap-4">
           {team.map((m, index) => {
             const idx = index + 1;
             return (
@@ -350,9 +319,9 @@ function AboutUs() {
                   alt=""
                   className="w-full h-auto aspect-square object-cover rounded-[var(--radius-m)]"
                 />
-                <hr className="bg-[var(--border)] h-[1px] border-0 mb-2 mt-3" />
+               
 
-                <div className="grid grid-cols-[1fr_auto] truncate items-center">
+                <div className="grid grid-cols-[1fr_auto] pt-3 truncate items-center">
                   <span className="font-semibold font-p-2 truncate">
                     {m.name}
                   </span>
@@ -374,6 +343,8 @@ function AboutUs() {
                 <span className="font-medium opacity-70 font-p-3 mt-1">
                   {m.position}
                 </span>
+
+                <hr className="bg-[var(--border)] hidden max-sm:flex h-[1px] border-0 mb-2 mt-3" />
               </motion.div>
             );
           })}

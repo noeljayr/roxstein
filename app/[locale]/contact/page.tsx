@@ -139,7 +139,7 @@ function Contact() {
               {t("form.services.placeholder")}
             </span>
           </span>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 max-sm:grid max-sm:grid-cols-3">
             {services.map((s, index) => {
               const idx = index + 1;
               return (
@@ -155,7 +155,7 @@ function Contact() {
                   key={index}
                   onClick={() => toggleService(s)}
                   style={{ transition: "var(--transition)" }}
-                  className={`cursor-pointer rounded-4xl border-[1px] px-4 py-1.5 font-semibold select-none ${
+                  className={`cursor-pointer text-center rounded-4xl border-[1px] px-4 py-1.5 font-semibold select-none ${
                     selectedServices.includes(s)
                       ? "border-transparent bg-[var(--primary)] text-[var(--off-white)]"
                       : "bg-[rgba(65,98,191,0.05)] border-[rgba(65,98,191,0.2)]"

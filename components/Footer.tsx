@@ -47,7 +47,7 @@ function Footer() {
           }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="flex-col flex gap-2 max-[800px]:mt-2 "
+          className="flex-col flex gap-2 max-[800px]:mt-2 max-[800px]:hidden"
         >
           <Link href="/contact" className="font-semibold">
             {contact}
@@ -66,7 +66,7 @@ function Footer() {
           }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="flex-col flex gap-2"
+          className="flex-col flex gap-2 max-[800px]:hidden"
         >
           <Link href="/about" className="font-semibold">
             {about}
@@ -85,7 +85,7 @@ function Footer() {
           }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="w-fit"
+          className="w-fit max-[800px]:hidden"
         >
           <Link
             target="_blank"
@@ -98,6 +98,35 @@ function Footer() {
             </span>
           </Link>
         </motion.div>
+
+        <div className="w-full items-center mt-4 gap-4 hidden max-[800px]:flex">
+          <Link href="/contact" className="font-semibold">
+            {contact}
+          </Link>
+          <Link href="/#projects" className="font-semibold">
+            {work}
+          </Link>
+
+          <Link href="/about" className="font-semibold">
+            {about}
+          </Link>
+          <Link href="/imprint" className="font-semibold">
+            {imprint}
+          </Link>
+
+          
+        </div>
+
+        <Link
+            target="_blank"
+            href="tel:+41775090427"
+            className="cta-container w-fit max-[800px]:flex mt-4 hidden items-center gap-0.5"
+          >
+            <div className="cta">{t("callUs")}</div>
+            <span>
+              <Image src={arrow} alt="arrow" />
+            </span>
+          </Link>
       </div>
       <div className="flex w-full bg-[#CCD0D9] rounded-[var(--radius-s)] p-2 pr-4 justify-between items-center">
         <div>

@@ -27,6 +27,7 @@ function WhyUs() {
             duration: 0.85,
             delay: 0,
           }}
+          className="max-sm:text-center"
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >

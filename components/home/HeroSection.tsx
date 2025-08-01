@@ -58,7 +58,7 @@ function HeroSection() {
             }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="max-[980px]:text-center max-[980px]:w-[75ch] max-[480px]:w-full"
+            className="max-[980px]:text-center max-[980px]:w-[75ch] max-[500px]:w-full"
           >
             {t("tagline")}
           </motion.h1>
