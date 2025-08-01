@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@/i18n/routing";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import arrowUpright from "@/public/arrow-up-right.png";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
@@ -14,7 +14,6 @@ import LanguageMobile from "./LanguageMobile";
 function Navbar() {
   const t = useTranslations("navbar");
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -119,7 +118,7 @@ function Navbar() {
 
           <Link
             href="/contact"
-            className="cta-container max-[450px]:hidden cursor-pointer flex gap-0.5 items-center"
+            className="cta-container max-sm:hidden cursor-pointer flex gap-0.5 items-center"
           >
             <button className="font-semibold cursor-pointer cta">
               {t("callUs")}
@@ -159,7 +158,7 @@ function Navbar() {
 
         <Link
           href="/contact"
-          className="cta-container cursor-pointer flex gap-0.5 max-[850px]:hidden   items-center"
+          className="cta-container cursor-pointer flex ml-auto gap-0.5 max-[850px]:hidden   items-center"
         >
           <button className="font-semibold cursor-pointer cta">
             {t("callUs")}
@@ -186,7 +185,7 @@ function Navbar() {
               animate={{ opacity: 1, y: "0" }}
               exit={{ opacity: 0, y: "-2rem" }}
               transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
-              className="menu grid grid-cols-2 font-p-2 rounded-b-[var(--radius)] fixed w-[calc(100%_-_2rem)]  flex-col space-y-2 bg-[#fff] z-[2] top-[3rem] left-4 p-4 pt-0"
+              className="menu grid grid-cols-2 font-p-2 rounded-b-[var(--radius)] fixed w-[calc(100vw_-_2rem)] flex-col space-y-2 bg-[#fff] z-[2] top-[3rem] left-4 p-4 pt-0"
             >
               <hr className="bg-[var(--border)] hidden max-sm:flex h-[1px] border-0 mb-4 mt-3 col-span-2" />
 
