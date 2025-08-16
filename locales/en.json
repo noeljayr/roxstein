@@ -1,39 +1,39 @@
 {
   "meta": {
     "title": "Roxstein",
-    "description": "Personalized software and multimedia solutions.",
+    "description": "Tailored software and multimedia solutions designed to help your business thrive.",
     "keywords": [
       "Roxstein",
-      "software solutions",
-      "best web Design agency in Switzerland",
+      "custom software solutions",
+      "top web design agency in Switzerland",
       "web development",
-      "software developer in Switzerland",
+      "software developers in Switzerland",
       "web design",
       "UI/UX design",
-      "App developer",
+      "app development",
       "Swiss",
       "Switzerland",
       "personal portfolio"
     ]
   },
-  "projectsId" : {
+  "projectsId": {
     "text": "projects"
   },
-  "servicesId" : {
+  "servicesId": {
     "text": "services"
   },
   "visitSite": {
-    "text": "Visit site"
+    "text": "Visit Website"
   },
   "navbar": {
     "home": "Home",
     "projects": "Projects",
     "services": "Services",
+    "about": "About Us",
     "contact": "Contact",
-    "about": "About us",
     "imprint": "Imprint",
-    "callUs": "Call us now",
-    "allRights": "All Rights Reserved"
+    "callUs": "Call Us",
+    "allRights": "All rights reserved"
   },
   "hero": {
     "tri": {
@@ -41,46 +41,46 @@
       "reliable": "Reliable.",
       "affordable": "Affordable."
     },
-    "tagline": "Max out your business goals.",
-    "description": "When Swiss quality assurance meets global talent, we ensure that we maximize your business online whether its for reach or profits",
-    "cta1": "Request quote",
-    "cta2": "Give us a call",
+    "tagline": "Elevating your business success to the next level.",
+    "description": "When Swiss precision meets global talent, the result is websites that deliver – more visibility, more customers, and measurable growth.",
+    "cta1": "Fill Out the Form",
+    "cta2": "Call Us Today",
     "chart": {
-      "customersGained": "Customers gained",
-      "conversionRate": "Conversion rate"
+      "customersGained": "Customers Gained",
+      "conversionRate": "Conversion Rate"
     }
   },
   "services": {
     "title": "Services",
-    "tagline": "Made Just for You",
-    "description": "We take the time to understand what you need deliver required service",
+    "tagline": "Built Around You",
+    "description": "Every project we deliver is shaped by our clients’ vision and goals.",
     "design": {
       "title": "Design",
-      "description": "We create clean layouts and visuals that help your customers find what they need. From buttons to the checkout page, every detail is designed to make it so that every one using it has the best experience.",
-      "learnMore": "Learn more"
+      "description": "We create websites that don’t just look beautiful, they work beautifully. Clear, intuitive, and purposeful. From sleek minimalist layouts to bold visual statements, every detail is crafted to guide your visitors effortlessly and make your brand unforgettable.",
+      "learnMore": "Learn More"
     },
     "dev": {
       "title": "Development",
-      "description": "We turn static design images to full functioning sites, using industry’s best practices to ensure that your website is as reliable as it can be."
+      "description": "Our development process ensures your website is technically flawless, cleanly coded, lightning-fast, and reliable across devices. Whether it’s CMS integration, custom features, or dynamic animations, we deliver solutions built for long-term performance and easy maintenance."
     },
     "hosting": {
       "title": "Hosting",
-      "description": "Bringing the site to life is not the end of the journey. We enable your customers to access your business online from anywhere, at any time."
+      "description": "Hosting with care. We keep your site running smoothly, securely, and without interruptions, just as it should."
     }
   },
   "why": {
-    "title": "Why Roxstein?",
-    "tagline": "Here’s how we can boost your business’s growth",
-    "description": "Collaborate with Roxstein to bridge the gap between",
-    "yourbigideas": "Your big ideas",
-    "last": "and business outcomes.",
+    "title": "Why Choose Roxstein?",
+    "tagline": "Here’s how we accelerate your business growth.",
+    "description": "With Roxstein, your ideas move from concept to reality faster, turning ",
+    "yourbigideas": "vision",
+    "last": "into measurable results.",
     "reason3": {
       "title": "Creative Excellence",
-      "description": "We combine creativity and skill to make unique products that help your brand feel real and stand out online."
+      "description": "At Roxstein, creativity meets precision. We blend innovative design with strategic thinking to create digital experiences that reflect your brand with clarity and authenticity, design with purpose."
     },
     "reason4": {
-      "title": "Quality Assurance",
-      "description": "We ensure every project is tested for flawless performance, security, and a seamless user experience, delivering reliable, polished results that exceed expectations.",
+      "title": "Quality Without Compromise",
+      "description": "Every site we deliver is rigorously tested on every device, in every major browser. Performance, security, and usability are checked down to the last detail to guarantee reliable results.",
       "performance": "Performance",
       "bestPractices": "Best Practices",
       "seo": "SEO"
@@ -88,67 +88,93 @@
   },
   "value": {
     "title": "Value",
-    "tagline": "Better value than cost added makes great product.",
-    "description": "Our commitment is to accelerate your success. Our definition of \"great product\" centers on this core idea: its ability to deliver meaningful business outcomes, faster workflows, actionable insights, improved conversions",
-    "descriptionMobile": "We build products that accelerate success through faster workflows, insights, and conversions.",
-    "getStarted": "Get started"
+    "tagline": " More Impact. More Results. More Than Just a Website.",
+    "description": "For us, it’s not just about creating a website, it’s about delivering measurable business impact. Our solutions streamline operations, enhance flexibility, and deliver digital results that push your business forward. Our goal? To ensure your investment doesn’t just pay for itself, it pays you back.",
+    "descriptionMobile": "We build solutions that drive success with faster workflows, deeper insights, and higher conversion rates.",
+    "getStarted": "Get Started"
   },
-
   "faqs": {
     "title": "Quick Answers"
   },
   "secondCta": {
-    "title": "Still curious? Talk directly to the team.",
-    "cta": "Call us now"
+    "title": "Questions? Speak Directly With Our Team",
+    "cta": "Call Us"
   },
   "contactPage": {
     "title": "Contact",
-    "tagline": "Together we can boost your company’s growth",
-    "description": "For business inquiries or to say hello, fill out the form below or email",
+    "tagline": "Let’s make a digital impact together.",
+    "description": "Use the form below or email us at",
     "emailAddress": "contact@roxstein.ch",
     "form": {
       "name": {
         "label": "Name",
-        "placeholder": "Full name"
+        "placeholder": "Full Name"
       },
       "email": {
-        "label": "What's your email?",
-        "placeholder": "Email address"
+        "label": "Email",
+        "placeholder": "Email Address"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "Include country code"
       },
       "message": {
-        "label": "Any extra details that you would like to share?",
-        "placeholder": "Write us your message",
+        "label": "Tell us more about your project",
+        "placeholder": "Write your message here",
         "optional": "(optional)"
       },
       "services": {
         "label": "Services",
-        "placeholder": "(select one that applies.)"
+        "placeholder": "(Select the service areas relevant to your project)"
       },
-      "submit": "Send message"
+      "submit": "Send Message",
+      "success": "Message Sent. We'll get back to you within 24 hours.",
+      "error": "Something went wrong."
     }
   },
   "aboutUs": {
-    "title": "About us",
-    "tagline": "Get to know about Roxstein and the team.",
+    "title": "About Us",
+    "tagline": "Meet Roxstein and the people behind it.",
     "years": {
-      "title": "Years in business",
-      "description": "Roxstein was founded 3 years ago but it is comprised of a team of professionals and experts with more years of experience",
-      "yearsOfExperience": "3+ years of experience",
-      "projects": "57+ completed projects"
+      "title": "Years in Business",
+      "description": "Roxstein has been in business for over three years, but our expertise goes much further back. We’re a team of seasoned professionals with deep experience in design, development, and digital strategy.",
+      "yearsOfExperience": "3+ Years of Experience",
+      "projects": "57+ Projects Delivered"
     },
     "clients": {
-      "title": "Satisfied Clients",
-      "description": "Driving brand success through innovative and powerful solutions."
+      "title": "Happy Clients",
+      "description": "Driving brand growth through innovative, high-performing solutions."
     },
     "values": {
-      "title": "Roxstein's values",
-      "description": "Our business approach and processes are guided by the following values:"
+      "title": "Our Core Values",
+      "description": "At Roxstein, our work is guided by clear principles that shape everything we do delivering real, lasting value for our clients."
     },
     "team": {
-      "title": "The team",
-      "description": "Roxstein is comprised of a diverse team, including top talents from across the world including Africa.",
+      "title": "The Team",
+      "description": "An international team of experts with diverse skills and perspectives, united by a passion for creating digital excellence.",
       "professional": "Professional",
       "international": "International"
+    }
+  },
+  "imprint": {
+    "title": "Imprint",
+    "tagline": "We value transparency and compliance with legal regulations",
+    "managment": "Management",
+    "director": "Director",
+    "contact": {
+      "title": "Contact",
+      "email": "E-Mail",
+      "phone": "Phone",
+      "address": {
+        "title": "Address",
+        "value": "CH, ggf. PLZ und Stadt ergänzen"
+      },
+      "company": {
+        "title": "Company information",
+        "reg": "Commercial registration number",
+        "vat": "VAT number",
+        "extra": "(MwSt)"
+      }
     }
   }
 }

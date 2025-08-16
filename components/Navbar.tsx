@@ -178,14 +178,14 @@ function Navbar() {
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
               transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
-              className=" bg-black/20 w-screen h-screen fixed z-[2] top-0 left-0"
+              className=" bg-black/20 w-screen h-screen fixed z-[4] top-0 left-0"
             ></motion.div>
             <motion.div
               initial={{ opacity: 0, y: "-2rem" }}
               animate={{ opacity: 1, y: "0" }}
               exit={{ opacity: 0, y: "-2rem" }}
               transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
-              className="menu grid grid-cols-2 font-p-2 rounded-b-[var(--radius)] fixed w-[calc(100vw_-_2rem)] flex-col space-y-2 bg-[#fff] z-[2] top-[3rem] left-4 p-4 pt-0"
+              className="menu grid grid-cols-2 font-p-2 rounded-b-[var(--radius)] fixed w-[calc(100vw_-_2rem)] flex-col space-y-2 bg-[#fff] z-[5] top-[3rem] left-4 p-4 pt-0"
             >
               <hr className="bg-[var(--border)] hidden max-sm:flex h-[1px] border-0 mb-4 mt-3 col-span-2" />
 

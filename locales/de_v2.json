@@ -39,9 +39,9 @@
     "tri": {
       "local": "Lokal.",
       "reliable": "Zuverlässig.",
-      "affordable": "Preiswertig."
+      "affordable": "Effizient."
     },
-    "tagline": "Geschäftserfolg strategisch gestalten.",
+    "tagline": "Geschäftserfolg auf das nächste Level heben.",
     "description": "Wenn Schweizer Qualität auf globales Talent trifft, entstehen Webseiten, die wirken – für mehr Sichtbarkeit, mehr Kunden und messbares Wachstum.",
     "cta1": "Formular ausfüllen",
     "cta2": "Jetzt unverbindlich anrufen",
@@ -56,24 +56,24 @@
     "description": "Von uns realisierte Projekte, nach den Vorstellungen unserer Kunden.",
     "design": {
       "title": "Design",
-      "description": "Von kreativen Icons bis zu klar strukturierten Layouts: Wir gestalten Webseiten, die intuitiv, visuell ansprechend und funktional sind. Ihre Kunden finden schnell, was sie suchen – von der Startseite bis zum Checkout. Jedes Detail ist darauf ausgerichtet, ein nahtloses Nutzererlebnis zu schaffen, das überzeugt.",
+      "description": "Wir gestalten Webseiten, die nicht nur gut aussehen, sondern wirken: Klar, durchdacht und benutzerfreundlich. Von minimalistischen Layouts bis zu auffälligen Icons – jedes Element hilft Ihren Kunden, sich schnell zurechtzufinden und Ihre Angebote zu verstehen. So entsteht ein Erlebnis, das im Kopf bleibt.",
       "learnMore": "Mehr erfahren"
     },
     "dev": {
       "title": "Entwicklung",
-      "description": "Aus Vision wird Funktion: Wir entwickeln Websites, die nicht nur optisch überzeugen, sondern auch unter der Haube stimmen. Stabil, flexibel und auf dem neuesten Stand – für flüssige Abläufe, hohe Ladegeschwindigkeit und technische Qualität."
+      "description": "Wir bringen Ihre Website technisch auf den Punkt: sauber programmiert, schnell ladend, zuverlässig auf allen Geräten. Ob CMS-Anbindung, individuelle Funktionen oder animierte Elemente – wir setzen alles so um, dass Ihre Website langfristig performant und wartbar bleibt."
     },
     "hosting": {
       "title": "Hosting",
-      "description": "Wir übernehmen den Betrieb Ihrer Website – sicher, stabil und betreut. Vom ersten Livegang bis zur täglichen Verfügbarkeit begleiten wir Sie mit zuverlässigem Hosting, regelmässiger Wartung und persönlichem Support."
+      "description": "Ihre Website läuft nicht irgendwo – sie läuft bei uns. Mit skalierbarem Hosting, täglicher Systempflege und technischer Betreuung sorgen wir dafür, dass Ihr Online-Auftritt stabil erreichbar bleibt und mit Ihrem Geschäft mitwächst."
     }
   },
   "why": {
     "title": "Warum Roxstein?",
     "tagline": "So können wir das Wachstum Ihres Unternehmens steigern.",
-    "description": "Mit Roxstein bringen Sie Ihre Ideen schneller in die Umsetzung und verwandeln ",
-    "yourbigideas": "Visionen",
-    "last": "in messbare Resultate.",
+    "description": "Arbeiten Sie mit Roxstein zusammen, um die Lücke zwischen",
+    "yourbigideas": "grossen Ideen",
+    "last": "und greifbaren Geschäftsergebnissen zu schliessen.",
     "reason3": {
       "title": "Kreative Exzellenz",
       "description": "Bei Roxstein trifft Feingefühl auf solides Handwerk. Wir verbinden Kreativität mit Strategie und gestalten digitale Erlebnisse, die Ihre Marke klar und authentisch widerspiegeln – Design mit Funktion."
@@ -102,8 +102,8 @@
   },
   "contactPage": {
     "title": "Kontakt",
-    "tagline": "Lassen Sie uns gemeinsam digitale Wirkung schaffen.",
-    "description": "Sie haben ein Projekt, eine Idee oder eine Frage? Schicken Sie uns eine Anfrage oder schreiben Sie uns direkt per E-Mail an",
+    "tagline": "Gemeinsam gestalten wir den nächsten Schritt.",
+    "description": "Nutzen Sie das Formular oder schreiben Sie uns an",
     "emailAddress": "kontakt@roxstein.ch",
     "form": {
       "name": {
@@ -119,7 +119,7 @@
         "placeholder": "Bitte mit Landesvorwahl"
       },
       "message": {
-        "label": "Gibt es bereits konkrete Vorstellungen oder Wünsche?",
+        "label": "Erzählen Sie uns mehr über Ihre Anforderungen",
         "placeholder": "Schreiben Sie uns Ihre Nachricht",
         "optional": "(optional)"
       },
@@ -127,7 +127,7 @@
         "label": "Dienstleitungen",
         "placeholder": "(Wählen Sie den Bereich oder die Bereiche, die Ihr Projekt betreffen)"
       },
-      "submit": "Jetzt Kontakt aufnehmen",
+      "submit": "Anfrage abschicken",
       "success": "Nachricht gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
       "error": "Es ist ein Fehler aufgetreten."
     }

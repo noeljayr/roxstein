@@ -44,11 +44,11 @@ html {
   /* typography */
   --inter: "Inter", sans-serif;
   --plus-jakarta: "Plus Jakarta Sans", sans-serif;
-  --h1: clamp(1.5rem, 4.35vw, 1.75rem);
+  --h1: clamp(1.40rem, 4.30vw, 1.60rem);
   --h3: clamp(1rem, 3.5vw, 1.25rem);
   --h4: clamp(0.95rem, 3vw, 1.15rem);
   --p1: clamp(0.75rem, 2.5vw, 0.85rem);
-  --p2: clamp(0.65rem, 2vw, 0.75rem);
+  --p2: clamp(0.7rem, 2.1vw, 0.8rem);
   --p3: clamp(0.55rem, 1.75vw, 0.65rem);
   --p4: clamp(0.45rem, 1.5vw, 0.55rem);
   --p5: clamp(0.35rem, 1.45vw, 0.45rem);
@@ -342,10 +342,11 @@ ul li {
 .language .selector img {
   width: 0.85rem;
   height: 0.85rem;
+
 }
 
 .language .options {
-  width: 5rem;
+  width: 7rem;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
@@ -357,7 +358,7 @@ ul li {
   font-size: var(--p3);
 }
 
-.language .options span {
+.language .option {
   padding: 0.35rem;
   cursor: pointer;
   transition: var(--transition);
@@ -367,4 +368,5 @@ ul li {
   height: 0.85rem;
   width: 0.85rem;
   transition: var(--transition);
+  margin-right: 0.25rem;
 }

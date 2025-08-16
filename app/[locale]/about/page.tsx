@@ -32,15 +32,15 @@ const englishValues = [
 const germanValues = [
   {
     title: "Handwerkskunst",
-    p: "Projekte werden als Handwerk betrachtet. „Fertig ist nicht genug – nur richtig gemacht zählt.“",
+    p: "Ihre Zufriedenheit steht im Mittelpunkt. Deshalb holen wir kontinuierlich Feedback ein und optimieren unsere Prozesse, um Ihre Erwartungen nicht nur zu erfüllen, sondern zu übertreffen. So entstehen digitale Lösungen, die genau auf Ihre Bedürfnisse zugeschnitten sind.",
   },
   {
     title: "Kundenorientierung",
-    p: "Wir holen regelmäßig Feedback ein und verbessern unsere Arbeit stetig, um unsere Kunden wirklich zufrieden zu stellen.",
+    p: "Ihre Zufriedenheit steht im Mittelpunkt. Deshalb holen wir kontinuierlich Feedback ein und optimieren unsere Prozesse, um Ihre Erwartungen nicht nur zu erfüllen, sondern zu übertreffen. So entstehen digitale Lösungen, die genau auf Ihre Bedürfnisse zugeschnitten sind.",
   },
   {
     title: "Zusammenarbeit",
-    p: "Offene Kommunikation, klare Fahrpläne, ehrliche Statusberichte.",
+    p: "Transparenz und offene Kommunikation sind die Basis unserer Partnerschaft. Mit klaren Zeitplänen, ehrlichen Statusberichten und einem engen Dialog stellen wir sicher, dass Sie jederzeit wissen, wo Ihr Projekt steht – und dass es reibungslos vorankommt.",
   },
 ];
 
@@ -83,8 +83,6 @@ function AboutUs() {
       setValues(englishValues);
     }
   }, [locale]);
-
- 
 
   return (
     <div className="section flex flex-col mt-8">
@@ -159,7 +157,7 @@ function AboutUs() {
         </div>
 
         <div className="w-full pt-8 grid grid-cols-[auto_40%] max-[850px]:flex max-[850px]:flex-col max-[850px]:gap-4 justify-between">
-          <div className="flex flex-col font-medium w-[45ch] max-[360]:w-full">
+          <div className="flex flex-col font-medium w-[80%] max-[360]:w-full">
             <motion.span
               initial={{ opacity: 0, y: -40 }}
               transition={{
@@ -216,7 +214,6 @@ function AboutUs() {
           </div>
 
           <div className="grid max-[850px]:hidden grid-cols-1 gap-2 h-full max-[850px]:h-[15rem] max-[600px]:h-[10rem] max-[450px]:h-fit max-[450px]:flex max-[450px]:grid-rows-[10rem_15rem]">
-            
             <motion.div
               initial={{ opacity: 0 }}
               transition={{
@@ -319,7 +316,6 @@ function AboutUs() {
                   alt=""
                   className="w-full h-auto aspect-square object-cover rounded-[var(--radius-m)]"
                 />
-               
 
                 <div className="grid grid-cols-[1fr_auto] pt-3 truncate items-center">
                   <span className="font-semibold font-p-2 truncate">

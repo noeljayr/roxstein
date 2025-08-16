@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
+
 import { Link } from "@/i18n/routing";
-import arrow from "@/public/arrow-up-right.png";
 import { IconBrandLinkedin } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -18,7 +17,7 @@ function Footer() {
 
   return (
     <div className="section pb-2 mt-auto flex flex-col gap-4 justify-between">
-      <div className="w-full pb-8 flex justify-between max-[800px]:flex-col max-[800px]:gap-2 ">
+      <div className="w-full pb-8 flex gap-8 max-[800px]:flex max-[800px]:flex-col max-[800px]:gap-2 ">
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           transition={{
@@ -27,9 +26,9 @@ function Footer() {
           }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col gap-2"
+          className="flex flex-col gap-2 mr-auto"
         >
-          <Link href="/" className="logo font-bold select-none flex">
+          <Link href="/" className="logo font-bold select-none flex ">
             <span className="font-h-2 font-extrabold text-[var(--primary)]">
               Rox<b className="font-h-2 font-extrabold">stein.</b>
             </span>
@@ -76,28 +75,7 @@ function Footer() {
           </Link>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          transition={{
-            ease: [0.25, 0.1, 0.25, 1.0],
-            duration: 0.85,
-            delay: 0.75,
-          }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="w-fit max-[800px]:hidden"
-        >
-          <Link
-            target="_blank"
-            href="tel:+41775090427"
-            className="cta-container w-fit flex items-center gap-0.5"
-          >
-            <div className="cta">{t("callUs")}</div>
-            <span>
-              <Image src={arrow} alt="arrow" />
-            </span>
-          </Link>
-        </motion.div>
+      
 
         <div className="w-full items-center mt-4 gap-4 hidden max-[800px]:flex">
           <Link href="/contact" className="font-semibold">
@@ -117,16 +95,7 @@ function Footer() {
           
         </div>
 
-        <Link
-            target="_blank"
-            href="tel:+41775090427"
-            className="cta-container w-fit max-[800px]:flex mt-4 hidden items-center gap-0.5"
-          >
-            <div className="cta">{t("callUs")}</div>
-            <span>
-              <Image src={arrow} alt="arrow" />
-            </span>
-          </Link>
+        
       </div>
       <div className="flex w-full bg-[#CCD0D9] rounded-[var(--radius-s)] p-2 pr-4 justify-between items-center">
         <div>

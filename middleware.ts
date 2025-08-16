@@ -14,9 +14,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all paths EXCEPT:
-    // - _next
-    // - .ico, .txt, .xml, .riv (add .riv here)
-    "/((?!_next|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.riv$).*)",
+    "/((?!_next|api|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.riv$).*)",
   ],
 };
