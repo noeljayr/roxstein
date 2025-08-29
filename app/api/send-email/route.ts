@@ -18,7 +18,7 @@ export const POST = async (req: NextRequest) => {
     const data = await resend.emails.send({
       from: "Roxstein <noreply@roxstein.ch>",
       to: [
-        "admin@roxstein.ch",
+        "info@roxstein.ch",
         "gian@roxstein.ch",
         "aisa@roxstein.ch",
         "noeljayr01@gmail.com",

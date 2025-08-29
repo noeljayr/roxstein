@@ -21,7 +21,7 @@ function Reason4() {
       viewport={{ once: true }}
       className="reason"
     >
-      <span className="number">02</span>
+      
       <span className="title">{t("title")}</span>
       <p className="opacity-85">
         {t("description")}

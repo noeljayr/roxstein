@@ -37,7 +37,7 @@ function Reason3() {
       ref={ref}
       className="reason"
     >
-      <span className="number">01</span>
+      
       <span className="title">{t("title")}</span>
       <p className="opacity-85">{t("description")}</p>
       <div className="absolute h-[70%] bottom-[-10%] w-full">

@@ -29,7 +29,7 @@ function Reason1() {
       viewport={{ once: true }}
       className="reason"
     >
-      <span className="number">01</span>
+     
       <span className="title">Expertise</span>
       <p className="opacity-85">
         Our team leverages extensive hands-on experience and in-depth technical

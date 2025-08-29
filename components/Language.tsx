@@ -54,10 +54,7 @@ function Language() {
         className="selector flex gap-1"
       >
         <Image src={prefLanguage == "en" ? uk : switzerland} alt="english" />
-        <IconChevronDown
-          style={{ transition: "var(--transition)" }}
-          className={`${showOptions ? "rotate-180" : ""}`}
-        />
+        <IconChevronDown className={`${showOptions ? "rotate-180" : ""}`} />
       </span>
 
       <AnimatePresence>
@@ -69,45 +66,20 @@ function Language() {
             transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
             className="options absolute"
           >
-            <div
-              className={`flex flex-col option gap-1 ${
-                prefLanguage.startsWith("de") ? "opacity-100" : "opacity-50"
+            <span
+              onClick={() => changeLanguage("de")}
+              className={`flex gap-1 items-center p-1.5 ${
+                prefLanguage == "de" ? "opacity-100" : "opacity-35"
               }`}
             >
-              <span className={`flex items-center gap-1 ${prefLanguage.startsWith('de') ? "opacity-100 font-semibold": 'opacity-50 font-medium'}`}>
-                <Image src={switzerland} className="" alt="" /> German
-              </span>
-              <div className="grid grid-cols-[auto_1fr] mt-0.5">
-                <span className="w-[0.85rem] h-full flex flex-col items-center">
-                  <span className="bg-black/10 h-full w-[1px]"></span>
-                </span>
-                <div className="flex flex-col pl-2">
-                  <span
-                    onClick={() => changeLanguage("de")}
-                    className={` ${prefLanguage === 'de'? "opacity-100 font-semibold": 'opacity-50 font-medium'} py-0.5 pt-0`}
-                  >
-                    Version 1
-                  </span>
-                  <span
-                    onClick={() => changeLanguage("de_v2")}
-                    className={` ${prefLanguage === 'de_v2'? "opacity-100 font-semibold": 'opacity-50 font-medium'} py-0.5`}
-                  >
-                    Version 2
-                  </span>
-                  <span
-                    onClick={() => changeLanguage("de_v3")}
-                    className={` ${prefLanguage === 'de_v3'? "opacity-100 font-semibold": 'opacity-50 font-medium'} py-0.5 pb-0`}
-                  >
-                    Version 3
-                  </span>
-                </div>
-              </div>
-            </div>
+              <Image src={switzerland} className="" alt="" /> German
+            </span>
 
+            <hr className="bg-[var(--border)] border-0 h-[1px]" />
             <span
               onClick={() => changeLanguage("en")}
-              className={`option flex gap-1 items-center ${
-                prefLanguage == "en" ? "opacity-100 font-semibold" : "opacity-50"
+              className={`flex gap-1 p-1.5  items-center ${
+                prefLanguage == "en" ? "opacity-100" : "opacity-35"
               }`}
             >
               <Image src={uk} className="" alt="" /> English

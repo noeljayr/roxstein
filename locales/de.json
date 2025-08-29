@@ -23,7 +23,7 @@
     "text": "dienstleistungen"
   },
   "visitSite": {
-    "text": "Website besuchen"
+    "text": "Webseite besuchen"
   },
   "navbar": {
     "home": "Start",
@@ -37,13 +37,13 @@
   },
   "hero": {
     "tri": {
-      "local": "Lokal.",
+      "local": "Global.",
       "reliable": "Zuverlässig.",
-      "affordable": "Preiswertig."
+      "affordable": "Qualitativ."
     },
-    "tagline": "Geschäftserfolg strategisch gestalten.",
+    "tagline": "Gmeinsam zum Gschäftserfolg.",
     "description": "Wenn Schweizer Qualität auf globales Talent trifft, entstehen Webseiten, die wirken – für mehr Sichtbarkeit, mehr Kunden und messbares Wachstum.",
-    "cta1": "Formular ausfüllen",
+    "cta1": "Offerte beantragen",
     "cta2": "Jetzt unverbindlich anrufen",
     "chart": {
       "customersGained": "Gewonnene Kunden",
@@ -52,49 +52,49 @@
   },
   "services": {
     "title": "Dienstleistungen",
-    "tagline": "Nur für Sie gemacht",
+    "tagline": "Nur für Sie gemacht.",
     "description": "Von uns realisierte Projekte, nach den Vorstellungen unserer Kunden.",
     "design": {
-      "title": "Design",
-      "description": "Von kreativen Icons bis zu klar strukturierten Layouts: Wir gestalten Webseiten, die intuitiv, visuell ansprechend und funktional sind. Ihre Kunden finden schnell, was sie suchen – von der Startseite bis zum Checkout. Jedes Detail ist darauf ausgerichtet, ein nahtloses Nutzererlebnis zu schaffen, das überzeugt.",
+      "title": "Gestaltung",
+      "description": "Wir gestalten Webseiten, die nicht nur gut aussehen, sondern wirken: Klar, durchdacht und benutzerfreundlich. Von minimalistischen Layouts bis zu auffälligen Icons – jedes Element hilft Ihren Kunden, sich schnell zurechtzufinden und Ihre Angebote zu verstehen. So entsteht ein Erlebnis, das im Kopf bleibt.",
       "learnMore": "Mehr erfahren"
     },
     "dev": {
       "title": "Entwicklung",
-      "description": "Aus Vision wird Funktion: Wir entwickeln Websites, die nicht nur optisch überzeugen, sondern auch unter der Haube stimmen. Stabil, flexibel und auf dem neuesten Stand – für flüssige Abläufe, hohe Ladegeschwindigkeit und technische Qualität."
+      "description": "Wir bringen Ihre Website technisch auf den Punkt: sauber programmiert, schnell ladend, zuverlässig auf allen Geräten. Ob CMS-Anbindung, individuelle Funktionen oder animierte Elemente – wir setzen alles so um, dass Ihre Website langfristig performant und wartungsarm bleibt."
     },
     "hosting": {
       "title": "Hosting",
-      "description": "Wir übernehmen den Betrieb Ihrer Website – sicher, stabil und betreut. Vom ersten Livegang bis zur täglichen Verfügbarkeit begleiten wir Sie mit zuverlässigem Hosting, regelmässiger Wartung und persönlichem Support."
+      "description": "Wir übernehmen den Betrieb Ihrer Website – sicher, stabil und betreut. Vom ersten Livegang bis zur täglichen Verfügbarkeit begleiten wir Sie mit zuverlässigem Hosting, regelmässiger Wartung und persönlichem Support"
     }
   },
   "why": {
-    "title": "Warum Roxstein?",
+    "title": "Unsere Vorteile für Sie.",
     "tagline": "So können wir das Wachstum Ihres Unternehmens steigern.",
-    "description": "Mit Roxstein bringen Sie Ihre Ideen schneller in die Umsetzung und verwandeln ",
-    "yourbigideas": "Visionen",
-    "last": "in messbare Resultate.",
+    "description": "Mit Roxstein bringen Sie Ihre Ideen schneller in die  ",
+    "yourbigideas": "Umsetzung",
+    "last": " und verwandeln Visionen in messbare Resultate.",
     "reason3": {
-      "title": "Kreative Exzellenz",
-      "description": "Bei Roxstein trifft Feingefühl auf solides Handwerk. Wir verbinden Kreativität mit Strategie und gestalten digitale Erlebnisse, die Ihre Marke klar und authentisch widerspiegeln – Design mit Funktion."
+      "title": "Kreative Perfektion",
+      "description": "Bei Roxstein trifft gestalterisches Feingefühl auf fundiertes Handwerk. Wir kombinieren Kreativität mit strategischem Denken und entwickeln digitale Erlebnisse, die Ihre Marke authentisch widerspiegeln – klar, unverwechselbar und zielgerichtet. So entsteht Design, das nicht nur gut aussieht, sondern funktioniert!"
     },
     "reason4": {
-      "title": "Qualitätssicherung",
-      "description": "Keine Kompromisse: Wir testen jede Website umfassend – auf allen Geräten, in allen gängigen Browsern. Performance, Sicherheit und Usability prüfen wir im Detail – für zuverlässige Ergebnisse.",
+      "title": "Schweizer Qualitätssicherung",
+      "description": "Keine Kompromisse bei Stabilität und Präzision: Wir testen jede Website gründlich – auf allen Geräten, in allen gängigen Browsern und unter realen Bedingungen. Von der Performance über die Sicherheit bis zur Usability prüfen wir alle Details sorgfältig, bevor Ihre Website live geht.",
       "performance": "Leistung",
       "bestPractices": "Bewährte Verfahren",
       "seo": "SEO"
     }
   },
   "value": {
-    "title": "Wert",
-    "tagline": " Mehr Wirkung. Mehr Ergebnis. Mehr als nur eine Website.",
+    "title": "Anspruch",
+    "tagline": "Mehr Wirkung. Mehr Ergebnis. Mehr als nur eine Website.",
     "description": "Bei Roxstein steht nicht das Produkt im Mittelpunkt, sondern das Ergebnis. Wir entwickeln Websites, die echten geschäftlichen Mehrwert liefern: klar strukturierte Abläufe im Hintergrund, mehr Beweglichkeit im Alltag und digitale Ergebnisse, die Sie geschäftlich weiterbringen. Unser Anspruch? Dass sich Ihre Investition nicht nur lohnt – sondern auszahlt.",
-    "descriptionMobile": "Wir entwickeln Produkte, die den Erfolg durch schnellere Arbeitsabläufe, tiefere Einblicke und höhere Conversion-Raten beschleunigen.",
+    "descriptionMobile": "Bei Roxstein steht nicht das Produkt im Mittelpunkt, sondern das Ergebnis. Wir entwickeln Websites, die echten geschäftlichen Mehrwert liefern: klar strukturierte Abläufe im Hintergrund, mehr Beweglichkeit im Alltag und digitale Ergebnisse, die Sie geschäftlich weiterbringen. Unser Anspruch? Dass sich Ihre Investition nicht nur lohnt – sondern auszahlt.",
     "getStarted": "Loslegen"
   },
   "faqs": {
-    "title": "Schnelle Antworten"
+    "title": "FAQs"
   },
   "secondCta": {
     "title": "Noch Fragen? Sprechen Sie unser Team direkt an",
@@ -102,9 +102,9 @@
   },
   "contactPage": {
     "title": "Kontakt",
-    "tagline": "Lassen Sie uns gemeinsam digitale Wirkung schaffen.",
-    "description": "Sie haben ein Projekt, eine Idee oder eine Frage? Schicken Sie uns eine Anfrage oder schreiben Sie uns direkt per E-Mail an",
-    "emailAddress": "kontakt@roxstein.ch",
+    "tagline": "Gmeinsam gestalten wir den nächsten Schritt.",
+    "description": "Sie haben ein Projekt, eine Idee oder eine Frage? Schicken Sie uns eine Anfrage oder schreiben Sie uns direkt per E-Mail an , wir melden uns zeitnah bei Ihnen.",
+    "emailAddress": "info@roxstein.ch",
     "form": {
       "name": {
         "label": "Vor- und Nachname",
@@ -127,7 +127,7 @@
         "label": "Dienstleitungen",
         "placeholder": "(Wählen Sie den Bereich oder die Bereiche, die Ihr Projekt betreffen)"
       },
-      "submit": "Jetzt Kontakt aufnehmen",
+      "submit": "Anfrage abschicken",
       "success": "Nachricht gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
       "error": "Es ist ein Fehler aufgetreten."
     }
@@ -136,8 +136,8 @@
     "title": "Über uns",
     "tagline": "Lernen Sie Roxstein und das Team kennen.",
     "years": {
-      "title": "Jahre im Geschäft",
-      "description": "Roxstein gibt es seit drei Jahren – unsere Erfahrung reicht jedoch weit darüber hinaus. Es besteht aus einem Team erfahrenen Fachleuten mit umfassender Kompetenz in Design, Entwicklung und digitaler Strategie.",
+      "title": "Erfahrung",
+      "description": "Roxstein gibt es zwei Jahren – unsere Erfahrung reicht jedoch weit darüber hinaus. Es besteht aus einem Team erfahrenen Fachleuten mit umfassender Kompetenz in Design, Entwicklung und digitaler Strategie.",
       "yearsOfExperience": "3+ Jahre Erfahrung",
       "projects": "57+ abgeschlossene Projekte"
     },
@@ -147,11 +147,11 @@
     },
     "values": {
       "title": "Unsere Werte bei Roxstein",
-      "description": "Bei Roxstein orientieren wir uns an klaren Grundsätzen, die unser tägliches Handeln prägen und Ihnen als Kunde echten Mehrwert bieten:"
+      "description": "Bei Roxstein orientieren wir uns an klaren Grundsätzen, die unser tägliches Handeln prägen und Ihnen als Kunde echten Mehrwert bieten."
     },
     "team": {
-      "title": "Das Team",
-      "description": "Roxstein vereint ein internationales Team von Experten mit vielfältigen Hintergründen und Kompetenzen.",
+      "title": "Unser Team",
+      "description": "Roxstein vereint ein globales Team von Experten mit vielfältigen Hintergründen und Kompetenzen.",
       "professional": "Professionell",
       "international": "International"
     }

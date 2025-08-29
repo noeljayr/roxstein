@@ -1,7 +1,7 @@
 "use client";
 
 import { IconMinus, IconPlus, IconQuestionMark } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { faqs_eng, faqs_ger } from "@/data/faq";
 import { useLocale, useTranslations } from "next-intl";
@@ -26,6 +26,12 @@ function FAQs() {
       setActiveQuestion(q);
     }
   };
+
+  useEffect(()=>{
+    setActiveCategory(faqs[0])
+  }, [setActiveCategory, faqs])
+
+  
   return (
     <AnimatePresence mode="wait">
       <motion.div layout className="section flex flex-col gap-2">
@@ -51,42 +57,13 @@ function FAQs() {
           layout="position"
           className="w-full bg-[#E6E6E6] border-[1px] border-[var(--border)] p-4 rounded-[var(--radius)]"
         >
-          <div className="flex max-sm:grid max-sm:grid-cols-2 max-sm:pb-4 max-sm:truncate gap-2 items-center">
-            {faqs.map((q, index) => {
-              const idx = index + 1;
-              return (
-                <motion.span
-                  layout="position"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{
-                    ease: [0.25, 0.1, 0.25, 1.0],
-                    duration: 0.5,
-                    delay: idx * 0.25,
-                  }}
-                  key={index}
-                  onClick={() => setActiveCategory(q)}
-                  style={{ transition: "var(--transition)" }}
-                  className={`category truncate text-center cursor-pointer rounded-4xl border-[1px] px-4 py-1.5 font-semibold select-none ${
-                    activeCategory == q
-                      ? "border-transparent bg-[var(--primary)] text-[var(--off-white)]"
-                      : "bg-[rgba(65,98,191,0.05)] border-[rgba(65,98,191,0.2)]"
-                  }`}
-                >
-                  {q.category}
-                </motion.span>
-              );
-            })}
-          </div>
-
           <motion.div
             layout="position"
             transition={{
               ease: [0.25, 0.1, 0.25, 1.0],
               duration: 0.25,
             }}
-            className="flex flex-col gap-1 mt-2 w-full overflow-hidden"
+            className="flex flex-col gap-1 w-full overflow-hidden"
           >
             {activeCategory.questions.map((q, index) => {
               const idx = index + 1;
@@ -151,20 +128,46 @@ function FAQs() {
                   </motion.span>
 
                   {activeQuestion === q && (
-                    <motion.p
-                      className="font-medium"
-                      layout
-                      transition={{
-                        ease: [0.25, 0.1, 0.25, 1.0],
-                        duration: 0.85,
-                      }}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.75 }}
-                      exit={{ opacity: 0 }}
-                      key={idx}
-                    >
-                      {q.answer}
-                    </motion.p>
+                    <>
+                      {q.list && q.last ? (
+                        <motion.div
+                          layout
+                          transition={{
+                            ease: [0.25, 0.1, 0.25, 1.0],
+                            duration: 0.85,
+                          }}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 0.75 }}
+                          exit={{ opacity: 0 }}
+                          key={idx}
+                        >
+                          <p className="font-medium">{q.answer}</p>
+                          <ul className="list-disc pl-6 my-1.5">
+                            {
+                              q.list.map((l, index)=>(
+                                <li className="font-medium" key={index}>{l}</li>
+                              ))
+                            }
+                          </ul>
+                          <p className="font-medium">{q.last}</p>
+                        </motion.div>
+                      ) : (
+                        <motion.p
+                          className="font-medium"
+                          layout
+                          transition={{
+                            ease: [0.25, 0.1, 0.25, 1.0],
+                            duration: 0.85,
+                          }}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 0.75 }}
+                          exit={{ opacity: 0 }}
+                          key={idx}
+                        >
+                          {q.answer}
+                        </motion.p>
+                      )}
+                    </>
                   )}
                 </motion.div>
               );

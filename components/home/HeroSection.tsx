@@ -92,9 +92,7 @@ function HeroSection() {
             {t("cta1")}
           </Link>
 
-          <Link target="_blank" href="tel:+41775090427" className="cta max-[450px]:hidden">
-            {t("cta2")}
-          </Link>
+      
         </motion.div>
       </div>
 

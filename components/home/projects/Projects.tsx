@@ -8,14 +8,14 @@ import { useTranslations } from "next-intl";
 
 const projects = [
   {
+    name: "Racket Service",
+    link: "https://www.racket-service.ch/",
+    image: "racket",
+  },
+  {
     name: "IRU",
     link: "https://www.immediateresponseunit.com/",
     image: "iru",
-  },
-  {
-    name: "Makoko Children Development Foundation",
-    link: "https://www.mcdf.ng/",
-    image: "makoko",
   },
   {
     name: "Rainbow Paints",

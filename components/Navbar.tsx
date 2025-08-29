@@ -114,7 +114,7 @@ function Navbar() {
         </div>
 
         <div className="flex items-center ml-auto min-[850px]:hidden space-x-4">
-          <LanguageMobile open={open} />
+          <LanguageMobile />
 
           <Link
             href="/contact"
@@ -245,17 +245,7 @@ function Navbar() {
                 {t("about")}
               </Link>
 
-              <Link
-                href="/contact"
-                className="cta-container max-sm:hidden cursor-pointer flex gap-0.5 items-center"
-              >
-                <button className="font-semibold cursor-pointer cta">
-                  {t("callUs")}
-                </button>
-                <span className="icon cursor-pointer">
-                  <Image src={arrowUpright} alt="arrow" />
-                </span>
-              </Link>
+             
 
               
             </motion.div>

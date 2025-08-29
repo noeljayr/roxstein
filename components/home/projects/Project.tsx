@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import iru from "@/public/projects/iru.png";
 import mzunipay from "@/public/projects/mzunipay.png";
 import rainbow from "@/public/projects/rainbow.png";
-import makoko from "@/public/projects/makoko.png";
+import racket from "@/public/projects/racket.png"
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -132,10 +132,10 @@ function Project({ project, index }: FinalTypes) {
             ? mzunipay
             : project.image === "rainbow"
             ? rainbow
-            : makoko
+            : racket
         }
         alt={project.name}
-        className="h-[140%] scale-[1.3] w-full object-cover object-center absolute z-[0]"
+        className="h-[140%] scale-[1.4] w-full object-cover object-center absolute z-[0]"
       />
     </motion.a>
   );

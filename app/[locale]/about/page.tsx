@@ -1,6 +1,11 @@
 "use client";
 import { motion } from "motion/react";
-import { IconInfoCircleFilled } from "@tabler/icons-react";
+import {
+  IconBrandLinkedin,
+  IconInfoCircleFilled,
+  IconMail,
+  IconPhone,
+} from "@tabler/icons-react";
 import React, { useEffect, useState } from "react";
 import tron from "@/public/tron-analytics.png";
 import Image from "next/image";
@@ -32,11 +37,11 @@ const englishValues = [
 const germanValues = [
   {
     title: "Handwerkskunst",
-    p: "Ihre Zufriedenheit steht im Mittelpunkt. Deshalb holen wir kontinuierlich Feedback ein und optimieren unsere Prozesse, um Ihre Erwartungen nicht nur zu erfüllen, sondern zu übertreffen. So entstehen digitale Lösungen, die genau auf Ihre Bedürfnisse zugeschnitten sind.",
+    p: `Jedes Projekt ist für uns ein Meisterwerk - kein Standardprodukt. Für uns bedeutet „fertig" nicht nur abgeschlossen, sondern perfekt umgesetzt. Qualität, Präzision und Liebe zum Detail sind für uns selbstverständlich.`,
   },
   {
     title: "Kundenorientierung",
-    p: "Ihre Zufriedenheit steht im Mittelpunkt. Deshalb holen wir kontinuierlich Feedback ein und optimieren unsere Prozesse, um Ihre Erwartungen nicht nur zu erfüllen, sondern zu übertreffen. So entstehen digitale Lösungen, die genau auf Ihre Bedürfnisse zugeschnitten sind.",
+    p: "Ihre Zufriedenheit steht im Mittelpunkt. Deshalb holen wir kontinuierlich Feedback ein und optimieren unsere Prozesse, um Ihre Erwartungen nicht nur zu erfüllen, sondern zu übertreffen. So entstehen digitale Lösungen, die genau auf lhre Bedürfnisse zugeschnitten sind.",
   },
   {
     title: "Zusammenarbeit",
@@ -50,24 +55,44 @@ const team = [
     position: "Chief Executive Officer",
     courtry: "Switzerland",
     profile: prof1,
+    contact: {
+      linkedIn: "https://www.linkedin.com/in/gian-iglowstein/",
+      phone: "+41775090427",
+      email: "gian@roxstein.ch",
+    },
   },
   {
     name: "Robin Stambach",
     position: "Chief Financial Officer",
     courtry: "Switzerland",
     profile: prof5,
+    contact: {
+      linkedIn: "",
+      phone: "",
+      email: "",
+    },
   },
   {
     name: "Taiwo Emanuel Jolomi",
     position: "Full Stack developer",
     courtry: "Nigeria",
     profile: prof2,
+    contact: {
+      linkedIn: "https://www.linkedin.com/in/jolomitee/",
+      phone: "+2349061603717",
+      email: "taiwo@roxstein.ch",
+    },
   },
   {
     name: "Noel Luhanga",
     position: "UI/UX Designer",
     courtry: "Malawi",
     profile: prof6,
+    contact: {
+      linkedIn: "https://www.linkedin.com/in/noel-jr-luhanga-2890a5229/",
+      phone: "+265886047774",
+      email: "noel@roxstein.ch",
+    },
   },
 ];
 
@@ -112,34 +137,6 @@ function AboutUs() {
             >
               {t("years.title")}
             </motion.span>
-            <div className="flex gap-2 ml-auto max-[850px]:absolute max-[850px]:bottom-4">
-              <motion.span
-                initial={{ opacity: 0, x: -40 }}
-                transition={{
-                  ease: [0.25, 0.1, 0.25, 1.0],
-                  duration: 0.85,
-                  delay: 0.35,
-                }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="font-bold font-p-4 px-4 py-2 bg-[#D6D9E3] rounded-4xl text-[var(--primary)]"
-              >
-                {t("years.yearsOfExperience")}
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, x: -40 }}
-                transition={{
-                  ease: [0.25, 0.1, 0.25, 1.0],
-                  duration: 0.85,
-                  delay: 0.55,
-                }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="font-bold font-p-4 px-4 py-2 bg-[#D0E0DB] rounded-4xl text-[#03825E]"
-              >
-                {t("years.projects")}
-              </motion.span>
-            </div>
           </div>
 
           <motion.p
@@ -251,34 +248,6 @@ function AboutUs() {
             >
               {t("team.title")}
             </motion.span>
-            <div className="flex gap-2 ml-auto  max-[850px]:absolute max-[850px]:bottom-4">
-              <motion.span
-                initial={{ opacity: 0, x: -40 }}
-                transition={{
-                  ease: [0.25, 0.1, 0.25, 1.0],
-                  duration: 0.85,
-                  delay: 0.35,
-                }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="font-bold font-p-4 px-4 py-2 bg-[#E3D6DC] rounded-4xl text-[#BF4182]"
-              >
-                {t("team.professional")}
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, x: -40 }}
-                transition={{
-                  ease: [0.25, 0.1, 0.25, 1.0],
-                  duration: 0.85,
-                  delay: 0.55,
-                }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="font-bold font-p-4 px-4 py-2 bg-[#DDDBCF] rounded-4xl text-[#847500]"
-              >
-                {t("team.international")}
-              </motion.span>
-            </div>
           </div>
 
           <motion.p
@@ -339,6 +308,41 @@ function AboutUs() {
                 <span className="font-medium opacity-70 font-p-3 mt-1">
                   {m.position}
                 </span>
+
+                <div className="flex gap-4 mt-3">
+                  <a
+                    target="_blank"
+                    href={`mailto:${m.contact.email}`}
+                    style={{
+                      border: "1px solid rgba(44, 44, 53, 0.2)",
+                    }}
+                    className="bg-white h-6.5 w-6.5 border rounded-[0.5rem] flex items-center justify-center"
+                  >
+                    <IconMail color="#1C68C0" className="h-4 w-4" />
+                  </a>
+
+                  <a
+                    target="_blank"
+                    href={m.contact.linkedIn}
+                    style={{
+                      border: "1px solid rgba(44, 44, 53, 0.2)",
+                    }}
+                    className="bg-white h-6.5 w-6.5 border rounded-[0.5rem] flex items-center justify-center"
+                  >
+                    <IconBrandLinkedin color="#1C68C0" className="h-4 w-4" />
+                  </a>
+
+                  <a
+                    target="_blank"
+                    href={`tel:${m.contact.phone}`}
+                    style={{
+                      border: "1px solid rgba(44, 44, 53, 0.2)",
+                    }}
+                    className="bg-white h-6.5 w-6.5 border rounded-[0.5rem] flex items-center justify-center"
+                  >
+                    <IconPhone color="#1C68C0" className="h-4 w-4" />
+                  </a>
+                </div>
 
                 <hr className="bg-[var(--border)] hidden max-sm:flex h-[1px] border-0 mb-2 mt-3" />
               </motion.div>

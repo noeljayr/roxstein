@@ -15,7 +15,7 @@ function Reason2() {
       viewport={{ once: true }}
       className="reason"
     >
-      <span className="number relative z-[2]">02</span>
+     
       <span className="title relative z-[2]">Tailored Solutions</span>
 
       <p className="opacity-85 relative z-[2]">
