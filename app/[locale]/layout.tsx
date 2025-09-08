@@ -25,7 +25,7 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale };
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
 
   if (!routing.locales.includes(locale)) {
     notFound();
@@ -47,7 +47,7 @@ export async function generateMetadata({
     openGraph: {
       title: messages.meta.title,
       description: messages.meta.description,
-      url: new URL("/", "https://www.roxstein.ch").toString(),
+      url: new URL(`/${locale}`, "https://www.roxstein.ch").toString(),
       images: [
         new URL("/opengraph-image.png", "https://www.roxstein.ch").toString(),
       ],
@@ -58,16 +58,20 @@ export async function generateMetadata({
     twitter: {
       title: messages.meta.title,
       description: messages.meta.description,
-
-      images: [
-        new URL("/twitter-image.png", "https://www.roxstein.ch").toString(),
-      ],
+      images: [`https://www.roxstein.ch/${locale}/twitter-image.png`],
       card: "summary_large_image",
       site: "@roxstein",
       creator: "@roxstein",
     },
+    alternates: {
+      canonical: `https://www.roxstein.ch/${locale}`,
+      languages: {
+        en: "https://www.roxstein.ch/en",
+        de: "https://www.roxstein.ch/de",
+        "x-default": "https://www.roxstein.ch/de",
+      },
+    },
     metadataBase: new URL("https://www.roxstein.ch"),
-    viewport: "width=device-width, initial-scale=1",
   };
 }
 
@@ -88,7 +92,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <NextTopLoader color="#4162bf" showSpinner={false}  />
+          <NextTopLoader color="#4162bf" showSpinner={false} />
           <Navbar />
           {children}
           <Footer />

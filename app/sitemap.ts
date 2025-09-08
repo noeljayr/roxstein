@@ -1,51 +1,21 @@
-import type { MetadataRoute } from "next";
+// app/sitemap.ts
+import { MetadataRoute } from "next";
+import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://www.roxstein.ch/de",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: "https://www.roxstein.ch/en",
-      lastModified: new Date(),
-      priority: 0.9,
-      changeFrequency: "weekly",
-    },
-    {
-      url: "https://www.roxstein.ch/de/contact",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.roxstein.ch/en/contact",
-      lastModified: new Date(),
-      priority: 0.7,
-    },
-    {
-      url: "https://www.roxstein.ch/de/about",
-      lastModified: new Date(),
-      priority: 0.6,
-    },
-    {
-      url: "https://www.roxstein.ch/en/about",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: "https://www.roxstein.ch/de/imprint",
-      lastModified: new Date(),
-      priority: 0.4,
-    },
+  const baseUrl = "https://www.roxstein.ch";
 
-    {
-      url: "https://www.roxstein.ch/en/imprint",
-      lastModified: new Date(),
-      priority: 0.3,
-    },
+  const routes = [
+    "/",
+    "/about",
+    "/imprint",
+    "/contact",
   ];
+
+  return routes.flatMap((route) =>
+    routing.locales.map((locale) => ({
+      url: `${baseUrl}/${locale}${route === "/" ? "" : route}`,
+      lastModified: new Date(),
+    }))
+  );
 }

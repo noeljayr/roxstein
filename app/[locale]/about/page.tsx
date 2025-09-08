@@ -16,8 +16,7 @@ import prof6 from "@/public/team/prof6.jpg";
 import switzerland from "@/public/team/country/switzerland.png";
 import nigeria from "@/public/team/country/nigeria.png";
 import mw from "@/public/team/country/malawi.png";
-import { useLocale } from "next-intl";
-import { useTranslations } from "use-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const englishValues = [
   {

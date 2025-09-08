@@ -148,7 +148,7 @@ function Navbar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.5 }}
-                onClick={close}
+                onClick={() => setOpen(false)}
                 className="cursor-pointer"
               >
                 <IconMenu className="h-5 w-5 opacity-70" />
