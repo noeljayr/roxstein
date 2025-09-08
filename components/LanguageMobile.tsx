@@ -68,7 +68,7 @@ function LanguageMobile() {
           >
             <span
               onClick={() => changeLanguage("de")}
-              className={`flex p-1.5 gap-1 items-center ${
+              className={`flex cursor-pointer p-1.5 gap-1 items-center ${
                 prefLanguage == "de" ? "opacity-100" : "opacity-35"
               }`}
             >
@@ -78,7 +78,7 @@ function LanguageMobile() {
             <hr className="bg-[var(--border)] border-0 h-[1px]" />
             <span
               onClick={() => changeLanguage("en")}
-              className={`flex p-1.5 gap-1 items-center ${
+              className={`flex cursor-pointer p-1.5 gap-1 items-center ${
                 prefLanguage == "en" ? "opacity-100" : "opacity-35"
               }`}
             >

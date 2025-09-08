@@ -5,6 +5,9 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  images: {
+    unoptimized: true, // Disables all image optimizations globally
+  },
 };
 
 export default withNextIntl(nextConfig);

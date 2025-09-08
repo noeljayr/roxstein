@@ -17,7 +17,6 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-
   const handleScroll = useCallback(() => {
     const scrolled = window.scrollY >= 35;
     setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
@@ -45,7 +44,9 @@ function Navbar() {
               pathname === "/de/"
             ? "w-screen px-5"
             : "w-[80vw]  max-[850px]:w-[calc(100vw_-_2rem)] min-[1440px]:w-[60vw]"
-        } ${isScrolled && !open ? '' : ''} grid grid-cols-[10rem_auto_10rem] max-[850px]:flex justify-between items-center`}
+        } ${
+          isScrolled && !open ? "" : ""
+        } grid grid-cols-[10rem_auto_10rem] max-[850px]:flex justify-between items-center`}
       >
         <Link href="/" className="logo font-bold flex select-none">
           <span className="font-h-2 font-extrabold text-[var(--primary)]">
@@ -156,8 +157,9 @@ function Navbar() {
           </button>
         </div>
 
-        <Link
-          href="/contact"
+        <a
+          target="_blank"
+          href="tel:+41715896530"
           className="cta-container cursor-pointer flex ml-auto gap-0.5 max-[850px]:hidden   items-center"
         >
           <button className="font-semibold cursor-pointer cta">
@@ -166,7 +168,7 @@ function Navbar() {
           <span className="icon cursor-pointer">
             <Image src={arrowUpright} alt="arrow" />
           </span>
-        </Link>
+        </a>
       </div>
 
       <AnimatePresence>
@@ -244,10 +246,6 @@ function Navbar() {
               >
                 {t("about")}
               </Link>
-
-             
-
-              
             </motion.div>
           </>
         )}

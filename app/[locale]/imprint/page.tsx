@@ -20,49 +20,61 @@ function Imprint() {
 
       <div className="flex flex-col gap-8 p-4 w-full bg-[#E6E6E6] border-[1px] border-[var(--border)] rounded-[var(--radius)]">
         <div className="flex flex-col gap-2">
-          <span className="font-semibold font-p-1">{t("managment")}</span>
-          <span className="flex gap-2">
-            <span className="font-semibold">{t("director")}: </span>
-            <span className="font-medium opacity-70">Gian Iglowstein</span>
-          </span>
-        </div>
-
-        <div className="flex flex-col gap-2">
           <span className="font-semibold font-p-1">{t("contact.title")}</span>
           <span className="flex gap-2">
-            <span className="font-semibold">{t("contact.email")}: </span>
-            <span className="font-medium opacity-70 underline">
-              contact@netflash.ch
+            <span className="font-semibold">Name: </span>
+            <span className="font-medium opacity-70 ">
+              Roxstein Iglowstein {`(${t("sole")})`}
             </span>
+          </span>
+          <span className="flex gap-2">
+            <span className="font-semibold">{t("managment")}: </span>
+            <span className="font-medium opacity-70 ">Gian Iglowstein</span>
+          </span>
+
+          <span className="flex gap-2">
+            <span className="font-semibold">{t("contact.email")}: </span>
+            <a
+              className="font-medium opacity-70 underline"
+              target="_blank"
+              href="mailto:info@netflash.ch"
+            >
+              info@netflash.ch
+            </a>
           </span>
           <span className="flex gap-2">
             <span className="font-semibold">{t("contact.phone")}: </span>
-            <span className="font-medium opacity-70 ">+41 77 509 04 27</span>
+            <a
+              className="font-medium opacity-70 underline"
+              target="_blank"
+              href="tel:+41715896530"
+            >
+              +41 71 589 65 30
+            </a>
           </span>
           <span className="flex gap-2">
-            <span className="font-semibold">
-              {t("contact.address.title")}:{" "}
-            </span>
+            <span className="font-semibold">{t("contact.address.title")}:</span>
             <span className="font-medium opacity-70 ">
               {t("contact.address.value")}
             </span>
           </span>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <span className="font-semibold font-p-1">
-            {t("contact.company.title")}:
-          </span>
-          <span className="flex gap-2">
-            <span className="font-semibold">{t("contact.company.reg")}: </span>
-            <span className="font-medium opacity-70">CH-123456</span>
-          </span>
 
           <span className="flex gap-2">
             <span className="font-semibold">
-              {t("contact.company.vat")} {`(${t("contact.company.extra")})`}:{" "}
+              {t("contact.language.title")}:
             </span>
-            <span className="font-medium opacity-70">CHE-789.101.112 MWST</span>
+            <span className="font-medium opacity-70">
+              {t("contact.language.value")}
+            </span>
+          </span>
+
+          <span className="flex gap-2">
+            <span className="font-semibold whitespace-nowrap">
+              {t("contact.disclaimer.title")}:
+            </span>
+            <span className="font-medium opacity-70">
+            {t("contact.disclaimer.value")}
+            </span>
           </span>
         </div>
       </div>

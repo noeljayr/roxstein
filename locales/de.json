@@ -39,7 +39,7 @@
     "tri": {
       "local": "Global.",
       "reliable": "Zuverlässig.",
-      "affordable": "Qualitativ."
+      "affordable": "Hochwertig."
     },
     "tagline": "Gmeinsam zum Gschäftserfolg.",
     "description": "Wenn Schweizer Qualität auf globales Talent trifft, entstehen Webseiten, die wirken – für mehr Sichtbarkeit, mehr Kunden und messbares Wachstum.",
@@ -159,21 +159,31 @@
   "imprint": {
     "title": "Impressum",
     "tagline": "Wir legen Wert auf Transparenz und Einhaltung der Rechtsvorschriften",
-    "managment": "Geschäftsleitung",
+    "description": "References and links to third-party websites are outside our area of ​​responsibility. We disclaim any responsibility for such websites. Access to and use of such websites is at the user's own risk.",
+    "managment": "Inhaber",
+    "sole": "Einzelunternehmen",
     "director": "Geschäftsführer",
     "contact": {
       "title": "Kontakt",
       "email": "E-Mail",
       "phone": "Telefon",
       "address": {
-        "title": "Anschrift",
-        "value": "CH, ggf. PLZ und Stadt ergänzen"
+        "title": "Adresse",
+        "value": "Sonnenrainstrasse 12B, 9205 Waldkirch, Schweiz"
+      },
+      "language": {
+        "title": "Sprache",
+        "value": "Die deutsche Version des Impressums ist verbindlich."
+      },
+      "disclaimer": {
+        "title": "Haftungsausschluss für",
+        "value": "Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt."
       },
       "company": {
         "title": "Unternehmensinformationen",
         "reg": "Handelsregisternummer",
         "vat": "Mehrwertsteuernummer",
-        "extra": "(MwSt)"
+        "extra": "MwSt"
       }
     }
   }

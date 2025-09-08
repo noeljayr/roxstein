@@ -22,15 +22,15 @@ import { useTranslations } from "use-intl";
 const englishValues = [
   {
     title: "Craftsmanship",
-    p: "Treat projects as a craft. “Done isn’t enough, done right is the only standard.”",
+    p: `Every project is a masterpiece to us – never just a standard product. For us, “finished” doesn’t simply mean done, but flawlessly executed. Quality, precision, and attention to detail come naturally.`,
   },
   {
-    title: "Client centric",
-    p: "We regularly ask for feedback and keep improving our work to make sure it really makes clients happy.",
+    title: "Customer Focus",
+    p: "Your satisfaction is at the heart of what we do. We continuously gather feedback and refine our processes to not only meet but exceed your expectations. The result: digital solutions tailored precisely to your needs.",
   },
   {
     title: "Collaboration",
-    p: "Open communication, clear roadmaps, honest status reports.",
+    p: "Transparency and open communication are the foundation of our partnership. With clear timelines, honest progress updates, and close dialogue, we ensure you always know where your project stands — and that it moves forward seamlessly.",
   },
 ];
 
@@ -222,9 +222,11 @@ function AboutUs() {
               viewport={{ once: true }}
               className="flex relative bg-[#FFFFFF] rounded-[var(--radius-m)] w-full h-full overflow-hidden"
             >
-              <Image
-                src={tron}
-                alt=""
+              <img
+                src={
+                  "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/tron-analytics.png"
+                }
+                alt="tron"
                 className="scale-[1.5] top-[25%] left-[30%] w-full h-fit absolute z-[1] "
               />
               <span className="absolute z-[2] h-full w-full left-0 top-0 bg-[rgba(21,21,25,0.2)]"></span>
