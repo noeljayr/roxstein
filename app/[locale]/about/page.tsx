@@ -7,7 +7,7 @@ import {
   IconPhone,
 } from "@tabler/icons-react";
 import React, { useEffect, useState } from "react";
-import tron from "@/public/tron-analytics.png";
+// import tron from "@/public/tron-analytics.png";
 import Image from "next/image";
 import prof1 from "@/public/team/prof1.png";
 import prof2 from "@/public/team/prof2.png";
