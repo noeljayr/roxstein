@@ -47,9 +47,9 @@ function Imprint() {
             <a
               className="font-medium opacity-70 underline"
               target="_blank"
-              href="tel:+41715896530"
+              href="tel:+41783324939"
             >
-              +41 71 589 65 30
+              +41 78 332 49 39
             </a>
           </span>
           <span className="flex gap-2">

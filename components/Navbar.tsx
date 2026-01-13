@@ -159,7 +159,7 @@ function Navbar() {
 
         <a
           target="_blank"
-          href="tel:+41715896530"
+          href="tel:+41783324939"
           className="cta-container cursor-pointer flex ml-auto gap-0.5 max-[850px]:hidden   items-center"
         >
           <button className="font-semibold cursor-pointer cta">

@@ -5,14 +5,14 @@ import {
   IconInfoCircleFilled,
   IconMail,
   IconPhone,
+  IconUserFilled,
 } from "@tabler/icons-react";
 import React, { useEffect, useState } from "react";
 // import tron from "@/public/tron-analytics.png";
 import Image from "next/image";
-import prof1 from "@/public/team/prof1.png";
-import prof2 from "@/public/team/prof2.png";
-import prof5 from "@/public/team/prof5.png";
-import prof6 from "@/public/team/prof6.jpg";
+import gian from "@/public/team/gian.jpg";
+import ken from "@/public/team/ken.jpg";
+import noel from "@/public/team/noel.jpg";
 import switzerland from "@/public/team/country/switzerland.png";
 import nigeria from "@/public/team/country/nigeria.png";
 import mw from "@/public/team/country/malawi.png";
@@ -51,42 +51,39 @@ const germanValues = [
 const team = [
   {
     name: "Gian Iglowstein",
-    position: "Chief Executive Officer",
+    position: "Inhaber",
     courtry: "Switzerland",
-    profile: prof1,
+    profile: gian,
     contact: {
       linkedIn: "https://www.linkedin.com/in/gian-iglowstein/",
-      phone: "+41775090427",
       email: "gian@roxstein.ch",
     },
   },
   {
-    name: "Robin Stambach",
-    position: "Chief Financial Officer",
+    name: "Aisa Hozdic",
+    position: "Marketing Officer",
     courtry: "Switzerland",
-    profile: prof5,
+    profile: null,
     contact: {
-      linkedIn: "",
-      phone: "",
-      email: "",
+      linkedIn: "https://www.linkedin.com/in/aisa-hozdic-a81874368/",
+      email: "aisa@roxstein.ch",
     },
   },
   {
-    name: "Taiwo Emanuel Jolomi",
-    position: "Full Stack developer",
-    courtry: "Nigeria",
-    profile: prof2,
+    name: "Ken Nyirenda",
+    position: "Brand and Visual Designer",
+    courtry: "Malawi",
+    profile: ken,
     contact: {
-      linkedIn: "https://www.linkedin.com/in/jolomitee/",
-      phone: "+2349061603717",
-      email: "taiwo@roxstein.ch",
+      linkedIn: "https://www.linkedin.com/in/ken-nyirenda-99549226b/",
+      email: "ken@roxstein.ch",
     },
   },
   {
     name: "Noel Luhanga",
     position: "UI/UX Designer",
     courtry: "Malawi",
-    profile: prof6,
+    profile: noel,
     contact: {
       linkedIn: "https://www.linkedin.com/in/noel-jr-luhanga-2890a5229/",
       phone: "+265886047774",
@@ -281,11 +278,15 @@ function AboutUs() {
                 key={index}
                 className="flex flex-col"
               >
-                <Image
+                <div className="w-full h-auto aspect-square items-center justify-center flex bg-black/5 rounded-[var(--radius-m)] overflow-hidden">
+                  {
+                    m.profile ? <Image
                   src={m.profile}
                   alt=""
                   className="w-full h-auto aspect-square object-cover rounded-[var(--radius-m)]"
-                />
+                /> : <IconUserFilled className="h-10 w-10 opacity-25" />
+                  }
+                </div>
 
                 <div className="grid grid-cols-[1fr_auto] pt-3 truncate items-center">
                   <span className="font-semibold font-p-2 truncate">
@@ -333,7 +334,7 @@ function AboutUs() {
                     <IconBrandLinkedin color="#1C68C0" className="h-4 w-4" />
                   </a>
 
-                  <a
+                  {/* <a
                     target="_blank"
                     href={`tel:${m.contact.phone}`}
                     style={{
@@ -342,7 +343,7 @@ function AboutUs() {
                     className="bg-white h-6.5 w-6.5 border rounded-[0.5rem] flex items-center justify-center"
                   >
                     <IconPhone color="#1C68C0" className="h-4 w-4" />
-                  </a>
+                  </a> */}
                 </div>
 
                 <hr className="bg-[var(--border)] hidden max-sm:flex h-[1px] border-0 mb-2 mt-3" />

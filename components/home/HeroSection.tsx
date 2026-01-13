@@ -28,7 +28,7 @@ function HeroSection() {
   return (
     <motion.div className="hero-section h-[25rem] flex max-[980px]:items-center max-[980px]:justify-center  max-[980px]:flex-col relative items-center overflow-hidden justify-between">
       <div className="flex flex-col gap-3 max-[980px]:items-center  ">
-        <div className="flex w-[60ch] max-[980px]:w-fit flex-col gap-1 max-[980px]:items-center">
+        <div className="flex w-[62ch] max-[980px]:w-fit flex-col gap-1 max-[980px]:items-center">
           <motion.span
             initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -71,7 +71,7 @@ function HeroSection() {
             }}
             whileInView={{ y: 0, opacity: 0.85 }}
             viewport={{ once: true }}
-            className="w-full font-medium opacity-85 max-[980px]:text-center max-[980px]:w-[55ch] max-[480px]:w-full"
+            className="w-[85%] font-medium opacity-75 max-[980px]:text-center max-[980px]:w-[55ch] max-[480px]:w-full"
           >
             {t("description")}
           </motion.p>

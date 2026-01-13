@@ -5,28 +5,29 @@ import React from "react";
 import Project from "./Project";
 import { useTranslations } from "next-intl";
 
-
 const projects = [
+  {
+    name: "Beauceron Vom Sauterhof",
+    link: "http://projects.roxstein.ch/vomsauterhof",
+    image: "vom",
+  },
+
+  {
+    name: `Gian's Bus Service`,
+    link: "https://gbs-ps.vercel.app/",
+    image: "gbs",
+  },
+
   {
     name: "Racket Service",
     link: "https://www.racket-service.ch/",
     image: "racket",
   },
-  {
-    name: "IRU",
-    link: "https://www.immediateresponseunit.com/",
-    image: "iru",
-  },
-  {
-    name: "Rainbow Paints",
-    link: "https://www.figma.com/design/QJ69eHpn3hgP0xP5VpKdtq/Rainbow?node-id=0-1&p=f&t=rHA0OvGDNUzdHLvf-0",
-    image: "rainbow",
-  },
 
   {
-    name: "MzuniPay",
-    link: "https://mzunipay.vercel.app/",
-    image: "mzunipay",
+    name: "IRU",
+    link: "https://iru-lime.vercel.app/",
+    image: "iru",
   },
 ];
 

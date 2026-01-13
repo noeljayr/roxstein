@@ -1,12 +1,12 @@
 "use client";
 
-
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import iru from "@/public/projects/iru.png";
 import mzunipay from "@/public/projects/mzunipay.png";
-import rainbow from "@/public/projects/rainbow.png";
-import racket from "@/public/projects/racket.png"
+import racket from "@/public/projects/racket.png";
+import vom from "@/public/projects/vom.png";
+import gbs from "@/public/projects/gbs.png";
+import iru from "@/public/projects/iru.png";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -87,7 +87,7 @@ function Project({ project, index }: FinalTypes) {
       target="_blank"
       ref={ref}
       href={project.link}
-      className="project w-full h-full bg-[#E6E6E6] cursor-none relative overflow-hidden rounded-[var(--radius)] border border-[var(--border)] flex items-center justify-center max-[800px]:aspect-square"
+      className={`project w-full h-full bg-[#E6E6E6] cursor-none relative overflow-hidden rounded-[var(--radius)] border border-black/10 flex items-center justify-center max-[800px]:aspect-square`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -106,11 +106,11 @@ function Project({ project, index }: FinalTypes) {
             scale: 1,
             opacity: 1,
           }}
-          transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0.15 }}
+          transition={{ ease: [0.25, 0.1, 0.25, 1.0], duration: 0 }}
           exit={{
             scale: 0,
             opacity: 0,
-            transition: { duration: 0.15 },
+            transition: { duration: 0 },
           }}
           className="absolute z-[2] indicator h-[5rem] w-[5rem] bg-[var(--primary)] text-[var(--off-white)] flex items-center justify-center text-center font-bold rounded-full pointer-events-none"
           style={{
@@ -126,16 +126,16 @@ function Project({ project, index }: FinalTypes) {
 
       <Image
         src={
-          project.image === "iru"
+          project.image === "vom"
+            ? vom
+            : project.image == "iru"
             ? iru
-            : project.image == "mzunipay"
-            ? mzunipay
-            : project.image === "rainbow"
-            ? rainbow
+            : project.image === "gbs"
+            ? gbs
             : racket
         }
         alt={project.name}
-        className="h-[140%] scale-[1.4] w-full object-cover object-center absolute z-[0]"
+        className={` w-[85%] border ${project.image === "vom" ? "border-black/10" : "border-black/5"} top-[10%] rounded-[var(--radius-s)] shadow-lg h-fit object-cover object-center absolute z-[0]`}
       />
     </motion.a>
   );
