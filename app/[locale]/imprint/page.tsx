@@ -37,9 +37,9 @@ function Imprint() {
             <a
               className="font-medium opacity-70 underline"
               target="_blank"
-              href="mailto:info@netflash.ch"
+              href="mailto:info@roxstein.ch"
             >
-              info@netflash.ch
+              info@roxstein.ch
             </a>
           </span>
           <span className="flex gap-2">
@@ -73,7 +73,7 @@ function Imprint() {
               {t("contact.disclaimer.title")}:
             </span>
             <span className="font-medium opacity-70">
-            {t("contact.disclaimer.value")}
+              {t("contact.disclaimer.value")}
             </span>
           </span>
         </div>
