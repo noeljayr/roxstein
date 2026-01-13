@@ -61,7 +61,7 @@ const team = [
   },
   {
     name: "Aisa Hozdic",
-    position: "Marketing Officer",
+    position: "Marketing & Sales",
     courtry: "Switzerland",
     profile: null,
     contact: {
@@ -71,7 +71,7 @@ const team = [
   },
   {
     name: "Ken Nyirenda",
-    position: "Brand and Visual Designer",
+    position: "Brand & Visual Designer",
     courtry: "Malawi",
     profile: ken,
     contact: {
