@@ -6,10 +6,18 @@ import Project from "./Project";
 import { useTranslations } from "next-intl";
 
 const projects = [
+
+  
   {
-    name: "Beauceron Vom Sauterhof",
-    link: "http://projects.roxstein.ch/vomsauterhof",
-    image: "vom",
+    name: "Racket Service",
+    link: "https://www.racket-service.ch/",
+    image: "racket",
+  },
+
+  {
+    name: "The Makoko Dream Foundation",
+    link: "https://makoko-dream-ten.vercel.app/",
+    image: "mdf",
   },
 
   {
@@ -18,11 +26,6 @@ const projects = [
     image: "gbs",
   },
 
-  {
-    name: "Racket Service",
-    link: "https://www.racket-service.ch/",
-    image: "racket",
-  },
 
   {
     name: "IRU",

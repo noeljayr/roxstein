@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import mzunipay from "@/public/projects/mzunipay.png";
 import racket from "@/public/projects/racket.png";
-import vom from "@/public/projects/vom.png";
+import mdf from "@/public/projects/mdf.png"
 import gbs from "@/public/projects/gbs.png";
 import iru from "@/public/projects/iru.png";
 import Image from "next/image";
@@ -126,8 +126,8 @@ function Project({ project, index }: FinalTypes) {
 
       <Image
         src={
-          project.image === "vom"
-            ? vom
+          project.image === "mdf"
+            ? mdf
             : project.image == "iru"
             ? iru
             : project.image === "gbs"
