@@ -311,7 +311,7 @@ function AboutUs() {
                   {m.position}
                 </span>
 
-                <div className="flex gap-4 mt-3">
+                <div className="flex gap-2 mt-3">
                   <a
                     target="_blank"
                     href={`mailto:${m.contact.email}`}

@@ -130,7 +130,6 @@
       "submit": "Jetzt Kontakt aufnehmen",
       "success": "Nachricht gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
       "error": "Es ist ein Fehler aufgetreten."
-    
     }
   },
   "aboutUs": {
@@ -171,7 +170,7 @@
         "value": "CH, ggf. PLZ und Stadt ergänzen"
       },
       "company": {
-        "title" : "Unternehmensinformationen",
+        "title": "Unternehmensinformationen",
         "reg": "Handelsregisternummer",
         "vat": "Mehrwertsteuernummer",
         "extra": "(MwSt)"

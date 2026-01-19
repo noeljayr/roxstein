@@ -4,7 +4,7 @@ import { createNavigation } from "next-intl/navigation";
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  locales: ["en", "de",],
+  locales: ["en", "de"],
   defaultLocale: "de",
   pathnames: {
     "/": {
@@ -31,9 +31,9 @@ export const routing = defineRouting({
       en: "/contact",
       de: "/kontakt",
     },
-    "tel:+41775090427": {
-      en: "tel:+41775090427",
-      de: "tel:+41775090427",
+    "tel:+41783324939": {
+      en: "tel:+41783324939",
+      de: "tel:+41783324939",
     },
     "https://www.linkedin.com/company/roxstein/": {
       en: "https://www.linkedin.com/company/roxstein/",

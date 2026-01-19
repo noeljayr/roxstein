@@ -95,15 +95,15 @@ function Contact() {
     emptyFields();
   }, [name, email, phone, message, selectedServices, emptyFields]);
 
-  useEffect(()=>{
-    if(success){
-      setEmail("")
-      setName("")
-      setMessage("")
-      setPhone("")
-      setSelectedServices([])
+  useEffect(() => {
+    if (success) {
+      setEmail("");
+      setName("");
+      setMessage("");
+      setPhone("");
+      setSelectedServices([]);
     }
-  }, [success])
+  }, [success]);
 
   return (
     <div className="section flex flex-col mt-8">
@@ -198,7 +198,7 @@ function Contact() {
             <input
               required
               type="text"
-              placeholder="+41"
+              placeholder="+41 98 765 43 21"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
@@ -213,9 +213,10 @@ function Contact() {
               </span>
             </label>
             <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder={t("form.message.placeholder")} />
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder={t("form.message.placeholder")}
+            />
           </div>
         </div>
 

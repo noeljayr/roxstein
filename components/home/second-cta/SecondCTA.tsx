@@ -36,7 +36,7 @@ function SecondCTA() {
       >
         <Link
           target="_blank"
-          href="tel:+41775090427"
+          href="tel:+41783324939"
           className="cta-container w-fit flex items-center gap-0.5"
         >
           <div className="cta">{t("cta")}</div>
