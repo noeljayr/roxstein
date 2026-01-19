@@ -1,10 +1,10 @@
 "use client";
 
-
 import { Link } from "@/i18n/routing";
 import { IconBrandLinkedin } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
+import HashLink from "./HashLink";
 
 function Footer() {
   const t = useTranslations("navbar");
@@ -51,9 +51,9 @@ function Footer() {
           <Link href="/contact" className="font-semibold">
             {contact}
           </Link>
-          <Link href="/#projects" className="font-semibold">
+          <HashLink href="#projects" className="font-semibold">
             {work}
-          </Link>
+          </HashLink>
         </motion.div>
 
         <motion.div
@@ -75,15 +75,13 @@ function Footer() {
           </Link>
         </motion.div>
 
-      
-
         <div className="w-full items-center mt-4 gap-4 hidden max-[800px]:flex">
           <Link href="/contact" className="font-semibold">
             {contact}
           </Link>
-          <Link href="/#projects" className="font-semibold">
+          <HashLink href="#projects" className="font-semibold">
             {work}
-          </Link>
+          </HashLink>
 
           <Link href="/about" className="font-semibold">
             {about}
@@ -91,11 +89,7 @@ function Footer() {
           <Link href="/imprint" className="font-semibold">
             {imprint}
           </Link>
-
-          
         </div>
-
-        
       </div>
       <div className="flex w-full bg-[#CCD0D9] rounded-[var(--radius-s)] p-2 pr-4 justify-between items-center">
         <div>

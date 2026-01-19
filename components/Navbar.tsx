@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import { IconMenu, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import LanguageMobile from "./LanguageMobile";
+import HashLink from "./HashLink";
 
 function Navbar() {
   const t = useTranslations("navbar");
@@ -39,11 +40,11 @@ function Navbar() {
           isScrolled || open
             ? "w-[80vw] min-[1440px]:w-[60vw] max-[850px]:w-[calc(100vw_-_2rem)] px-4  bg-[#fff] scrolled"
             : pathname === "/en" ||
-              pathname === "/en/" ||
-              pathname === "/de" ||
-              pathname === "/de/"
-            ? "w-screen px-5"
-            : "w-[80vw]  max-[850px]:w-[calc(100vw_-_2rem)] min-[1440px]:w-[60vw]"
+                pathname === "/en/" ||
+                pathname === "/de" ||
+                pathname === "/de/"
+              ? "w-screen px-5"
+              : "w-[80vw]  max-[850px]:w-[calc(100vw_-_2rem)] min-[1440px]:w-[60vw]"
         } ${
           isScrolled && !open ? "" : ""
         } grid grid-cols-[10rem_auto_10rem] max-[850px]:flex justify-between items-center`}
@@ -66,8 +67,8 @@ function Navbar() {
             {t("home")}
           </Link>
 
-          <Link
-            href="/#projects"
+          <HashLink
+            href="#projects"
             className={`flex items-center gap-1 ${
               pathname == "/work"
                 ? "opacity-100 font-bold"
@@ -75,10 +76,10 @@ function Navbar() {
             }`}
           >
             {t("projects")}
-          </Link>
+          </HashLink>
 
-          <Link
-            href="/#services"
+          <HashLink
+            href="#services"
             className={`flex items-center gap-1 ${
               pathname == "/work"
                 ? "opacity-100 font-bold"
@@ -86,7 +87,7 @@ function Navbar() {
             }`}
           >
             {t("services")}
-          </Link>
+          </HashLink>
 
           <Link
             href="/contact"
@@ -202,8 +203,8 @@ function Navbar() {
                 {t("home")}
               </Link>
 
-              <Link
-                href="/#projects"
+              <HashLink
+                href="#projects"
                 className={`flex items-center gap-1 ${
                   pathname == "/work"
                     ? "opacity-100 font-bold"
@@ -211,10 +212,10 @@ function Navbar() {
                 }`}
               >
                 {t("projects")}
-              </Link>
+              </HashLink>
 
-              <Link
-                href="/#services"
+              <HashLink
+                href="#services"
                 className={`flex items-center gap-1 ${
                   pathname == "/work"
                     ? "opacity-100 font-bold"
@@ -222,7 +223,7 @@ function Navbar() {
                 }`}
               >
                 {t("services")}
-              </Link>
+              </HashLink>
 
               <Link
                 href="/contact"

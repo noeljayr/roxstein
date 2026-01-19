@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import Loader from "@/components/ux/Loader";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 const englishServices = ["Design", "Development", "Hosting"];
 const germanServices = ["Design", "Entwicklung", "Hosting"];
@@ -37,6 +38,8 @@ function Contact() {
     {},
   );
   const [touched, setTouched] = useState<{ [key: string]: boolean }>({});
+  const [hasValidationErrors, setHasValidationErrors] =
+    useState<boolean>(false);
 
   useEffect(() => {
     if (locale === "de") {
@@ -60,12 +63,23 @@ function Contact() {
 
   // Validation functions
   const validateName = (value: string): string | undefined => {
-    if (!value.trim()) {
+    const trimmed = value.trim();
+
+    if (!trimmed) {
       return t("form.validation.name.required");
     }
-    if (value.trim().length < 2) {
+
+    // must contain at least two name parts
+    if (trimmed.split(/\s+/).length < 2) {
       return t("form.validation.name.minLength");
     }
+
+    // allowed characters only
+    const nameRegex = /^[A-Za-z]+([ '-][A-Za-z]+)+$/;
+    if (!nameRegex.test(trimmed)) {
+      return t("form.validation.name.invalid");
+    }
+
     return undefined;
   };
 
@@ -85,43 +99,27 @@ function Contact() {
       return undefined; // Phone is optional
     }
 
-    // Remove all spaces, dashes, and parentheses for validation
-    const cleanPhone = value.replace(/[\s\-\(\)]/g, "");
+    try {
+      // Check if the phone number is valid using libphonenumber-js
+      const isValid = isValidPhoneNumber(value);
 
-    // Swiss phone number patterns
-    const swissPatterns = [
-      /^0[1-9]\d{8}$/, // 0XX XXX XX XX (10 digits starting with 0)
-      /^\+41[1-9]\d{8}$/, // +41XX XXX XX XX (12 digits starting with +41)
-    ];
+      if (isValid) {
+        return undefined; // Valid phone number
+      }
 
-    // International phone number pattern (must start with +)
-    const internationalPattern = /^\+[1-9]\d{6,14}$/;
+      // If not valid, check if it might be a local number without country code
+      const cleanPhone = value.replace(/[\s\-\(\)]/g, "");
 
-    // Check if it's a Swiss number
-    const isSwissNumber = swissPatterns.some((pattern) =>
-      pattern.test(cleanPhone),
-    );
+      // If it starts with a digit (not +), suggest adding country code
+      if (/^[0-9]/.test(cleanPhone) && !cleanPhone.startsWith("+")) {
+        return t("form.validation.phone.needsCountryCode");
+      }
 
-    if (isSwissNumber) {
-      return undefined; // Valid Swiss number
+      return t("form.validation.phone.invalid");
+    } catch (error) {
+      // If parsing completely fails, return invalid message
+      return t("form.validation.phone.invalid");
     }
-
-    // Check if it's a valid international number
-    if (internationalPattern.test(cleanPhone)) {
-      return undefined; // Valid international number
-    }
-
-    // If it starts with a digit (not +), it might be a Swiss number without proper format
-    if (/^[0-9]/.test(cleanPhone) && !cleanPhone.startsWith("+")) {
-      return t("form.validation.phone.swissFormat");
-    }
-
-    // If it doesn't start with +, it needs country code
-    if (!cleanPhone.startsWith("+")) {
-      return t("form.validation.phone.internationalFormat");
-    }
-
-    return t("form.validation.phone.invalid");
   };
 
   const validateServices = (services: string[]): string | undefined => {
@@ -182,6 +180,11 @@ function Contact() {
       setValidationErrors((prev) => ({ ...prev, services: error }));
     }
   }, [selectedServices, touched.services, t]);
+
+  // Update hasValidationErrors whenever validationErrors changes
+  useEffect(() => {
+    setHasValidationErrors(Object.keys(validationErrors).length > 0);
+  }, [validationErrors]);
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -260,9 +263,6 @@ function Contact() {
     }
   }, [success]);
 
-  // Check if form has any validation errors
-  const hasValidationErrors = Object.keys(validationErrors).length > 0;
-
   return (
     <div className="section flex flex-col mt-8">
       <span className="section-title">
@@ -331,7 +331,11 @@ function Contact() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               onBlur={() => handleBlur("name")}
-              className={validationErrors.name ? "!outline-red-500/25 !outline-2 !border-red-500" : ""}
+              className={
+                validationErrors.name
+                  ? "!outline-red-500/25 !outline-2 !border-red-500"
+                  : ""
+              }
             />
             {validationErrors.name && (
               <span className="text-red-500 text-sm mt-0.5 block font-p-4">
@@ -349,7 +353,9 @@ function Contact() {
               onChange={(e) => setEmail(e.target.value)}
               onBlur={() => handleBlur("email")}
               className={
-                validationErrors.email ? "!outline-red-500/25 !outline-2 !border-red-500" : ""
+                validationErrors.email
+                  ? "!outline-red-500/25 !outline-2 !border-red-500"
+                  : ""
               }
             />
             {validationErrors.email && (
@@ -369,12 +375,14 @@ function Contact() {
             </label>
             <input
               type="text"
-              placeholder="+41 98 765 43 21"
+              placeholder={t("form.phone.placeholder")}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               onBlur={() => handleBlur("phone")}
               className={
-                validationErrors.phone ? "!outline-red-500/25 !outline-2 !border-red-500" : ""
+                validationErrors.phone
+                  ? "!outline-red-500/25 !outline-2 !border-red-500"
+                  : ""
               }
             />
             {validationErrors.phone && (
@@ -443,10 +451,10 @@ function Contact() {
         </div>
 
         <button
-          disabled={loading || hasValidationErrors}
+          disabled={loading || !hasValidationErrors}
           style={{ borderRadius: "var(--radius-s)" }}
           className={`cta-2 mt-2 cursor-pointer items-center justify-center flex h-[2.2rem] ${
-            hasValidationErrors || loading
+            !hasValidationErrors || loading
               ? "opacity-50 pointer-events-none"
               : "opacity-100"
           }`}

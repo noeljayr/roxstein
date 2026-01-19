@@ -116,7 +116,7 @@
       },
       "phone": {
         "label": "Telefonnummer",
-        "placeholder": "Bitte mit Landesvorwahl"
+        "placeholder": "z.B. +41 98 765 43 21"
       },
       "message": {
         "label": "Gibt es bereits konkrete Vorstellungen oder Wünsche?",
@@ -133,16 +133,15 @@
       "validation": {
         "name": {
           "required": "Name ist erforderlich",
-          "minLength": "Name muss mindestens 2 Zeichen lang sein"
+          "minLength": "First name and last name required"
         },
         "email": {
           "required": "E-Mail ist erforderlich",
           "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
         },
         "phone": {
-          "invalid": "Bitte geben Sie eine gültige Telefonnummer ein",
-          "swissFormat": "Schweizer Nummern können mit 0 oder +41 beginnen",
-          "internationalFormat": "Internationale Nummern müssen die Landesvorwahl enthalten (z.B. +49, +33)"
+          "invalid": "Bitte geben Sie eine gültige Telefonnummer mit Landesvorwahl ein",
+          "needsCountryCode": "Bitte geben Sie die Landesvorwahl an"
         },
         "services": {
           "required": "Bitte wählen Sie mindestens eine Dienstleistung aus"

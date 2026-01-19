@@ -116,7 +116,7 @@
       },
       "phone": {
         "label": "Phone Number",
-        "placeholder": "Please include country code"
+        "placeholder": "e.g., +41 98 765 43 21"
       },
       "message": {
         "label": "Are there any specific ideas or requirements already?",
@@ -133,16 +133,15 @@
       "validation": {
         "name": {
           "required": "Name is required",
-          "minLength": "Name must be at least 2 characters long"
+          "minLength": "First name and last name required"
         },
         "email": {
           "required": "Email is required",
           "invalid": "Please enter a valid email address"
         },
         "phone": {
-          "invalid": "Please enter a valid phone number",
-          "swissFormat": "Swiss numbers can start with 0 or +41",
-          "internationalFormat": "International numbers must include country code (e.g., +49, +33)"
+          "invalid": "Please enter a valid phone number with country code",
+          "needsCountryCode": "Please include the country code"
         },
         "services": {
           "required": "Please select at least one service"

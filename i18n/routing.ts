@@ -15,14 +15,6 @@ export const routing = defineRouting({
       en: "/about",
       de: "/uber-uns",
     },
-    "/#projects": {
-      en: "/#projects",
-      de: "/#projekte",
-    },
-    "/#services": {
-      en: "/#services",
-      de: "/#dienstleistungen",
-    },
     "/imprint": {
       en: "/imprint",
       de: "/impressum",
