@@ -129,7 +129,25 @@
       },
       "submit": "Anfrage abschicken",
       "success": "Nachricht gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
-      "error": "Es ist ein Fehler aufgetreten."
+      "error": "Es ist ein Fehler aufgetreten.",
+      "validation": {
+        "name": {
+          "required": "Name ist erforderlich",
+          "minLength": "Name muss mindestens 2 Zeichen lang sein"
+        },
+        "email": {
+          "required": "E-Mail ist erforderlich",
+          "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+        },
+        "phone": {
+          "invalid": "Bitte geben Sie eine gültige Telefonnummer ein",
+          "swissFormat": "Schweizer Nummern können mit 0 oder +41 beginnen",
+          "internationalFormat": "Internationale Nummern müssen die Landesvorwahl enthalten (z.B. +49, +33)"
+        },
+        "services": {
+          "required": "Bitte wählen Sie mindestens eine Dienstleistung aus"
+        }
+      }
     }
   },
   "aboutUs": {

@@ -12,6 +12,13 @@ import Loader from "@/components/ux/Loader";
 const englishServices = ["Design", "Development", "Hosting"];
 const germanServices = ["Design", "Entwicklung", "Hosting"];
 
+interface ValidationErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  services?: string;
+}
+
 function Contact() {
   const [services, setServices] = useState<string[]>([]);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -26,7 +33,10 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [empty, setEmpty] = useState<boolean>(false);
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>(
+    {},
+  );
+  const [touched, setTouched] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     if (locale === "de") {
@@ -42,12 +52,167 @@ function Contact() {
     } else {
       setSelectedServices([...selectedServices, service]);
     }
+    // Clear services validation error when user selects a service
+    if (validationErrors.services) {
+      setValidationErrors((prev) => ({ ...prev, services: undefined }));
+    }
   };
+
+  // Validation functions
+  const validateName = (value: string): string | undefined => {
+    if (!value.trim()) {
+      return t("form.validation.name.required");
+    }
+    if (value.trim().length < 2) {
+      return t("form.validation.name.minLength");
+    }
+    return undefined;
+  };
+
+  const validateEmail = (value: string): string | undefined => {
+    if (!value.trim()) {
+      return t("form.validation.email.required");
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      return t("form.validation.email.invalid");
+    }
+    return undefined;
+  };
+
+  const validatePhone = (value: string): string | undefined => {
+    if (!value.trim()) {
+      return undefined; // Phone is optional
+    }
+
+    // Remove all spaces, dashes, and parentheses for validation
+    const cleanPhone = value.replace(/[\s\-\(\)]/g, "");
+
+    // Swiss phone number patterns
+    const swissPatterns = [
+      /^0[1-9]\d{8}$/, // 0XX XXX XX XX (10 digits starting with 0)
+      /^\+41[1-9]\d{8}$/, // +41XX XXX XX XX (12 digits starting with +41)
+    ];
+
+    // International phone number pattern (must start with +)
+    const internationalPattern = /^\+[1-9]\d{6,14}$/;
+
+    // Check if it's a Swiss number
+    const isSwissNumber = swissPatterns.some((pattern) =>
+      pattern.test(cleanPhone),
+    );
+
+    if (isSwissNumber) {
+      return undefined; // Valid Swiss number
+    }
+
+    // Check if it's a valid international number
+    if (internationalPattern.test(cleanPhone)) {
+      return undefined; // Valid international number
+    }
+
+    // If it starts with a digit (not +), it might be a Swiss number without proper format
+    if (/^[0-9]/.test(cleanPhone) && !cleanPhone.startsWith("+")) {
+      return t("form.validation.phone.swissFormat");
+    }
+
+    // If it doesn't start with +, it needs country code
+    if (!cleanPhone.startsWith("+")) {
+      return t("form.validation.phone.internationalFormat");
+    }
+
+    return t("form.validation.phone.invalid");
+  };
+
+  const validateServices = (services: string[]): string | undefined => {
+    if (services.length === 0) {
+      return t("form.validation.services.required");
+    }
+    return undefined;
+  };
+
+  // Handle field blur events
+  const handleBlur = (field: string) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+
+    let error: string | undefined;
+    switch (field) {
+      case "name":
+        error = validateName(name);
+        break;
+      case "email":
+        error = validateEmail(email);
+        break;
+      case "phone":
+        error = validatePhone(phone);
+        break;
+      case "services":
+        error = validateServices(selectedServices);
+        break;
+    }
+
+    setValidationErrors((prev) => ({ ...prev, [field]: error }));
+  };
+
+  // Real-time validation on input change
+  useEffect(() => {
+    if (touched.name) {
+      const error = validateName(name);
+      setValidationErrors((prev) => ({ ...prev, name: error }));
+    }
+  }, [name, touched.name, t]);
+
+  useEffect(() => {
+    if (touched.email) {
+      const error = validateEmail(email);
+      setValidationErrors((prev) => ({ ...prev, email: error }));
+    }
+  }, [email, touched.email, t]);
+
+  useEffect(() => {
+    if (touched.phone) {
+      const error = validatePhone(phone);
+      setValidationErrors((prev) => ({ ...prev, phone: error }));
+    }
+  }, [phone, touched.phone, t]);
+
+  useEffect(() => {
+    if (touched.services) {
+      const error = validateServices(selectedServices);
+      setValidationErrors((prev) => ({ ...prev, services: error }));
+    }
+  }, [selectedServices, touched.services, t]);
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (empty) return;
+    // Validate all fields
+    const nameError = validateName(name);
+    const emailError = validateEmail(email);
+    const phoneError = validatePhone(phone);
+    const servicesError = validateServices(selectedServices);
+
+    const errors: ValidationErrors = {
+      name: nameError,
+      email: emailError,
+      phone: phoneError,
+      services: servicesError,
+    };
+
+    // Remove undefined errors
+    Object.keys(errors).forEach((key) => {
+      if (errors[key as keyof ValidationErrors] === undefined) {
+        delete errors[key as keyof ValidationErrors];
+      }
+    });
+
+    setValidationErrors(errors);
+    setTouched({ name: true, email: true, phone: true, services: true });
+
+    // If there are validation errors, don't submit
+    if (Object.keys(errors).length > 0) {
+      return;
+    }
 
     setLoading(true);
     setSuccess(false);
@@ -83,18 +248,6 @@ function Contact() {
     }
   };
 
-  const emptyFields = () => {
-    if (name.length < 3 || email.length < 5 || selectedServices.length === 0) {
-      setEmpty(true);
-    } else {
-      setEmpty(false);
-    }
-  };
-
-  useEffect(() => {
-    emptyFields();
-  }, [name, email, phone, message, selectedServices, emptyFields]);
-
   useEffect(() => {
     if (success) {
       setEmail("");
@@ -102,8 +255,13 @@ function Contact() {
       setMessage("");
       setPhone("");
       setSelectedServices([]);
+      setValidationErrors({});
+      setTouched({});
     }
   }, [success]);
+
+  // Check if form has any validation errors
+  const hasValidationErrors = Object.keys(validationErrors).length > 0;
 
   return (
     <div className="section flex flex-col mt-8">
@@ -168,23 +326,37 @@ function Contact() {
           <div className="form-input">
             <label htmlFor="">{t("form.name.label")}</label>
             <input
-              required
               type="text"
               placeholder={t("form.name.placeholder")}
               value={name}
               onChange={(e) => setName(e.target.value)}
+              onBlur={() => handleBlur("name")}
+              className={validationErrors.name ? "!outline-red-500/25 !outline-2 !border-red-500" : ""}
             />
+            {validationErrors.name && (
+              <span className="text-red-500 text-sm mt-0.5 block font-p-4">
+                {validationErrors.name}
+              </span>
+            )}
           </div>
 
           <div className="form-input">
             <label htmlFor="">{t("form.email.label")}</label>
             <input
-              required
               type="email"
               placeholder={t("form.email.placeholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              onBlur={() => handleBlur("email")}
+              className={
+                validationErrors.email ? "!outline-red-500/25 !outline-2 !border-red-500" : ""
+              }
             />
+            {validationErrors.email && (
+              <span className="text-red-500 text-sm mt-0.5 block font-p-4">
+                {validationErrors.email}
+              </span>
+            )}
           </div>
 
           <div className="form-input">
@@ -196,12 +368,20 @@ function Contact() {
               </span>{" "}
             </label>
             <input
-              required
               type="text"
               placeholder="+41 98 765 43 21"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
+              onBlur={() => handleBlur("phone")}
+              className={
+                validationErrors.phone ? "!outline-red-500/25 !outline-2 !border-red-500" : ""
+              }
             />
+            {validationErrors.phone && (
+              <span className="text-red-500 text-sm mt-0.5 block font-p-4">
+                {validationErrors.phone}
+              </span>
+            )}
           </div>
 
           <div className="form-input">
@@ -242,6 +422,7 @@ function Contact() {
                   }}
                   key={index}
                   onClick={() => toggleService(s)}
+                  onBlur={() => handleBlur("services")}
                   style={{ transition: "var(--transition)" }}
                   className={`cursor-pointer text-center flex items-center justify-center rounded-4xl border-[1px] px-4 max-sm:px-2 py-1.5 font-semibold select-none ${
                     selectedServices.includes(s)
@@ -254,13 +435,20 @@ function Contact() {
               );
             })}
           </div>
+          {validationErrors.services && (
+            <span className="text-red-500 text-sm mt-0.5 block font-p-4">
+              {validationErrors.services}
+            </span>
+          )}
         </div>
 
         <button
-          disabled={loading}
+          disabled={loading || hasValidationErrors}
           style={{ borderRadius: "var(--radius-s)" }}
           className={`cta-2 mt-2 cursor-pointer items-center justify-center flex h-[2.2rem] ${
-            empty || loading ? "opacity-50 pointer-events-none" : "opacity-100"
+            hasValidationErrors || loading
+              ? "opacity-50 pointer-events-none"
+              : "opacity-100"
           }`}
         >
           {loading ? <Loader /> : t("form.submit")}

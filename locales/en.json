@@ -129,7 +129,25 @@
       },
       "submit": "Send Inquiry",
       "success": "Message sent. We will contact you within 24 hours.",
-      "error": "An error has occurred."
+      "error": "An error has occurred.",
+      "validation": {
+        "name": {
+          "required": "Name is required",
+          "minLength": "Name must be at least 2 characters long"
+        },
+        "email": {
+          "required": "Email is required",
+          "invalid": "Please enter a valid email address"
+        },
+        "phone": {
+          "invalid": "Please enter a valid phone number",
+          "swissFormat": "Swiss numbers can start with 0 or +41",
+          "internationalFormat": "International numbers must include country code (e.g., +49, +33)"
+        },
+        "services": {
+          "required": "Please select at least one service"
+        }
+      }
     }
   },
   "aboutUs": {
