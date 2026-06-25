@@ -11,7 +11,6 @@ import React, { useEffect, useState } from "react";
 // import tron from "@/public/tron-analytics.png";
 import Image from "next/image";
 import gian from "@/public/team/gian.jpg";
-import ken from "@/public/team/ken.jpg";
 import noel from "@/public/team/noel.jpg";
 import switzerland from "@/public/team/country/switzerland.png";
 import nigeria from "@/public/team/country/nigeria.png";
@@ -60,25 +59,16 @@ const team = [
     },
   },
   {
-    name: "Aisa Hozdic",
+    name: "Sina Iglowstein",
     position: "Marketing & Sales",
     courtry: "Switzerland",
     profile: null,
     contact: {
-      linkedIn: "https://www.linkedin.com/in/aisa-hozdic-a81874368/",
-      email: "aisa@roxstein.ch",
+      linkedIn: "",
+      email: "sina@roxstein",
     },
   },
-  {
-    name: "Ken Nyirenda",
-    position: "Brand & Visual Designer",
-    courtry: "Malawi",
-    profile: ken,
-    contact: {
-      linkedIn: "https://www.linkedin.com/in/ken-nyirenda-99549226b/",
-      email: "ken@roxstein.ch",
-    },
-  },
+  
   {
     name: "Noel Luhanga",
     position: "UI/UX Designer",
@@ -323,7 +313,8 @@ function AboutUs() {
                     <IconMail color="#1C68C0" className="h-4 w-4" />
                   </a>
 
-                  <a
+                 {
+                  m.contact.linkedIn &&  <a
                     target="_blank"
                     href={m.contact.linkedIn}
                     style={{
@@ -333,6 +324,7 @@ function AboutUs() {
                   >
                     <IconBrandLinkedin color="#1C68C0" className="h-4 w-4" />
                   </a>
+                 }
 
                   {/* <a
                     target="_blank"
