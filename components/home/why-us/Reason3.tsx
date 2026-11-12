@@ -12,7 +12,7 @@ function Reason3() {
   const t = useTranslations("why.reason3");
 
   const { rive, RiveComponent } = useRive({
-    src: "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/creative-animation.riv",
+    src: "/creative-animation.riv",
     stateMachines: "default",
     autoplay: false,
   });
@@ -37,7 +37,6 @@ function Reason3() {
       ref={ref}
       className="reason"
     >
-      
       <span className="title">{t("title")}</span>
       <p className="opacity-85">{t("description")}</p>
       <div className="absolute h-[70%] bottom-[-10%] w-full">

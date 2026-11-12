@@ -32,6 +32,7 @@
     "about": "About Us",
     "contact": "Contact",
     "imprint": "Imprint",
+    "privacy": "Privacy Policy",
     "callUs": "Call Us",
     "allRights": "All rights reserved"
   },
@@ -44,11 +45,7 @@
     "tagline": "Together to business success.",
     "description": "When Swiss quality meets global talent, websites are created that deliver results – for more visibility, more customers, and measurable growth.",
     "cta1": "Request a Quote",
-    "cta2": "Call now for a no-obligation consultation",
-    "chart": {
-      "customersGained": "Customers Gained",
-      "conversionRate": "Conversion Rate"
-    }
+    "cta2": "Call now for a no-obligation consultation"
   },
   "services": {
     "title": "Services",
@@ -128,6 +125,7 @@
         "placeholder": "(Select the area or areas relevant to your project)"
       },
       "submit": "Send Inquiry",
+      "privacyNotice": "By submitting this form, you agree to the processing of your details in accordance with our Privacy Policy.",
       "success": "Message sent. We will contact you within 24 hours.",
       "error": "An error has occurred.",
       "validation": {
@@ -155,13 +153,9 @@
     "years": {
       "title": "Experience",
       "description": "Roxstein has been established for two years – however, our experience extends far beyond that. It consists of a team of experienced professionals with comprehensive expertise in design, development, and digital strategy.",
-      "yearsOfExperience": "3+ Years of Experience",
       "projects": "57+ Completed Projects"
     },
-    "clients": {
-      "title": "Satisfied Clients",
-      "description": "Driving brand success through innovative and high-performance solutions."
-    },
+
     "values": {
       "title": "Our Values at Roxstein",
       "description": "At Roxstein, we are guided by clear principles that shape our daily actions and offer you, our client, real added value."
@@ -177,7 +171,7 @@
     "title": "Imprint",
     "tagline": "We value transparency and compliance with legal regulations.",
     "description": "References and links to third-party websites are outside our area of ​​responsibility. We disclaim any responsibility for such websites. Access to and use of such websites is at the user's own risk.",
-    "managment": "Manager",
+    "management": "Owner",
     "sole": "sole proprietorship",
     "director": "Managing Director",
     "contact": {
@@ -203,5 +197,10 @@
         "extra": "VAT"
       }
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "tagline": "Your data is safe with us.",
+    "content": "Content will be provided after approval."
   }
 }

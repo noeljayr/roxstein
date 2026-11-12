@@ -13,6 +13,7 @@ function Footer() {
   const work = t("projects");
   const about = t("about");
   const imprint = t("imprint");
+  const privacy = t("privacy");
   const allRights = t("allRights");
 
   return (
@@ -54,6 +55,9 @@ function Footer() {
           <HashLink href="#projects" className="font-semibold">
             {work}
           </HashLink>
+          <Link href="/about" className="font-semibold">
+            {about}
+          </Link>
         </motion.div>
 
         <motion.div
@@ -67,11 +71,11 @@ function Footer() {
           viewport={{ once: true }}
           className="flex-col flex gap-2 max-[800px]:hidden"
         >
-          <Link href="/about" className="font-semibold">
-            {about}
-          </Link>
           <Link href="/imprint" className="font-semibold">
             {imprint}
+          </Link>
+          <Link href="/privacy" className="font-semibold">
+            {privacy}
           </Link>
         </motion.div>
 
@@ -89,6 +93,9 @@ function Footer() {
           <Link href="/imprint" className="font-semibold">
             {imprint}
           </Link>
+          <Link href="/privacy" className="font-semibold">
+            {privacy}
+          </Link>
         </div>
       </div>
       <div className="flex w-full bg-[#CCD0D9] rounded-[var(--radius-s)] p-2 pr-4 justify-between items-center">
@@ -103,7 +110,7 @@ function Footer() {
         </div>
 
         <span className="font-semibold font-p-4 opacity-75">
-          2025. {allRights}
+          {new Date().getFullYear()}. {allRights}
         </span>
       </div>
     </div>

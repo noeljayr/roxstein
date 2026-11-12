@@ -462,6 +462,34 @@ function Contact() {
           {loading ? <Loader /> : t("form.submit")}
         </button>
 
+        <p className="font-p-4 opacity-70 text-center px-4 mt-2">
+          {locale === "de" ? (
+            <>
+              Mit dem Absenden erklären Sie sich mit der Bearbeitung Ihrer
+              Angaben gemäss unserer{" "}
+              <Link
+                href="/privacy"
+                className="underline hover:text-[var(--primary)]"
+              >
+                Datenschutzerklärung
+              </Link>{" "}
+              einverstanden.
+            </>
+          ) : (
+            <>
+              By submitting this form, you agree to the processing of your
+              details in accordance with our{" "}
+              <Link
+                href="/privacy"
+                className="underline hover:text-[var(--primary)]"
+              >
+                Privacy Policy
+              </Link>
+              .
+            </>
+          )}
+        </p>
+
         {error && (
           <motion.span
             initial={{ opacity: 0 }}

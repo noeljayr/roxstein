@@ -7,10 +7,9 @@ import { useTranslations } from "next-intl";
 
 function Service3() {
   const t = useTranslations("services.hosting");
- 
-   
+
   const { rive, RiveComponent } = useRive({
-    src: "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/hosting-animation.riv",
+    src: "/hosting-animation.riv",
     stateMachines: "default",
     autoplay: false,
   });

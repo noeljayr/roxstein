@@ -26,9 +26,9 @@ function HeroSection() {
   }, []);
 
   return (
-    <motion.div className="hero-section h-[25rem] flex max-[980px]:items-center max-[980px]:justify-center  max-[980px]:flex-col relative items-center overflow-hidden justify-between">
-      <div className="flex flex-col gap-3 max-[980px]:items-center  ">
-        <div className="flex w-[62ch] max-[980px]:w-fit flex-col gap-1 max-[980px]:items-center">
+    <motion.div className="hero-section h-[25rem] flex max-[980px]:items-center max-[980px]:justify-center  max-[980px]:flex-col relative justify-center items-center overflow-hidden">
+      <div className="flex flex-col gap-3 items-center  ">
+        <div className="flex w-[62ch] max-[980px]:w-fit flex-col  gap-1 items-center">
           <motion.span
             initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -71,7 +71,7 @@ function HeroSection() {
             }}
             whileInView={{ y: 0, opacity: 0.85 }}
             viewport={{ once: true }}
-            className="w-[85%] font-medium opacity-75 max-[980px]:text-center max-[980px]:w-[55ch] max-[480px]:w-full"
+            className="w-[85%] font-medium text-center opacity-75 max-[980px]:text-center max-[980px]:w-[55ch] max-[480px]:w-full"
           >
             {t("description")}
           </motion.p>
@@ -96,68 +96,7 @@ function HeroSection() {
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, x: 60 }}
-        transition={{
-          ease: [0.25, 0.1, 0.25, 1.0],
-          duration: 0.85,
-        }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="hero-image right-[5rem] max-[980px]:hidden  self-center rounded-[var(--radius)] border-[1px] border-[var(--border)] h-[19rem] w-[28rem] bg-[rgba(255,255,255,0.5)] absolute"
-      >
-        <div className="flex conversion-chart flex-col items-center justify-center absolute border-[1px] border-white w-[4.5rem] bg-[rgba(255,255,255,0.3)] backdrop-blur-[2px] h-[4.5rem] left-[4.5rem] top-[3rem] z-[2] rounded-full">
-          <svg
-            className="w-[5rem] h-[5rem] top-[-0.4rem] left-[-0.3rem]  absolute loader-svg"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="-3 -4 40 40"
-          >
-            <circle
-              r={radius}
-              cx="16"
-              cy="16"
-              fill="#FFFFFF"
-              fillOpacity={0.3}
-              stroke="transparent"
-            />
-            <motion.circle
-              cx="16"
-              cy="16"
-              r={radius}
-              className="progress-bar__progress"
-              fill="none"
-              stroke="#4162BF"
-              initial={{ strokeDashoffset: 100 }}
-              whileInView={{ strokeDashoffset: 8 }}
-              transition={{
-                ease: [0.25, 0.1, 0.25, 1.0],
-                duration: 4.5,
-              }}
-              viewport={{ once: true }}
-              strokeDasharray={circumference}
-            />
-          </svg>
-          <span className="font-extrabold font-p-1 text-[#8D8D8D]">
-            <NumberFlow value={value} style={{ color: "#8D8D8D" }} />%
-          </span>
-          <span
-            style={{ fontSize: "calc(var(--p4) * 0.65)" }}
-            className=" text-[#8F8F8F] font-bold"
-          >
-            {t("chart.conversionRate")}
-          </span>
-        </div>
 
-        <Image
-          src={heroImage}
-          alt="hero image"
-          className="absolute left-[-3rem] bottom-0"
-        />
-
-        <div className="chart p-3 backdrop-blur-[5px] rounded-[var(--radius)] border-[1px] border-[rgba(255,255,255,0.5)] absolute right-[-6rem] scale-[0.8] bg-[rgba(255,255,255,0.3)] top-[4rem]">
-          <Customers />
-        </div>
-      </motion.div>
     </motion.div>
   );
 }

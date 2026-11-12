@@ -65,10 +65,10 @@ const team = [
     profile: null,
     contact: {
       linkedIn: "",
-      email: "sina@roxstein",
+      email: "sina@roxstein.ch",
     },
   },
-  
+
   {
     name: "Noel Luhanga",
     position: "UI/UX Designer",
@@ -139,8 +139,8 @@ function AboutUs() {
           </motion.p>
         </div>
 
-        <div className="w-full pt-8 grid grid-cols-[auto_40%] max-[850px]:flex max-[850px]:flex-col max-[850px]:gap-4 justify-between">
-          <div className="flex flex-col font-medium w-[80%] max-[360]:w-full">
+        <div className="w-full pt-8 grid grid-cols-1 max-[850px]:flex max-[850px]:flex-col max-[850px]:gap-4 justify-between">
+          <div className="flex flex-col font-medium  w-full">
             <motion.span
               initial={{ opacity: 0, y: -40 }}
               transition={{
@@ -162,12 +162,12 @@ function AboutUs() {
               }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="opacity-70"
+              className="opacity-70 w-full max-w-[45ch]"
             >
               {t("values.description")}
             </motion.p>
 
-            <div className="flex flex-col w-full gap-2 mt-2 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4 max-sm:gap-y-6 mt-2 ">
               {values.map((v, index) => {
                 const idx = index + 2;
                 return (
@@ -181,42 +181,19 @@ function AboutUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     key={index}
-                    className="grid grid-cols-[1rem_1fr] w-full items-center gap-3"
+                    className="grid grid-cols-[auto_1fr] w-full items-center gap-4"
                   >
-                    <span className="bg-[var(--primary)] w-[3px] rounded-[0.5rem] opacity-50 h-[80%]"></span>
+                    <span className="bg-[var(--black)]/10 w-[2px] rounded-[0.5rem] opacity-50 h-[80%]"></span>
                     <div className="flex flex-col">
                       <span className="font-semibold opacity-90">
                         {v.title}
                       </span>
-                      <p className="font-p-4 opacity-70">{v.p}</p>
+                      <p className="font-p-4 opacity-70 mt-2">{v.p}</p>
                     </div>
                   </motion.div>
                 );
               })}
             </div>
-          </div>
-
-          <div className="grid max-[850px]:hidden grid-cols-1 gap-2 h-full max-[850px]:h-[15rem] max-[600px]:h-[10rem] max-[450px]:h-fit max-[450px]:flex max-[450px]:grid-rows-[10rem_15rem]">
-            <motion.div
-              initial={{ opacity: 0 }}
-              transition={{
-                ease: [0.25, 0.1, 0.25, 1.0],
-                duration: 0.85,
-                delay: 2,
-              }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="flex relative bg-[#FFFFFF] rounded-[var(--radius-m)] w-full h-full overflow-hidden"
-            >
-              <img
-                src={
-                  "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/tron-analytics.png"
-                }
-                alt="tron"
-                className="scale-[1.5] top-[25%] left-[30%] w-full h-fit absolute z-[1] "
-              />
-              <span className="absolute z-[2] h-full w-full left-0 top-0 bg-[rgba(21,21,25,0.2)]"></span>
-            </motion.div>
           </div>
         </div>
       </div>
@@ -269,13 +246,15 @@ function AboutUs() {
                 className="flex flex-col"
               >
                 <div className="w-full h-auto aspect-square items-center justify-center flex bg-black/5 rounded-[var(--radius-m)] overflow-hidden">
-                  {
-                    m.profile ? <Image
-                  src={m.profile}
-                  alt=""
-                  className="w-full h-auto aspect-square object-cover rounded-[var(--radius-m)]"
-                /> : <IconUserFilled className="h-10 w-10 opacity-25" />
-                  }
+                  {m.profile ? (
+                    <Image
+                      src={m.profile}
+                      alt=""
+                      className="w-full h-auto aspect-square object-cover rounded-[var(--radius-m)]"
+                    />
+                  ) : (
+                    <IconUserFilled className="h-10 w-10 opacity-25" />
+                  )}
                 </div>
 
                 <div className="grid grid-cols-[1fr_auto] pt-3 truncate items-center">
@@ -287,10 +266,10 @@ function AboutUs() {
                       m.courtry.toLowerCase() === "switzerland"
                         ? switzerland
                         : m.courtry.toLowerCase() === "nigeria"
-                        ? nigeria
-                        : m.courtry.toLowerCase() === "malawi"
-                        ? mw
-                        : switzerland
+                          ? nigeria
+                          : m.courtry.toLowerCase() === "malawi"
+                            ? mw
+                            : switzerland
                     }
                     className="h-4 w-4 ml-auto opacity-70"
                     alt={m.courtry}
@@ -313,18 +292,18 @@ function AboutUs() {
                     <IconMail color="#1C68C0" className="h-4 w-4" />
                   </a>
 
-                 {
-                  m.contact.linkedIn &&  <a
-                    target="_blank"
-                    href={m.contact.linkedIn}
-                    style={{
-                      border: "1px solid rgba(44, 44, 53, 0.2)",
-                    }}
-                    className="bg-white h-6.5 w-6.5 border rounded-[0.5rem] flex items-center justify-center"
-                  >
-                    <IconBrandLinkedin color="#1C68C0" className="h-4 w-4" />
-                  </a>
-                 }
+                  {m.contact.linkedIn && (
+                    <a
+                      target="_blank"
+                      href={m.contact.linkedIn}
+                      style={{
+                        border: "1px solid rgba(44, 44, 53, 0.2)",
+                      }}
+                      className="bg-white h-6.5 w-6.5 border rounded-[0.5rem] flex items-center justify-center"
+                    >
+                      <IconBrandLinkedin color="#1C68C0" className="h-4 w-4" />
+                    </a>
+                  )}
 
                   {/* <a
                     target="_blank"

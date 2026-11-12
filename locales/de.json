@@ -32,6 +32,7 @@
     "about": "Über uns",
     "contact": "Kontakt",
     "imprint": "Impressum",
+    "privacy": "Datenschutzerklärung",
     "callUs": "Rufen Sie uns an",
     "allRights": "Alle Rechte vorbehalten"
   },
@@ -41,14 +42,10 @@
       "reliable": "Zuverlässig.",
       "affordable": "Hochwertig."
     },
-    "tagline": "Gmeinsam zum Gschäftserfolg.",
+    "tagline": "Gemeinsam zum Geschäftserfolg.",
     "description": "Wenn Schweizer Qualität auf globales Talent trifft, entstehen Webseiten, die wirken – für mehr Sichtbarkeit, mehr Kunden und messbares Wachstum.",
     "cta1": "Offerte beantragen",
-    "cta2": "Jetzt unverbindlich anrufen",
-    "chart": {
-      "customersGained": "Gewonnene Kunden",
-      "conversionRate": "Konversionsrate"
-    }
+    "cta2": "Jetzt unverbindlich anrufen"
   },
   "services": {
     "title": "Dienstleistungen",
@@ -102,7 +99,7 @@
   },
   "contactPage": {
     "title": "Kontakt",
-    "tagline": "Gmeinsam gestalten wir den nächsten Schritt.",
+    "tagline": "Gemeinsam gestalten wir den nächsten Schritt.",
     "description": "Sie haben ein Projekt, eine Idee oder eine Frage? Schicken Sie uns eine Anfrage oder schreiben Sie uns direkt per E-Mail an , wir melden uns zeitnah bei Ihnen.",
     "emailAddress": "info@roxstein.ch",
     "form": {
@@ -124,10 +121,11 @@
         "optional": "(optional)"
       },
       "services": {
-        "label": "Dienstleitungen",
+        "label": "Dienstleistungen",
         "placeholder": "(Wählen Sie den Bereich oder die Bereiche, die Ihr Projekt betreffen)"
       },
       "submit": "Anfrage abschicken",
+      "privacyNotice": "Mit dem Absenden erklären Sie sich mit der Bearbeitung Ihrer Angaben gemäss unserer Datenschutzerklärung einverstanden.",
       "success": "Nachricht gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
       "error": "Es ist ein Fehler aufgetreten.",
       "validation": {
@@ -155,13 +153,9 @@
     "years": {
       "title": "Erfahrung",
       "description": "Roxstein gibt es zwei Jahren – unsere Erfahrung reicht jedoch weit darüber hinaus. Es besteht aus einem Team erfahrenen Fachleuten mit umfassender Kompetenz in Design, Entwicklung und digitaler Strategie.",
-      "yearsOfExperience": "3+ Jahre Erfahrung",
       "projects": "57+ abgeschlossene Projekte"
     },
-    "clients": {
-      "title": "Zufriedene Kunden",
-      "description": "Markenerfolg durch innovative und leistungsstarke Lösungen vorantreiben."
-    },
+
     "values": {
       "title": "Unsere Werte bei Roxstein",
       "description": "Bei Roxstein orientieren wir uns an klaren Grundsätzen, die unser tägliches Handeln prägen und Ihnen als Kunde echten Mehrwert bieten."
@@ -177,7 +171,7 @@
     "title": "Impressum",
     "tagline": "Wir legen Wert auf Transparenz und Einhaltung der Rechtsvorschriften",
     "description": "References and links to third-party websites are outside our area of ​​responsibility. We disclaim any responsibility for such websites. Access to and use of such websites is at the user's own risk.",
-    "managment": "Inhaber",
+    "management": "Inhaber",
     "sole": "Einzelunternehmen",
     "director": "Geschäftsführer",
     "contact": {
@@ -203,5 +197,10 @@
         "extra": "MwSt"
       }
     }
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "tagline": "Ihre Daten sind bei uns sicher.",
+    "content": "Inhalt wird nach Freigabe bereitgestellt."
   }
 }

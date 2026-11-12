@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 function Reason1() {
   const { rive, RiveComponent } = useRive({
-    src: "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/expertise-animation.riv",
+    src: "/expertise-animation.riv",
     stateMachines: "default",
     autoplay: false,
   });
@@ -29,7 +29,6 @@ function Reason1() {
       viewport={{ once: true }}
       className="reason"
     >
-     
       <span className="title">Expertise</span>
       <p className="opacity-85">
         Our team leverages extensive hands-on experience and in-depth technical

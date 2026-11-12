@@ -8,9 +8,8 @@ import { useTranslations } from "next-intl";
 function Service2() {
   const t = useTranslations("services.dev");
 
-  
   const { rive, RiveComponent } = useRive({
-    src: "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/dev-animation.riv",
+    src: "/dev-animation.riv",
     stateMachines: "default",
     autoplay: false,
   });

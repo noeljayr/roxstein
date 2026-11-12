@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 function Service1() {
   const t = useTranslations("services.design");
   const { rive, RiveComponent } = useRive({
-    src: "https://cdn.jsdelivr.net/gh/noeljayr/roxstein/public/design-animation.riv",
+    src: "/design-animation.riv",
     stateMachines: "default",
     autoplay: false,
   });
@@ -33,8 +33,6 @@ function Service1() {
       <div className="flex flex-col p-4">
         <span className="font-bold font-p-1">{t("title")}</span>
         <p className="opacity-80 font-medium">{t("description")}</p>
-
-        
       </div>
 
       <div className="relative flex w-full h-full brightness-95">
