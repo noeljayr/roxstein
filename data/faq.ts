@@ -57,7 +57,6 @@ export const faqs_eng = [
         answer:
           "RoxStein is a remote-first agency with roots in Switzerland. We operate digitally, efficiently, and independently of location.",
       },
-      
     ],
   },
 ];
@@ -117,11 +116,10 @@ export const faqs_ger = [
           "Nein. Wir kümmern uns um die Technik und erklären alles klar und verständlich – von der ersten Idee bis zur fertigen Website.",
       },
       {
-        question: "Wo befindet sich Roxstein – und arbeitet Sie auch remote?",
+        question: "Wo befindet sich Roxstein – und arbeitet sie auch remote?",
         answer:
           "Unser Vertrieb, die Qualitätssicherung und Projektleitung sind im Kanton St. Gallen angesiedelt. Die IT-Experten von Roxstein sind in Malawi und Nigeria tätig. Dank digitaler Prozesse sind wir in der Lage flexibel und standortunabhängig zu arbeiten.",
       },
-      
     ],
   },
 ];

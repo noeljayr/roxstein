@@ -35,9 +35,9 @@ export const routing = defineRouting({
       en: "https://www.linkedin.com/company/roxstein/",
       de: "https://www.linkedin.com/company/roxstein/",
     },
-    "mailto:contact@roxstein.ch": {
-      en: "mailto:contact@roxstein.ch",
-      de: "mailto:contact@roxstein.ch",
+    "mailto:info@roxstein.ch": {
+      en: "mailto:info@roxstein.ch",
+      de: "mailto:info@roxstein.ch",
     },
   },
 });

@@ -50,7 +50,7 @@ const germanValues = [
 const team = [
   {
     name: "Gian Iglowstein",
-    position: "Inhaber",
+    position: "Owner",
     courtry: "Switzerland",
     profile: gian,
     contact: {

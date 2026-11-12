@@ -38,11 +38,11 @@
   },
   "hero": {
     "tri": {
-      "local": "Local.",
+      "local": "Lokal.",
       "reliable": "Zuverlässig.",
       "affordable": "Hochwertig."
     },
-    "tagline": "Gemeinsam zum Geschäftserfolg.",
+    "tagline": "Gmeinsam zum Gschäftserfolg.",
     "description": "Wenn Schweizer Qualität auf globales Talent trifft, entstehen Webseiten, die wirken – für mehr Sichtbarkeit, mehr Kunden und messbares Wachstum.",
     "cta1": "Offerte beantragen",
     "cta2": "Jetzt unverbindlich anrufen"
@@ -99,7 +99,7 @@
   },
   "contactPage": {
     "title": "Kontakt",
-    "tagline": "Gemeinsam gestalten wir den nächsten Schritt.",
+    "tagline": "Gmeinsam gestalten wir den nächsten Schritt.",
     "description": "Sie haben ein Projekt, eine Idee oder eine Frage? Schicken Sie uns eine Anfrage oder schreiben Sie uns direkt per E-Mail an , wir melden uns zeitnah bei Ihnen.",
     "emailAddress": "info@roxstein.ch",
     "form": {
@@ -152,7 +152,7 @@
     "tagline": "Lernen Sie Roxstein und das Team kennen.",
     "years": {
       "title": "Erfahrung",
-      "description": "Roxstein gibt es zwei Jahren – unsere Erfahrung reicht jedoch weit darüber hinaus. Es besteht aus einem Team erfahrenen Fachleuten mit umfassender Kompetenz in Design, Entwicklung und digitaler Strategie.",
+      "description": "Roxstein gibt es zwei Jahren – unsere Erfahrung reicht jedoch weit darüber hinaus. Es besteht aus einem Team erfahrener Fachleute mit umfassender Kompetenz in Design, Entwicklung und digitaler Strategie.",
       "projects": "57+ abgeschlossene Projekte"
     },
 
