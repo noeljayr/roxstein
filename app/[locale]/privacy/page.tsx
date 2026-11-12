@@ -22,6 +22,12 @@ function Privacy() {
         <div className="flex flex-col gap-4">
           <span className="font-medium opacity-70">
             {t("content")}
+
+            place holder text.
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eaque consequatur veniam cum explicabo distinctio soluta quod iure tenetur asperiores, ad ullam unde quos quidem nostrum facere, autem sed nemo? <br /> <br />
+
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum numquam tempore repellat sit rerum veritatis tempora nostrum amet, optio consequatur consectetur sed quos fugit molestias quia at explicabo magni corporis?
           </span>
         </div>
       </div>

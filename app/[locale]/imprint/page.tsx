@@ -28,7 +28,7 @@ function Imprint() {
             </span>
           </span>
           <span className="flex gap-2">
-            <span className="font-semibold">{t("managment")}: </span>
+            <span className="font-semibold">{t("management")}: </span>
             <span className="font-medium opacity-70 ">Gian Iglowstein</span>
           </span>
 
